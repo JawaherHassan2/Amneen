@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,9 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
         let window = UIWindow(windowScene: scene)
-           window.rootViewController = ContainerViewController()
+           window.rootViewController = LoginVC()
            window.makeKeyAndVisible()
            self.window = window
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

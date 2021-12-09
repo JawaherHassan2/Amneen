@@ -20,6 +20,10 @@ class RenterService {
             "timestamp": hostels.timestamp
         ])
     }
+    func deletRe(hostels: Renter) {
+        hostelsCollection.document(hostels.id).delete()
+    }
+
     
     func listenToRenters(completion: @escaping (([Renter]) -> Void)) {
 

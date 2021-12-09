@@ -140,7 +140,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
             
             return
         }
-
+       
         RenterService.shared.addH(
                 hostels: Renter(name: name, id: id,timestamp: Timestamp(date: date))
               )

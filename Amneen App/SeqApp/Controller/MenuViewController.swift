@@ -25,19 +25,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case language
         case about
         case settt
-//        case home = "الصفحة الرئيسية"
-//        case info = "البلاغات"
-//        case appRating = "الفنادق"
-//        case shareApp = "القائمه السوداء"
-//        case settings = "ارقام الطوارئ"
-//        case centers = "مواقع المراكز"
-//        case dark = "الوضع الليلي"
-//        case language = "تبديل اللغه"
-//        case about = "عن التطبيق"
-//        case settt = "الإعدادات"
-        
-//
-        var localized: String {
+
+   var localized: String {
                     switch self {
                     case .home:
                         return NSLocalizedString("47", comment: "الصفحة الرئيسية")

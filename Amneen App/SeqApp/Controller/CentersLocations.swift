@@ -64,7 +64,7 @@ import UIKit
                          ,NSLocalizedString("65", comment:"مديريه الدفاع المدني بمنطقه عسير")
                          ,NSLocalizedString("66", comment:"الشعبه الميدانيه للدفاع المدني غرب ابها")
                          ,NSLocalizedString("67", comment:"مركز الهلال الاحمر")
-                         ,NSLocalizedString("68", comment:"مركز الهلال الاحمر")
+                         ,NSLocalizedString("67", comment:"مركز الهلال الاحمر")
                          //                       ,""
 //                       ,""
 //                       ,""
@@ -96,43 +96,42 @@ import UIKit
              case  NSLocalizedString("57", comment:"مركز شرطه شرق ابها"):
                  annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
                  annotationView.glyphImage = UIImage(named: "2")
-         case  "East Abha Police Station":
-             annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
-             annotationView.glyphImage = UIImage(named: "2")
-             case  "مديريه شرطه منطقه عسير":
+//        
+             case   NSLocalizedString("58", comment:"مديريه شرطه منطقه عسير") :
                  annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
                  annotationView.glyphImage = UIImage(named: "2")
-             case "مركز المعلومات الوطني ابها":
-                 annotationView.markerTintColor = UIColor(red: (246.0/255), green: (233.0/255), blue: (212.0/255), alpha: 1.0)
-                 annotationView.glyphImage = UIImage(named: "2")
-             case "مركز شرطه غرب ابها" :
+        case  NSLocalizedString("59", comment:"مركز المعلومات الوطني ابها"):
+                 annotationView.markerTintColor = UIColor(red: (102/255), green: (126/255), blue: (145/255), alpha: 1.0)
+                 annotationView.glyphImage = UIImage(named: "center3")
+             case  NSLocalizedString("60", comment:"مركز شرطه غرب ابها"):
                  annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
                  annotationView.glyphImage = UIImage(named: "2")
-         case "مركز الشرطه المدنيه":
+         case  NSLocalizedString("61", comment:"مركز الشرطه المدنيه"):
              annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
              annotationView.glyphImage = UIImage(named: "2")
-         case "مركز شرطه وسط ابها":
+         case NSLocalizedString("62", comment:"مركز شرطه وسط ابها"):
              annotationView.markerTintColor = UIColor(red: (52.0/255), green: (114.0/255), blue: (1.0/255), alpha: 1.0)
              annotationView.glyphImage = UIImage(named: "2")
      
    
-         case "مركز دفاع مدني شمسان":
+         case NSLocalizedString("63", comment:"مركز دفاع مدني شمسان"):
              annotationView.markerTintColor =  #colorLiteral(red: 0.7770078778, green: 0.7983751893, blue: 0.1321480274, alpha: 1)
              annotationView.glyphImage = UIImage(named: "06")
-         case "الدفاع المدني بغرب ابها":
+         case NSLocalizedString("64", comment:"الدفاع المدني بغرب ابها"):
              annotationView.markerTintColor =  #colorLiteral(red: 0.7770078778, green: 0.7983751893, blue: 0.1321480274, alpha: 1)
              annotationView.glyphImage = UIImage(named: "06")
-         case "مديريه الدفاع المدني بمنطقه عسير":         annotationView.markerTintColor =  #colorLiteral(red: 0.7770078778, green: 0.7983751893, blue: 0.1321480274, alpha: 1)
+         case NSLocalizedString("65", comment:"مديريه الدفاع المدني بمنطقه عسير"):
+             annotationView.markerTintColor =  #colorLiteral(red: 0.7770078778, green: 0.7983751893, blue: 0.1321480274, alpha: 1)
          annotationView.glyphImage = UIImage(named: "06")
-     case "الشعبه الميدانيه للدفاع المدني غرب ابها":
+     case NSLocalizedString("66", comment:"الشعبه الميدانيه للدفاع المدني غرب ابها"):
          annotationView.markerTintColor =  #colorLiteral(red: 0.7770078778, green: 0.7983751893, blue: 0.1321480274, alpha: 1)
          annotationView.glyphImage = UIImage(named: "06")
              
              
-         case "مركز الهلال الاحمر":
+         case NSLocalizedString("67", comment:"مركز الهلال الاحمر"):
          annotationView.markerTintColor =  #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
          annotationView.glyphImage = UIImage(named: "09")
-         case "مركز الهلال الاحمر":
+         case NSLocalizedString("67", comment:"مركز الهلال الاحمر"):
          annotationView.markerTintColor =  #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
          annotationView.glyphImage = UIImage(named: "09")
              
@@ -143,24 +142,24 @@ import UIKit
      }
      }
 
- extension CentersLocations: MKMapViewDelegate, CLLocationManagerDelegate {
-     
-     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-         
-         
+extension CentersLocations: MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        guard let annotation = view.annotation as? MKPointAnnotation else {
+            return
+        }
+    
 
-         
-         if let url = URL(string: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x15fcab31969e6d91:0xf3806fdd52d95002?entry=s&sa=X&hl=ar-sa&ved=2ahUKEwje7NiO0s70AhUfQvEDHccyBJ4Q4kB6BAgcEAI") {
-             UIApplication.shared.open(url)
-             
-             
-         } else if let url1 = URL(string: "https://www.google.com") {
-             UIApplication.shared.open(url1)
-             
-             
-         }
-  
-       }
-
- }
+        print(annotation.title)
+//        switch annotation.title {
+//
+//        case: .
+//        }
+//        if let url = URL(string: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x15fcab31969e6d91:0xf3806fdd52d95002?entry=s&sa=X&hl=ar-sa&ved=2ahUKEwje7NiO0s70AhUfQvEDHccyBJ4Q4kB6BAgcEAI") {
+//            UIApplication.shared.open(url)
+//        }
+        
+    }
+    
+}
 

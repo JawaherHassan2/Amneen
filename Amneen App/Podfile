@@ -6,6 +6,8 @@ target 'SeqApp' do
   use_frameworks!
 
   # Pods for SeqApp
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
 
 

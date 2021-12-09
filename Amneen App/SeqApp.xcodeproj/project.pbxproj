@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104429DAF3DEDCF1C27F8E00 /* Pods_SeqApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D80C223D19FF149078572CA /* Pods_SeqApp.framework */; };
 		FA0773E12756C43D00305527 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0773E02756C43D00305527 /* Reports.swift */; };
 		FA0773E32756C44400305527 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0773E22756C44400305527 /* ReportService.swift */; };
 		FA0B3AF827511E28008A0C9A /* RenterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B3AF727511E28008A0C9A /* RenterInfo.swift */; };
@@ -17,6 +18,7 @@
 		FA52653C275D2CB500201069 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52653B275D2CB400201069 /* Animation.swift */; };
 		FA5536D62760A73400315C36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5536D82760A73400315C36 /* Localizable.strings */; };
 		FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */; };
+		FA5E33C0276222F1008753CC /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E33BF276222F1008753CC /* LogIn.swift */; };
 		FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */; };
 		FA6B0A9D275B818900D369E7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9C275B818800D369E7 /* InfoViewController.swift */; };
 		FA6B0A9F275B819100D369E7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9E275B819100D369E7 /* SettingViewController.swift */; };
@@ -54,6 +56,7 @@
 		FA5536D72760A73400315C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5536D92760A73500315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersLocations.swift; sourceTree = "<group>"; };
+		FA5E33BF276222F1008753CC /* LogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FA6B0A9C275B818800D369E7 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		FA6B0A9E275B819100D369E7 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104429DAF3DEDCF1C27F8E00 /* Pods_SeqApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +211,7 @@
 		FAEAEB86274EC12E0091BF4C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA5E33BF276222F1008753CC /* LogIn.swift */,
 				FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */,
 				FA6B0A9C275B818800D369E7 /* InfoViewController.swift */,
 				FA6B0AA0275B819800D369E7 /* MenuViewController.swift */,
@@ -243,8 +248,6 @@
 			dependencies = (
 			);
 			name = SeqApp;
-			packageProductDependencies = (
-			);
 			productName = SeqApp;
 			productReference = FA96BC71274CF97300CD71A6 /* SeqApp.app */;
 			productType = "com.apple.product-type.application";
@@ -274,8 +277,6 @@
 				ar,
 			);
 			mainGroup = FA96BC68274CF97300CD71A6;
-			packageReferences = (
-			);
 			productRefGroup = FA96BC72274CF97300CD71A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -371,6 +372,7 @@
 				FA96BC89274CFC0200CD71A6 /* Model.swift in Sources */,
 				FA52653C275D2CB500201069 /* Animation.swift in Sources */,
 				FA96BC77274CF97300CD71A6 /* SceneDelegate.swift in Sources */,
+				FA5E33C0276222F1008753CC /* LogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
