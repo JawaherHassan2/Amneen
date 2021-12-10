@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
         let window = UIWindow(windowScene: scene)
-           window.rootViewController = LoginVC()
+           window.rootViewController = L1()
            window.makeKeyAndVisible()
            self.window = window
         

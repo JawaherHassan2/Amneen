@@ -150,11 +150,8 @@ extension CentersLocations: MKMapViewDelegate, CLLocationManagerDelegate {
         }
     
 
-        print(annotation.title)
-//        switch annotation.title {
+        print((annotation.title)!)
 //
-//        case: .
-//        }
 //        if let url = URL(string: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x15fcab31969e6d91:0xf3806fdd52d95002?entry=s&sa=X&hl=ar-sa&ved=2ahUKEwje7NiO0s70AhUfQvEDHccyBJ4Q4kB6BAgcEAI") {
 //            UIApplication.shared.open(url)
 //        }
