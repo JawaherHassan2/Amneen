@@ -19,13 +19,16 @@ class ContainerViewController: UIViewController {
     let homeVC = Home()
     var navVC: UINavigationController?
     
-    lazy var infoVC = LeavingRenters()
+    lazy var infoVC = Reports()
     lazy var settin =  SOSNumbers()
     lazy var list =  List()
     lazy var cityy =  Cities()
     lazy var center = CentersLocations()
     lazy var newRenter = NewRenter()
-    
+    lazy var newleav = LeavingRenters()
+    lazy var profile = Profile()
+    lazy var banned = BannedRenters()
+    lazy var report = ReportRenters()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -60,7 +63,7 @@ extension ContainerViewController: HomeViewControllerDelegate{
             
         case .closed:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromRight) {
-                self.navVC?.view.frame.origin.x =  self.homeVC.view.frame.size.width-100
+                self.navVC?.view.frame.origin.x =  self.homeVC.view.frame.size.width-50
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opend
@@ -101,12 +104,21 @@ extension ContainerViewController: MenuViewControllerDelegate{
         switch menuItem {
         case .home:
             self.resetToHome()
+        case .profile:
+            self.addProfile()
         case .info:
             self.addInfo()
+        case .reportRenter:
+            self.addreportR()
         case .appRating:
             self.addcity()
         case .newRenter:
             self.addrenter()
+            
+        case .leaving:
+            self.addleav()
+        case .banned:
+            self.addbanned()
             
         case .shareApp:
             self.addlist()
@@ -132,6 +144,22 @@ extension ContainerViewController: MenuViewControllerDelegate{
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
+    func addreportR() {
+        let vc = report
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
+    func addProfile() {
+        let vc = profile
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
     
     func addrenter() {
         let vc = newRenter
@@ -141,6 +169,23 @@ extension ContainerViewController: MenuViewControllerDelegate{
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
+    func addleav() {
+        let vc = newleav
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
+    func addbanned() {
+        let vc = banned
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
+
     func darkk() {
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.backgroundColor = .black
@@ -187,7 +232,7 @@ extension ContainerViewController: MenuViewControllerDelegate{
         list.view.removeFromSuperview()
         center.view.removeFromSuperview()
         infoVC.didMove(toParent: nil)
-        homeVC.title =  NSLocalizedString("24", comment:"الصفحه الرئيسية")
+        homeVC.title =  NSLocalizedString("31", comment:"الصفحه الرئيسية")
     }
     func changrLan() {
         let currentLa = Locale.current.languageCode

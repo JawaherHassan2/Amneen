@@ -12,7 +12,7 @@ class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
+title = NSLocalizedString("72", comment:"الإعدادات ")
         view.backgroundColor = .orange
         // Do any additional setup after loading the view.
     }

@@ -116,16 +116,10 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let isCriminal = list.contains { p in
             p.name == name || p.id == id
         }
-       
-
-       
         if isCriminal  {
-        
-            
                     let alert = UIAlertController(title: NSLocalizedString("43", comment:"تحذير⚠️ "), message: NSLocalizedString("44", comment:"مطلوب أمنيا! يرجى الحذر وابلاغ الجهات الامنيه"), preferredStyle: .alert )
             alert.view.tintColor = UIColor.systemRed
 
-    
             let ok = UIAlertAction(title: NSLocalizedString("45", comment:"حسنا"), style: .default) { (alertAction) in }
             alert.addAction(ok)
            
@@ -133,19 +127,17 @@ class NewRenter: UIViewController, UITextFieldDelegate {
             let report = UIAlertAction(title: NSLocalizedString("46", comment: "إبلاغ"), style: .default) { (alertAction) in
                     self.ss()
                 self.callNumber()
-           
                     }
             alert.addAction(report)
             self.present(alert, animated:true, completion: nil)
-            
-                
-            
             return
         }
        
         RenterService.shared.addH(
                 hostels: Renter(name: name, id: id,timestamp: Timestamp(date: date))
               )
+       
+
 //        dismiss(animated: true, completion: nil)
     }
 

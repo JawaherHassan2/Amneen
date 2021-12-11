@@ -16,9 +16,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     enum MenuOPtions: String, CaseIterable {
         case home
+        case profile
         case info
+        case reportRenter
         case appRating
         case newRenter
+        case leaving
+        case banned
         case shareApp
         case settings
         case centers
@@ -31,12 +35,20 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                     switch self {
                     case .home:
                         return NSLocalizedString("47", comment: "الصفحة الرئيسية")
+                    case .profile:
+                        return NSLocalizedString("68", comment: "الملف الشخصي ")
                     case .info:
                         return NSLocalizedString("48", comment: "البلاغات")
+                    case .reportRenter:
+                        return NSLocalizedString("بلاغات الاشتباه", comment: "")
                     case .appRating:
                         return NSLocalizedString("49", comment: "الفنادق")
                     case .newRenter:
                         return  NSLocalizedString("70", comment: "مستأجر جديد ")
+                    case .leaving:
+                        return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
+                    case .banned:
+                        return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
                     case .shareApp:
                         return NSLocalizedString("50", comment: "القائمه السوداء")
                     case .settings:
@@ -53,50 +65,24 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                         return NSLocalizedString("56", comment: "الإعدادات")
                     }
                 }
-//            var localizedText: String {
-//                switch self {
-//                case .home: return NSLocalizedString("", comment: "hhik")
-//                case .info:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .appRating:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .shareApp:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .settings:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .centers:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .dark:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .language:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .about:
-//                    return NSLocalizedString("", comment: "hhik")
-//                case .settt:
-//                    return NSLocalizedString("", comment: "hhik")
-//                }
-//            }
-        
-        
-//        enum DisplayCellTitle: String {
-//         case Clear
 //
-//         func labelTitle() -> String {
-//             switch self {
-//             case .Clear:
-//                 return "LBL_CLEAR".localizedWithComment("Clear")
-//             }
-//         }
-//     }
         var imageName: String {
             switch self {
             case .home:
                 return "house"
+            case .profile:
+                return "house"
             case .info:
+                return "xmark.octagon"
+            case .reportRenter:
                 return "xmark.octagon"
             case .appRating:
                 return "house.circle.fill"
             case .newRenter:
+                return "person"
+            case .leaving:
+                return "person"
+            case .banned:
                 return "person"
             case .shareApp:
                 return "person.fill.xmark"

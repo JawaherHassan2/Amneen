@@ -129,11 +129,66 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         }
     }
     
-   
+     func tapToAdd(){
+
+        let alert = UIAlertController(title: "بلاغ اشتباه", message: "ارسال بلاغ اشتباه في :", preferredStyle: .alert )
+        
+        let save = UIAlertAction(title: "إرسال بلاغ", style: .default) { (alertAction) in
+            let textField = alert.textFields![0] as UITextField
+            guard  let text = textField.text, !text.isEmpty else {
+                       return
+                   }
+//
+//            self.data.append(StudentList(name: textField.text!))
+//            self.tabelView.reloadData()
+        }
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "اشتباه في:"
+            textField.textColor = .purple
+        }
+        alert.addAction(save)
+        let cancel = UIAlertAction(title: "إلغاء", style: .default) { (alertAction) in }
+        alert.addAction(cancel)
+        self.present(alert, animated:true, completion: nil)
+
+    }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let cell = self.renters[indexPath.row]
+        let editAction = UITableViewRowAction(style: .normal, title: "بلاغ") { (rowAction, indexPath) in
+            
+//            self.tapToAdd()
+            let alert = UIAlertController(title: "بلاغ اشتباه", message: "ارسال بلاغ اشتباه في :", preferredStyle: .alert )
+            
+            let save = UIAlertAction(title: "إرسال بلاغ", style: .default) { (alertAction) in
+                
+                
+                let textField = alert.textFields![0] as UITextField
+                guard  let text = textField.text, !text.isEmpty else {
+                           return
+                       }
+                let name = cell.name
+                let id = cell.id
+//                let date = cell.timestamp
+                let reason = textField.text!
+                
+              
+                ReportRenterService.shared.addReport(hostels: ReportRenter(name: name, id: id, reason: reason))
 
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (rowAction, indexPath) in
+    //
+    //            self.data.append(StudentList(name: textField.text!))
+    //            self.tabelView.reloadData()
+            }
+
+            alert.addTextField { (textField) in
+                textField.placeholder = "اشتباه في:"
+                textField.textColor = .purple
+            }
+            alert.addAction(save)
+            let cancel = UIAlertAction(title: "إلغاء", style: .default) { (alertAction) in }
+            alert.addAction(cancel)
+            self.present(alert, animated:true, completion: nil)
             
         }
         editAction.backgroundColor = .blue
@@ -160,8 +215,10 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
                                           let name = cell.name
                                           let id = cell.id
                                           let date = cell.timestamp
+                                          let nowdate = Timestamp()
+                                          
                                         
-               LeavingService.shared.addLeaving(leaving: LeavingRenter(name: name, id: id,timestamp: date))
+                                          LeavingService.shared.addLeaving(leaving: LeavingRenter(name: name, id: id,timestamp: date, date: nowdate))
                                           
                                               Firestore.firestore().collection("Hostels").document(cell.id).delete()
                                           

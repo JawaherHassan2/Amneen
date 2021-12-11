@@ -15,20 +15,21 @@
 		FA2219B9274E16B2007B9C8A /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2219B8274E16B2007B9C8A /* TabVC.swift */; };
 		FA2219BB274E16E7007B9C8A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2219BA274E16E7007B9C8A /* List.swift */; };
 		FA2DD3932752BFFC003D2F6D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2DD3922752BFFC003D2F6D /* Home.swift */; };
+		FA49E86D2764EA5A004C6FD3 /* BannedRenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E86C2764EA5A004C6FD3 /* BannedRenters.swift */; };
+		FA49E8732765154B004C6FD3 /* ReportRenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E8722765154B004C6FD3 /* ReportRenterService.swift */; };
+		FA49E87527651E87004C6FD3 /* ReportRenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49E87427651E87004C6FD3 /* ReportRenters.swift */; };
 		FA4CB53F276494AC00D68EF0 /* LeavingRenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB53E276494AC00D68EF0 /* LeavingRenters.swift */; };
 		FA4CB5412764A58300D68EF0 /* LeavingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB5402764A58300D68EF0 /* LeavingService.swift */; };
-		FA4FFF812763584300416A07 /* Colorjjj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FFF802763584300416A07 /* Colorjjj.swift */; };
+		FA4FFF812763584300416A07 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FFF802763584300416A07 /* Color.swift */; };
 		FA52653C275D2CB500201069 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52653B275D2CB400201069 /* Animation.swift */; };
 		FA5536D62760A73400315C36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5536D82760A73400315C36 /* Localizable.strings */; };
 		FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */; };
-		FA5E33C0276222F1008753CC /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E33BF276222F1008753CC /* LogIn.swift */; };
 		FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */; };
 		FA6B0A9F275B819100D369E7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9E275B819100D369E7 /* SettingViewController.swift */; };
 		FA6B0AA1275B819900D369E7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0AA0275B819800D369E7 /* MenuViewController.swift */; };
 		FA70A37A27629ADB0014143E /* L1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70A37927629ADB0014143E /* L1.swift */; };
 		FA70A37C27629AE20014143E /* R1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70A37B27629AE20014143E /* R1.swift */; };
 		FA70A37E27629AE80014143E /* V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70A37D27629AE80014143E /* V1.swift */; };
-		FA70A38027629AED0014143E /* C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70A37F27629AED0014143E /* C1.swift */; };
 		FA73B938274EAAD4002981F6 /* AddNewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73B937274EAAD4002981F6 /* AddNewC.swift */; };
 		FA73B93A274EB898002981F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA73B939274EB898002981F6 /* GoogleService-Info.plist */; };
 		FA8011B42751A38000DEBFB0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8011B32751A38000DEBFB0 /* GradientView.swift */; };
@@ -38,6 +39,7 @@
 		FA96BC7E274CF97700CD71A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA96BC7D274CF97700CD71A6 /* Assets.xcassets */; };
 		FA96BC81274CF97700CD71A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA96BC7F274CF97700CD71A6 /* LaunchScreen.storyboard */; };
 		FA96BC89274CFC0200CD71A6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96BC88274CFC0200CD71A6 /* Model.swift */; };
+		FA9CF6212764CEDE002D6AD4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CF6202764CEDE002D6AD4 /* Profile.swift */; };
 		FAB95B91274D5F36001171C0 /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB95B90274D5F36001171C0 /* Hotels.swift */; };
 		FACC216B274E80B7009A225B /* Renter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC216A274E80B7009A225B /* Renter.swift */; };
 		FAEAEB85274EBB060091BF4C /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAEB84274EBB060091BF4C /* ListService.swift */; };
@@ -56,22 +58,23 @@
 		FA2219B8274E16B2007B9C8A /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		FA2219BA274E16E7007B9C8A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		FA2DD3922752BFFC003D2F6D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FA49E86C2764EA5A004C6FD3 /* BannedRenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannedRenters.swift; sourceTree = "<group>"; };
+		FA49E8722765154B004C6FD3 /* ReportRenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRenterService.swift; sourceTree = "<group>"; };
+		FA49E87427651E87004C6FD3 /* ReportRenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRenters.swift; sourceTree = "<group>"; };
 		FA4CB53E276494AC00D68EF0 /* LeavingRenters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingRenters.swift; sourceTree = "<group>"; };
 		FA4CB5402764A58300D68EF0 /* LeavingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingService.swift; sourceTree = "<group>"; };
-		FA4FFF802763584300416A07 /* Colorjjj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colorjjj.swift; sourceTree = "<group>"; };
+		FA4FFF802763584300416A07 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA52653B275D2CB400201069 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		FA5536D32760A71300315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA5536D72760A73400315C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5536D92760A73500315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersLocations.swift; sourceTree = "<group>"; };
-		FA5E33BF276222F1008753CC /* LogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FA6B0A9E275B819100D369E7 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FA6B0AA0275B819800D369E7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FA70A37927629ADB0014143E /* L1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L1.swift; sourceTree = "<group>"; };
 		FA70A37B27629AE20014143E /* R1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R1.swift; sourceTree = "<group>"; };
 		FA70A37D27629AE80014143E /* V1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V1.swift; sourceTree = "<group>"; };
-		FA70A37F27629AED0014143E /* C1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C1.swift; sourceTree = "<group>"; };
 		FA73B937274EAAD4002981F6 /* AddNewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewC.swift; sourceTree = "<group>"; };
 		FA73B939274EB898002981F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SeqApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA8011B32751A38000DEBFB0 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		FA96BC80274CF97700CD71A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA96BC82274CF97700CD71A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA96BC88274CFC0200CD71A6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FA9CF6202764CEDE002D6AD4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		FAB95B90274D5F36001171C0 /* Hotels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
 		FACC216A274E80B7009A225B /* Renter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renter.swift; sourceTree = "<group>"; };
 		FAEAEB84274EBB060091BF4C /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				FA0B3AF727511E28008A0C9A /* RenterInfo.swift */,
 				FAEAEB89274EC97C0091BF4C /* RenterService.swift */,
 				FAEAEB87274EC93A0091BF4C /* NewRenter.swift */,
+				FA49E87127650332004C6FD3 /* Banned Renters */,
+				FA49E87027650326004C6FD3 /* Leaving Renters */,
 			);
 			path = Renter;
 			sourceTree = "<group>";
@@ -164,11 +170,30 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		FA49E87027650326004C6FD3 /* Leaving Renters */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CB53E276494AC00D68EF0 /* LeavingRenters.swift */,
+				FA4CB5402764A58300D68EF0 /* LeavingService.swift */,
+			);
+			path = "Leaving Renters";
+			sourceTree = "<group>";
+		};
+		FA49E87127650332004C6FD3 /* Banned Renters */ = {
+			isa = PBXGroup;
+			children = (
+				FA49E86C2764EA5A004C6FD3 /* BannedRenters.swift */,
+			);
+			path = "Banned Renters";
+			sourceTree = "<group>";
+		};
 		FA51C9812756A1090055D1B3 /* Reports */ = {
 			isa = PBXGroup;
 			children = (
 				FA0773E22756C44400305527 /* ReportService.swift */,
+				FA49E8722765154B004C6FD3 /* ReportRenterService.swift */,
 				FA0773E02756C43D00305527 /* Reports.swift */,
+				FA49E87427651E87004C6FD3 /* ReportRenters.swift */,
 			);
 			name = Reports;
 			path = List/Reports;
@@ -178,9 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				FA8011B32751A38000DEBFB0 /* GradientView.swift */,
-				FA6B0AA0275B819800D369E7 /* MenuViewController.swift */,
 				FA52653B275D2CB400201069 /* Animation.swift */,
-				FA4FFF802763584300416A07 /* Colorjjj.swift */,
+				FA4FFF802763584300416A07 /* Color.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,7 +212,6 @@
 		FA96BC68274CF97300CD71A6 = {
 			isa = PBXGroup;
 			children = (
-				FA4CB53E276494AC00D68EF0 /* LeavingRenters.swift */,
 				FA73B939274EB898002981F6 /* GoogleService-Info.plist */,
 				FA5536D82760A73400315C36 /* Localizable.strings */,
 				FA96BC73274CF97300CD71A6 /* SeqApp */,
@@ -210,10 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				FA96BC74274CF97300CD71A6 /* AppDelegate.swift */,
-				FA70A37B27629AE20014143E /* R1.swift */,
-				FA70A37D27629AE80014143E /* V1.swift */,
-				FA70A37F27629AED0014143E /* C1.swift */,
-				FA70A37927629ADB0014143E /* L1.swift */,
 				FA96BC76274CF97300CD71A6 /* SceneDelegate.swift */,
 				FA51C9822756B2070055D1B3 /* View */,
 				FAEAEB86274EC12E0091BF4C /* Controller */,
@@ -228,10 +247,14 @@
 		FAEAEB86274EC12E0091BF4C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E33BF276222F1008753CC /* LogIn.swift */,
+				FA70A37B27629AE20014143E /* R1.swift */,
+				FA70A37927629ADB0014143E /* L1.swift */,
+				FA70A37D27629AE80014143E /* V1.swift */,
 				FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */,
+				FA9CF6202764CEDE002D6AD4 /* Profile.swift */,
 				FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */,
 				FA6B0A9E275B819100D369E7 /* SettingViewController.swift */,
+				FA6B0AA0275B819800D369E7 /* MenuViewController.swift */,
 				FA2DD3922752BFFC003D2F6D /* Home.swift */,
 				FA2219B8274E16B2007B9C8A /* TabVC.swift */,
 				FA1785782754AB5200C9A95D /* SOSNumbers.swift */,
@@ -240,7 +263,6 @@
 				FA42F4372750EA15009B3619 /* Renter */,
 				FA51C9812756A1090055D1B3 /* Reports */,
 				FA42F43A2750EACF009B3619 /* List */,
-				FA4CB5402764A58300D68EF0 /* LeavingService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -369,7 +391,7 @@
 				FA4CB5412764A58300D68EF0 /* LeavingService.swift in Sources */,
 				FAEAEB85274EBB060091BF4C /* ListService.swift in Sources */,
 				FA0773E32756C44400305527 /* ReportService.swift in Sources */,
-				FA4FFF812763584300416A07 /* Colorjjj.swift in Sources */,
+				FA4FFF812763584300416A07 /* Color.swift in Sources */,
 				FA96BC79274CF97300CD71A6 /* Cities.swift in Sources */,
 				FA6B0AA1275B819900D369E7 /* MenuViewController.swift in Sources */,
 				FA70A37A27629ADB0014143E /* L1.swift in Sources */,
@@ -377,9 +399,9 @@
 				FA70A37C27629AE20014143E /* R1.swift in Sources */,
 				FAEAEB88274EC93A0091BF4C /* NewRenter.swift in Sources */,
 				FA2219BB274E16E7007B9C8A /* List.swift in Sources */,
-				FA70A38027629AED0014143E /* C1.swift in Sources */,
 				FA2DD3932752BFFC003D2F6D /* Home.swift in Sources */,
 				FA1785792754AB5200C9A95D /* SOSNumbers.swift in Sources */,
+				FA49E8732765154B004C6FD3 /* ReportRenterService.swift in Sources */,
 				FA0773E12756C43D00305527 /* Reports.swift in Sources */,
 				FA73B938274EAAD4002981F6 /* AddNewC.swift in Sources */,
 				FAEAEB8A274EC97C0091BF4C /* RenterService.swift in Sources */,
@@ -387,12 +409,14 @@
 				FA96BC75274CF97300CD71A6 /* AppDelegate.swift in Sources */,
 				FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */,
 				FA6B0A9F275B819100D369E7 /* SettingViewController.swift in Sources */,
+				FA9CF6212764CEDE002D6AD4 /* Profile.swift in Sources */,
+				FA49E86D2764EA5A004C6FD3 /* BannedRenters.swift in Sources */,
 				FACC216B274E80B7009A225B /* Renter.swift in Sources */,
 				FAB95B91274D5F36001171C0 /* Hotels.swift in Sources */,
 				FA96BC89274CFC0200CD71A6 /* Model.swift in Sources */,
+				FA49E87527651E87004C6FD3 /* ReportRenters.swift in Sources */,
 				FA52653C275D2CB500201069 /* Animation.swift in Sources */,
 				FA96BC77274CF97300CD71A6 /* SceneDelegate.swift in Sources */,
-				FA5E33C0276222F1008753CC /* LogIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

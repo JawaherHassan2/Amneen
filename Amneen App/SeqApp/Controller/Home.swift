@@ -54,7 +54,7 @@ class Home: UIViewController {
         
         
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        view.addSubview(label33)
+//        view.addSubview(label33)
 //        view.addSubview(Image)
 //        NSLayoutConstraint.activate([
 //            Image.topAnchor.constraint(equalTo: view.topAnchor),
@@ -63,14 +63,6 @@ class Home: UIViewController {
 //            Image.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 //
 //        ])
-        NSLayoutConstraint.activate([
-            label33.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label33.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-       
-            
-        ])
-
-    
     }
     @objc func goToCitiesVC() {
         var newVC = Cities()

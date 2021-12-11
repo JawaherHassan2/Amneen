@@ -21,7 +21,8 @@ class LeavingService {
         leavingCollection.document(leaving.id).setData([
             "name": leaving.name,
             "id": leaving.id,
-            "timestamp": leaving.timestamp
+            "timestamp": leaving.timestamp,
+            "date": leaving.date
         ])
     }
     
@@ -39,7 +40,8 @@ class LeavingService {
                 let criminal = LeavingRenter(
                     name: (data["name"] as? String) ?? "No name",
                     id: (data["id"] as? String) ?? "No id",
-                    timestamp: (data["timestamp"] as? Timestamp) ?? Timestamp()
+                    timestamp: (data["timestamp"] as? Timestamp) ?? Timestamp(),
+                    date: (data["date"] as? Timestamp) ?? Timestamp()
                 )
                 hostels.append(criminal)
             }

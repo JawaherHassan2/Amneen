@@ -1,21 +1,22 @@
 //
-//  Reports.swift
+//  ReportRenters.swift
 //  SeqApp
 //
-//  Created by Jawaher🌻 on 23/04/1443 AH.
+//  Created by Jawaher🌻 on 07/05/1443 AH.
 //
+
 
 import UIKit
 
-class Reports: UIViewController {
+class ReportRenters: UIViewController {
  
-    var reports: Array<Report> = []
+    var reports: Array<ReportRenter> = []
    
     private var hotelCV: UICollectionView?
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("34", comment:"تنبيهات البلاغات")
+        self.title = NSLocalizedString("بلاغات الاشتباه", comment:" ")
         
         
         
@@ -32,21 +33,21 @@ class Reports: UIViewController {
             return
         }
         
-        hotelCV.register(CellR.self, forCellWithReuseIdentifier: "cell")
+        hotelCV.register(Cellr.self, forCellWithReuseIdentifier: "cell")
         hotelCV.dataSource = self
         hotelCV.delegate = self
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
         
-        ReportService.shared.listenToReport { newRenter in
+        ReportRenterService.shared.listenToReport { newRenter in
             self.reports = newRenter
             self.hotelCV!.reloadData()
         }
     }
     
 }
-var selectedInde = -1
-extension Reports: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
+var selectedIn = -1
+extension ReportRenters: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            return CGSize(width: 370, height: 200)
@@ -58,12 +59,12 @@ extension Reports: UICollectionViewDelegate  , UICollectionViewDataSource, UICol
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellR
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Cellr
         
         let renter = reports[indexPath.row]
-        cell.label2.text = "لقد حاول المتهم  \(renter.name)⚠️"
+        cell.label2.text = " بلاغ من احد الفنادق بالمستأجر  \(renter.name)"
         cell.label3.text = " الذي يحمل رقم الهويه \(renter.id)"
-        cell.label4.text = "\(renter.getNiceDate()) دخول احد الفنادق في "
+        cell.label4.text = " اشتباه في:  \(renter.reason)     "
 //            cell.label5.text = "منذ   \(Date()  )"
 
         return cell
@@ -73,7 +74,7 @@ extension Reports: UICollectionViewDelegate  , UICollectionViewDataSource, UICol
 }
 
 
-class CellR: UICollectionViewCell {
+class Cellr: UICollectionViewCell {
     
     static let identifire = "Cell"
 
@@ -169,4 +170,5 @@ class CellR: UICollectionViewCell {
 
 
     
+
 

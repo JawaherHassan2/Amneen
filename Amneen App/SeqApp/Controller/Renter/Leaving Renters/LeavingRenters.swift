@@ -7,7 +7,7 @@
 
 
 import UIKit
-
+var leaving: Array<LeavingRenter> = []
 class LeavingRenters: UIViewController {
  
     var leaving: Array<LeavingRenter> = []
@@ -16,7 +16,7 @@ class LeavingRenters: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("34", comment:"تنبيهات البلاغات")
+        self.title = NSLocalizedString("69", comment:"المستأجرين المغادرين ")
         
         
         
@@ -65,7 +65,7 @@ extension LeavingRenters: UICollectionViewDelegate  , UICollectionViewDataSource
         cell.label2.text = "تم مغادره المستأجر    \(renter.name)"
         cell.label3.text = " الذي يحمل رقم الهويه \(renter.id)"
         cell.label4.text = "  حيث استأجر في:\(renter.getNiceDate())     "
-//            cell.label5.text = "منذ   \(Date()  )"
+        cell.label5.text = "وغادر في:   \(renter.getNiceDate1()  )"
 
         return cell
     }

@@ -1,21 +1,21 @@
 //
-//  Reports.swift
+//  BannedRenters.swift
 //  SeqApp
 //
-//  Created by Jawaher🌻 on 23/04/1443 AH.
+//  Created by Jawaher🌻 on 07/05/1443 AH.
 //
-
+//
 import UIKit
 
-class Reports: UIViewController {
+class BannedRenters: UIViewController {
  
-    var reports: Array<Report> = []
+    var banned: Array<Report> = []
    
-    private var hotelCV: UICollectionView?
+    private var bannedCV: UICollectionView?
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("34", comment:"تنبيهات البلاغات")
+        self.title = NSLocalizedString("71", comment:" مستأجرين تم منعهم")
         
         
         
@@ -25,46 +25,46 @@ class Reports: UIViewController {
         layout.minimumInteritemSpacing = 20
         layout.itemSize = CGSize(width: 340,
                                  height: 150)
-        hotelCV = UICollectionView(frame: .zero,
+        bannedCV = UICollectionView(frame: .zero,
                                    collectionViewLayout: layout)
         
-        guard let hotelCV = hotelCV else {
+        guard let bannedCV = bannedCV else {
             return
         }
         
-        hotelCV.register(CellR.self, forCellWithReuseIdentifier: "cell")
-        hotelCV.dataSource = self
-        hotelCV.delegate = self
-        view.addSubview(hotelCV)
-        hotelCV.frame = view.bounds
+        bannedCV.register(CellB.self, forCellWithReuseIdentifier: "cell")
+        bannedCV.dataSource = self
+        bannedCV.delegate = self
+        view.addSubview(bannedCV)
+        bannedCV.frame = view.bounds
         
         ReportService.shared.listenToReport { newRenter in
-            self.reports = newRenter
-            self.hotelCV!.reloadData()
+            self.banned = newRenter
+            self.bannedCV!.reloadData()
         }
     }
     
 }
-var selectedInde = -1
-extension Reports: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
+var selectedIndee = -1
+extension BannedRenters: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            return CGSize(width: 370, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reports.count
+        return banned.count
     }
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellR
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellB
         
-        let renter = reports[indexPath.row]
-        cell.label2.text = "لقد حاول المتهم  \(renter.name)⚠️"
+        let renter = banned[indexPath.row]
+        cell.label2.text = "  لقد تم منع  \(renter.name)  من دخول الفندق "
         cell.label3.text = " الذي يحمل رقم الهويه \(renter.id)"
-        cell.label4.text = "\(renter.getNiceDate()) دخول احد الفنادق في "
-//            cell.label5.text = "منذ   \(Date()  )"
+        cell.label4.text = "في \(renter.getNiceDate())     "
+        cell.label5.text = "بسبب وجوده في القائمه السوداء"
 
         return cell
     }
@@ -73,7 +73,7 @@ extension Reports: UICollectionViewDelegate  , UICollectionViewDataSource, UICol
 }
 
 
-class CellR: UICollectionViewCell {
+class CellB: UICollectionViewCell {
     
     static let identifire = "Cell"
 

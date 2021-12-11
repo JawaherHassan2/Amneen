@@ -29,8 +29,7 @@ class V1 : UIView {
         
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.tintColor = colors.titlesColor
-        $0.textColor = colors.titlesColor
-       
+        $0.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         $0.backgroundColor = colors.textFieldsBackground
         $0.textAlignment = .center
         $0.font = UIFont(name: "AppleSDGothicNeo-Heavy", size: 20)

@@ -75,18 +75,13 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-  
-        
         let newVC = Renters()
 
         newVC.title = h?.Hotels[indexPath.row].name
-        
         newVC.r = h?.Hotels[indexPath.row]
         newVC.a = hotelList[indexPath.row]
         newVC.navigationItem.largeTitleDisplayMode = .never
-           navigationController?.pushViewController(newVC,animated: true)
-        
-        print("Done")
+        navigationController?.pushViewController(newVC,animated: true)
         
     }
 }

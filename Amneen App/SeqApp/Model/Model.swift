@@ -203,11 +203,18 @@ struct LeavingRenter {
     let name: String
     let id: String
     let timestamp: Timestamp
+    let date: Timestamp
     func getNiceDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .medium
+        dateFormatter.timeStyle = .short
         return dateFormatter.string(from: timestamp.dateValue())
+    }
+    func getNiceDate1() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: date.dateValue())
     }
 
 }
@@ -226,6 +233,37 @@ struct Report {
     }
     
 }
+
+struct ReportRenter {
+    
+    let name: String
+    let id: String
+    let reason: String
+//    let timestamp: Timestamp
+    
+//    func getNiceDate() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .medium
+//        dateFormatter.timeStyle = .medium
+//        return dateFormatter.string(from: timestamp.dateValue())
+//    }
+    
+}
+
+//struct BannedRenter {
+//    
+//    let name: String
+//    let id: String
+//    let timestamp: Timestamp
+//
+//    func getNiceDate() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .medium
+//        dateFormatter.timeStyle = .medium
+//        return dateFormatter.string(from: timestamp.dateValue())
+//    }
+//
+//}
 
 
 var d: [String : Int] = ["Ahmad" : 21 ,
