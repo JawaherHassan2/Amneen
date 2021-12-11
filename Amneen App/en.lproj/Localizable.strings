@@ -49,8 +49,8 @@
 "38" = "Enter the renter name ";
 "39" = "Enter the renter ID number";
 "40" = "Add";
-"41" = "renter name:";
-"42" = "National ID Number :";
+"41" = "Name:";
+"42" = "National ID:";
 "43" = "Warning";
 "44" = "Security Wanted! Please be careful and inform the security authorities";
 "45" = "Okay";
@@ -84,7 +84,7 @@
 "67" = "Red Crescent Center";
 "68" = "";
 "69" = "";
-"70" = "";
+"70" = "New Renter";
 
 
 

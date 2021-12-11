@@ -13,14 +13,14 @@ import Foundation
 
 
 enum colors {
-    static let button = UIColor(red:0.58, green:0.26, blue:0.25, alpha:1.0)
-    static let bcolor = UIColor(red: (196/255), green: (24/255), blue: (24/255), alpha: 1)
+    static let button = UIColor(red:0.58, green:0.26, blue:0.25, alpha:0.7)
+    static let bcolor = UIColor(red: (196/255), green: (24/255), blue: (24/255), alpha: 0.7)
     
     
     static let backgroundDarckcolor = UIColor(red: (76/255), green: (133/255), blue: (104/255), alpha: 1)
     static let backgroundLightcolor = UIColor(red: (143/255), green: (204/255), blue: (173/255), alpha: 1)
     static let textFieldsBorder = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
-    static let textFieldsBackground = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.1)
+    static let textFieldsBackground = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.7)
     static let titlesColor = UIColor(red:0.89, green:0.89, blue:0.89, alpha:1.0)
 }
 

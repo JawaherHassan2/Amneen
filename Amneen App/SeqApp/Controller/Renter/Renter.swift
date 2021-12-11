@@ -157,8 +157,14 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
                         UIAlertAction(title: "مغادره",
                                       style: UIAlertAction.Style.destructive,
                                       handler: { Action in
-                                       
+                                          let name = cell.name
+                                          let id = cell.id
+                                          let date = cell.timestamp
+                                        
+               LeavingService.shared.addLeaving(leaving: LeavingRenter(name: name, id: id,timestamp: date))
+                                          
                                               Firestore.firestore().collection("Hostels").document(cell.id).delete()
+                                          
                                           
                                           self.sTV.reloadData()
                                       })

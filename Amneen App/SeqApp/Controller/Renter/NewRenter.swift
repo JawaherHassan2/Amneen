@@ -25,10 +25,10 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = NSLocalizedString("38", comment:"ادخل اسم المستأجر")
-        tf.attributedPlaceholder = NSAttributedString(
-            string: "Placeholder Text",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
+//        tf.attributedPlaceholder = NSAttributedString(
+//            string: "Placeholder Text",
+//            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        )
         tf.backgroundColor = .white
         
         tf.textAlignment = .right
@@ -110,6 +110,8 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let name = studentNameTF.text ?? ""
         let id = studentNameTF2.text ?? ""
         let date = datePicker.date
+        
+        
       
         let isCriminal = list.contains { p in
             p.name == name || p.id == id
@@ -144,7 +146,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         RenterService.shared.addH(
                 hostels: Renter(name: name, id: id,timestamp: Timestamp(date: date))
               )
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
     }
 
     
@@ -175,30 +177,30 @@ class NewRenter: UIViewController, UITextFieldDelegate {
 //        ])
         
         LabelN.frame = CGRect(x: 290,
-                             y: 8,
+                             y: 70,
                              width: 110,
                              height:130)
         
         LabelID.frame = CGRect(x: 260,
-                             y: 100,
+                             y: 150,
                              width: 140,
                              height:130)
         NSLayoutConstraint.activate([
             studentNameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+            studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             studentNameTF.heightAnchor.constraint(equalToConstant: 48),
             studentNameTF.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
         ])
         
-        NSLayoutConstraint.activate([
-            studentNameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
-            studentNameTF.heightAnchor.constraint(equalToConstant: 48),
-            studentNameTF.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
-        ])
+//        NSLayoutConstraint.activate([
+//            studentNameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+//            studentNameTF.heightAnchor.constraint(equalToConstant: 48),
+//            studentNameTF.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
+//        ])
         view.addSubview(studentNameTF2)
         NSLayoutConstraint.activate([
-            studentNameTF2.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            studentNameTF2.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
             studentNameTF2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             studentNameTF2.heightAnchor.constraint(equalToConstant: 48),
             studentNameTF2.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)

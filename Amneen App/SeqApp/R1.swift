@@ -11,43 +11,43 @@ import Firebase
 import FirebaseAuth
 
 class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    
     var users: Array<User> = []
     
     lazy var titleLbl: UILabel = {
         $0.changeUILabel(title: (NSLocalizedString("تسجيل جديد", comment: "")), size: 20)
         return $0
-         }(UILabel())
- 
+    }(UILabel())
+    
     lazy var nameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاول", comment: ""))
         $0.icon.image = UIImage(named: "user")
-            return $0
+        return $0
     }(V1())
-
+    
     lazy var emailTF:V1 = {
-           $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
-         $0.icon.image = UIImage(named: "email")
-           return $0
-       }(V1())
+        $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
+        $0.icon.image = UIImage(named: "email")
+        return $0
+    }(V1())
     
     lazy var passwordTF: V1 = {
-           $0.textFiled.placeholder = (NSLocalizedString("كلمه السر", comment: ""))
-         $0.icon.image = UIImage(named: "password")
+        $0.textFiled.placeholder = (NSLocalizedString("كلمه السر", comment: ""))
+        $0.icon.image = UIImage(named: "password")
         $0.textFiled.isSecureTextEntry = true
-           return $0
-       }(V1())
+        return $0
+    }(V1())
     
     lazy var lastNameTF: V1 = {
-           $0.textFiled.placeholder = (NSLocalizedString("الاسم الاخير", comment: ""))
-         $0.icon.image = UIImage(named: "birthday")
-           return $0
-       }(V1())
+        $0.textFiled.placeholder = (NSLocalizedString("الاسم الاخير", comment: ""))
+        $0.icon.image = UIImage(named: "birthday")
+        return $0
+    }(V1())
     
     lazy var singUpBtn: UIButton = {
-        $0.changeUIButton(title: (NSLocalizedString("تسجيل", comment: "")), color: colors.button)
+        $0.changeUIButton(title: (NSLocalizedString("تسجيل", comment: "")), color: colors.bcolor)
         $0.addTarget(self, action:#selector(startSignUp), for: .touchUpInside)
-                return $0
+        return $0
     }(UIButton(type: .system))
     
     lazy var singInBtn: UIButton = {
@@ -55,8 +55,6 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         $0.addTarget(self, action:#selector(didPresssignInButton), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
-    
-  
     
     lazy var stackView : UIStackView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -78,24 +76,23 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
     }
-        
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         assignbackground()
-     
-//        view.backgroundColor = .red
         
+        //      view.backgroundColor = .red
         view.addSubview(titleLbl)
         view.addSubview(singInBtn)
         view.addSubview(singUpBtn)
         //stack
         view.addSubview(stackView)
         stackView.addArrangedSubview(nameTF)
+        stackView.addArrangedSubview(lastNameTF)
         stackView.addArrangedSubview(emailTF)
         stackView.addArrangedSubview(passwordTF)
-        stackView.addArrangedSubview(lastNameTF)
- 
+        
+        
         NSLayoutConstraint.activate([
             self.titleLbl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 200),
             self.titleLbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -103,7 +100,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
             self.stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.stackView.topAnchor.constraint(equalTo: self.titleLbl.bottomAnchor, constant:20),
             self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -80),
-        
+            
             self.emailTF.heightAnchor.constraint(equalToConstant: 50),
             self.passwordTF.heightAnchor.constraint(equalToConstant: 50),
             self.emailTF.heightAnchor.constraint(equalToConstant: 50),
@@ -118,17 +115,18 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
             self.singInBtn.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             self.singInBtn.heightAnchor.constraint(equalToConstant: 30),
             self.singInBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-      
+            
         ])
     }
-
-     @objc func didPresssignInButton(_ sender : UIButton ){
+    
+    @objc func didPresssignInButton(_ sender : UIButton ){
         let VC = TabVC()
         VC.modalPresentationStyle = .fullScreen
         dismiss(animated: true, completion: nil)
-          print("move")
-      
+        print("move")
+        
     }
+    
     
     @objc func startSignUp() {
         let email = emailTF.textFiled.text ?? ""
@@ -138,74 +136,50 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         let uuid = UUID().uuidString
         
         if email.isEmpty || password.isEmpty || firstNam.isEmpty || lastNam.isEmpty {
+            print("something is empty")
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error as Any)
+                return
+            }
             
-            if email == "Security@gmail.com" {
-            let vc = UINavigationController(rootViewController: ContainerViewController())
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            if email == "securityagency@moi.gov.sa" {
+                let vc = UINavigationController(rootViewController: ContainerViewController())
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
                 
-            } else if email == "user@gmail.com" {
+            } else if email == "hotel@hotel.com" {
+                let vc = UINavigationController(rootViewController: TabVC())
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            } else {
+                
                 let vc = UINavigationController(rootViewController: SOSNumbers())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             }
-
-                guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-                Firestore.firestore().document("users/\(currentUserID)").setData([
-//                    "name" : self.name.text,
-                    "id" : currentUserID,
-                    "email" : self.emailTF.textFiled.text,
-                   
-                ], merge : true)
-//            if error != nil {
-//                print(error as Any)
-//                return
-//            }
+            
+            //                guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+            //                Firestore.firestore().document("users/\(currentUserID)").setData([
+            ////                    "name" : self.name.text,
+            //                    "id" : currentUserID,
+            //                    "email" : self.emailTF.textFiled.text,
+            //
+            //                ], merge : true)
+            //            if error != nil {
+            //                print(error as Any)
+            //                return
+            //            }
         }
-       
+        
     }
-//    @objc func SignupVC(_ sender: Any) {
-//
-//          let email = emailTF.text ?? ""
-//          let password = password.text ?? ""
-//
-//
-//          if email.isEmpty ||  password.isEmpty {
-//              print("Faild login ")
-//              return
-//          }
-//          Auth.auth().createUser(withEmail: email, password: password) {result,error in
-//
-//              if email == "Security@gmail.com" {
-//              let vc = UINavigationController(rootViewController: ContainerViewController())
-//              vc.modalTransitionStyle = .crossDissolve
-//              vc.modalPresentationStyle = .fullScreen
-//              self.present(vc, animated: true, completion: nil)
-//
-//              } else if email == "user@gmail.com" {
-//                  let vc = UINavigationController(rootViewController: SOSNumbers())
-//                  vc.modalTransitionStyle = .crossDissolve
-//                  vc.modalPresentationStyle = .fullScreen
-//                  self.present(vc, animated: true, completion: nil)
-//              }
-//
-//                  guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-//                  Firestore.firestore().document("users/\(currentUserID)").setData([
-//  //                    "name" : self.name.text,
-//                      "id" : currentUserID,
-//                      "email" : self.email.text,
-//
-//                  ], merge : true)
-//              }
-//          }
     
-
- 
+    
     
 }
 

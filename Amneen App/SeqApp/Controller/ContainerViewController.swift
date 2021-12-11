@@ -19,11 +19,12 @@ class ContainerViewController: UIViewController {
     let homeVC = Home()
     var navVC: UINavigationController?
     
-    lazy var infoVC = Reports()
+    lazy var infoVC = LeavingRenters()
     lazy var settin =  SOSNumbers()
     lazy var list =  List()
     lazy var cityy =  Cities()
     lazy var center = CentersLocations()
+    lazy var newRenter = NewRenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,9 @@ extension ContainerViewController: MenuViewControllerDelegate{
             self.addInfo()
         case .appRating:
             self.addcity()
+        case .newRenter:
+            self.addrenter()
+            
         case .shareApp:
             self.addlist()
         case .settings:
@@ -129,6 +133,14 @@ extension ContainerViewController: MenuViewControllerDelegate{
         homeVC.title = vc.title
     }
     
+    func addrenter() {
+        let vc = newRenter
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
     func darkk() {
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.backgroundColor = .black

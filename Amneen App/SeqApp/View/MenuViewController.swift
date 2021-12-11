@@ -18,6 +18,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case home
         case info
         case appRating
+        case newRenter
         case shareApp
         case settings
         case centers
@@ -34,6 +35,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                         return NSLocalizedString("48", comment: "البلاغات")
                     case .appRating:
                         return NSLocalizedString("49", comment: "الفنادق")
+                    case .newRenter:
+                        return  NSLocalizedString("70", comment: "مستأجر جديد ")
                     case .shareApp:
                         return NSLocalizedString("50", comment: "القائمه السوداء")
                     case .settings:
@@ -93,6 +96,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return "xmark.octagon"
             case .appRating:
                 return "house.circle.fill"
+            case .newRenter:
+                return "person"
             case .shareApp:
                 return "person.fill.xmark"
             case .settings:

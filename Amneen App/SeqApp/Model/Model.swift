@@ -198,6 +198,20 @@ let listNumber = [Numbers(name:  NSLocalizedString("2", comment: "الشرطه")
                   Numbers(name: NSLocalizedString("11", comment: " العمليات الامنيه الموحده"), number: 911, purpose: "لتقديم بلاغ او معلومه لوزارة الداخلية", image: "am")
                 
 ]
+struct LeavingRenter {
+    
+    let name: String
+    let id: String
+    let timestamp: Timestamp
+    func getNiceDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        return dateFormatter.string(from: timestamp.dateValue())
+    }
+
+}
+
 struct Report {
     
     let name: String

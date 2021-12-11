@@ -130,36 +130,29 @@ func assignbackground(){
         if email.isEmpty || password.isEmpty {
             return self.alertUserLoginError()
         }
-        
-        
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error as Any)
                 return
             }
-            
-//            let vc = ContainerViewController()
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
-            if email == "user@gmail.com"  {
-                
-            let vc = UINavigationController(rootViewController: TabVC())
+            if email == "securityagency@moi.gov.sa"  {
+            let vc = UINavigationController(rootViewController: ContainerViewController())
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
-                
-                
-                
-            } else if email == "Security@gmail.com" {
+            } else if email == "hotel@hotel.com" {
                 let vc = UINavigationController(rootViewController: ContainerViewController())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
+            } else {
+                let vc = UINavigationController(rootViewController: SOSNumbers())
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
-
         }
     }
-    
     func alertUserLoginError() {
         let alert = UIAlertController(title: "Woops",
          message: "Please enter your emile.",
