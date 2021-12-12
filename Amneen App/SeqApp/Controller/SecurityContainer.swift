@@ -232,6 +232,12 @@ extension SecurityContainer: MenuSViewControllerDelegate{
         cityy.view.removeFromSuperview()
         list.view.removeFromSuperview()
         center.view.removeFromSuperview()
+        newRenter.view.removeFromSuperview()
+        newleav.view.removeFromSuperview()
+        profile.view.removeFromSuperview()
+        banned.view.removeFromSuperview()
+        report.view.removeFromSuperview()
+  
         infoVC.didMove(toParent: nil)
         homeVC.title =  NSLocalizedString("31", comment:"الصفحه الرئيسية")
     }

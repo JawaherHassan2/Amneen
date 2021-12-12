@@ -108,32 +108,41 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        table.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         return table
+    }()
+    
+    let Image: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+//        imageView.layer.cornerRadius =
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "jay6")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//
 //        let switchDemo = UISwitch(frame:CGRect(x: 60, y: 500, width: 100, height: 100))
 //        switchDemo.addTarget(self, action: #selector(self.switchStateDidChange(_:)), for: .valueChanged)
 //        switchDemo.setOn(true, animated: false)
 //        self.view.addSubview(switchDemo)
         
-        
+        view.addSubview(Image)
         view.addSubview(tableView)
        
         tableView.delegate = self
         tableView.dataSource = self
         
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.bounds.size.width, height: view.bounds.size.height)
+        Image.frame = CGRect(x: 0, y: 0, width: 400, height: 250)
+        tableView.frame = CGRect(x: 0, y: 250, width: view.bounds.size.width, height: view.bounds.size.height)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuOPtions.allCases.count
@@ -143,11 +152,11 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = MenuOPtions.allCases[indexPath.row].localized
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = #colorLiteral(red: 0.1401828367, green: 0.3361562391, blue: 0.2719624596, alpha: 1)
         cell.imageView?.image = UIImage(systemName: MenuOPtions.allCases[indexPath.row].imageName)
-        cell.imageView?.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        cell.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-        cell.contentView.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        cell.imageView?.tintColor = #colorLiteral(red: 0.3525104821, green: 0.6645560861, blue: 0.6123059392, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         
         
 
@@ -155,10 +164,10 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
                cell.contentView.backgroundColor = .yellow
                
            } else if cell.isSelected == false{
-               cell.contentView.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+               cell.contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
            }
     
-        cell.selectionStyle = .blue
+//        cell.selectionStyle = .blue
         return cell
     }
     

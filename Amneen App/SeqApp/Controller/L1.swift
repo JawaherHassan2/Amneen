@@ -33,14 +33,14 @@ class L1: UIViewController {
     
     lazy var emailTextFiled :  V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
-        $0.icon.image = UIImage(named: "email")
+        $0.icon.image = UIImage(named: "email3")
         return $0
     }(V1())
     
     
     lazy var passwordTextFiled : V1  = {
         $0.textFiled.placeholder  = (NSLocalizedString("كلمه السر", comment: ""))
-        $0.icon.image = UIImage(named: "password")
+        $0.icon.image = UIImage(named: "password2")
         $0.textFiled.isSecureTextEntry = true
         return $0
     }(V1())
@@ -135,10 +135,27 @@ func assignbackground(){
                 return
             }
             if email == "securityagency@moi.gov.sa"  {
-            let vc = UINavigationController(rootViewController: SecurityContainer())
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+                let refreshAlert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
+                  
+                refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    let vc = UINavigationController(rootViewController: SecurityContainer())
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+//                            print("Handle Ok logic here")
+                   }))
+                        
+//                refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+//                            print("Handle Cancel Logic here")
+//                            refreshAlert .dismiss(animated: true, completion: nil)
+//                   }))
+
+                    self.present(refreshAlert, animated: true, completion: nil)
+                
+//            let vc = UINavigationController(rootViewController: SecurityContainer())
+//            vc.modalTransitionStyle = .crossDissolve
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
             } else if email == "hotel@hotel.com" {
                 let vc = UINavigationController(rootViewController: HotelContainer())
                 vc.modalTransitionStyle = .crossDissolve

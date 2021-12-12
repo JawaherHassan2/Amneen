@@ -16,31 +16,34 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     lazy var titleLbl: UILabel = {
         $0.changeUILabel(title: (NSLocalizedString("تسجيل جديد", comment: "")), size: 20)
+        
         return $0
     }(UILabel())
     
     lazy var nameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاول", comment: ""))
-        $0.icon.image = UIImage(named: "user")
+        $0.icon.image = UIImage(named: "person3")
+       
+        
         return $0
     }(V1())
     
     lazy var emailTF:V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
-        $0.icon.image = UIImage(named: "email")
+        $0.icon.image = UIImage(named: "email3")
         return $0
     }(V1())
     
     lazy var passwordTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("كلمه السر", comment: ""))
-        $0.icon.image = UIImage(named: "password")
+        $0.icon.image = UIImage(named: "password2")
         $0.textFiled.isSecureTextEntry = true
         return $0
     }(V1())
     
     lazy var lastNameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاخير", comment: ""))
-        $0.icon.image = UIImage(named: "birthday")
+        $0.icon.image = UIImage(named: "person3")
         return $0
     }(V1())
     
