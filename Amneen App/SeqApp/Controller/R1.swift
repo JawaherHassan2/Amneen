@@ -66,7 +66,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     
     func assignbackground(){
-        let background = UIImage(named: "ff")
+        let background = UIImage(named: "ef")
         var imageView : UIImageView!
         imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  .scaleAspectFill

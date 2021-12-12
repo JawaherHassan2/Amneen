@@ -22,6 +22,12 @@
 		FA4CB5412764A58300D68EF0 /* LeavingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB5402764A58300D68EF0 /* LeavingService.swift */; };
 		FA4FFF812763584300416A07 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FFF802763584300416A07 /* Color.swift */; };
 		FA52653C275D2CB500201069 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52653B275D2CB400201069 /* Animation.swift */; };
+		FA5403282765E7A8009C95C1 /* SecurityHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5403272765E7A8009C95C1 /* SecurityHome.swift */; };
+		FA54032A2765E7FB009C95C1 /* SecurityMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5403292765E7FB009C95C1 /* SecurityMenu.swift */; };
+		FA54032C2765E8A0009C95C1 /* SecurityContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54032B2765E8A0009C95C1 /* SecurityContainer.swift */; };
+		FA54032E2765EC21009C95C1 /* HotelHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54032D2765EC21009C95C1 /* HotelHome.swift */; };
+		FA5403302765EC72009C95C1 /* HotelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54032F2765EC72009C95C1 /* HotelMenu.swift */; };
+		FA5403322765ECC3009C95C1 /* HotelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5403312765ECC3009C95C1 /* HotelContainer.swift */; };
 		FA5536D62760A73400315C36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5536D82760A73400315C36 /* Localizable.strings */; };
 		FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */; };
 		FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */; };
@@ -65,6 +71,12 @@
 		FA4CB5402764A58300D68EF0 /* LeavingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavingService.swift; sourceTree = "<group>"; };
 		FA4FFF802763584300416A07 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA52653B275D2CB400201069 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		FA5403272765E7A8009C95C1 /* SecurityHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityHome.swift; sourceTree = "<group>"; };
+		FA5403292765E7FB009C95C1 /* SecurityMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityMenu.swift; sourceTree = "<group>"; };
+		FA54032B2765E8A0009C95C1 /* SecurityContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityContainer.swift; sourceTree = "<group>"; };
+		FA54032D2765EC21009C95C1 /* HotelHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelHome.swift; sourceTree = "<group>"; };
+		FA54032F2765EC72009C95C1 /* HotelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMenu.swift; sourceTree = "<group>"; };
+		FA5403312765ECC3009C95C1 /* HotelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelContainer.swift; sourceTree = "<group>"; };
 		FA5536D32760A71300315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA5536D72760A73400315C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5536D92760A73500315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -255,6 +267,12 @@
 				FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */,
 				FA6B0A9E275B819100D369E7 /* SettingViewController.swift */,
 				FA6B0AA0275B819800D369E7 /* MenuViewController.swift */,
+				FA54032B2765E8A0009C95C1 /* SecurityContainer.swift */,
+				FA5403312765ECC3009C95C1 /* HotelContainer.swift */,
+				FA5403292765E7FB009C95C1 /* SecurityMenu.swift */,
+				FA5403272765E7A8009C95C1 /* SecurityHome.swift */,
+				FA54032D2765EC21009C95C1 /* HotelHome.swift */,
+				FA54032F2765EC72009C95C1 /* HotelMenu.swift */,
 				FA2DD3922752BFFC003D2F6D /* Home.swift */,
 				FA2219B8274E16B2007B9C8A /* TabVC.swift */,
 				FA1785782754AB5200C9A95D /* SOSNumbers.swift */,
@@ -388,14 +406,18 @@
 				FA0B3AF827511E28008A0C9A /* RenterInfo.swift in Sources */,
 				FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */,
 				FA2219B9274E16B2007B9C8A /* TabVC.swift in Sources */,
+				FA54032A2765E7FB009C95C1 /* SecurityMenu.swift in Sources */,
 				FA4CB5412764A58300D68EF0 /* LeavingService.swift in Sources */,
 				FAEAEB85274EBB060091BF4C /* ListService.swift in Sources */,
 				FA0773E32756C44400305527 /* ReportService.swift in Sources */,
+				FA54032E2765EC21009C95C1 /* HotelHome.swift in Sources */,
 				FA4FFF812763584300416A07 /* Color.swift in Sources */,
 				FA96BC79274CF97300CD71A6 /* Cities.swift in Sources */,
 				FA6B0AA1275B819900D369E7 /* MenuViewController.swift in Sources */,
 				FA70A37A27629ADB0014143E /* L1.swift in Sources */,
+				FA5403322765ECC3009C95C1 /* HotelContainer.swift in Sources */,
 				FA8011B42751A38000DEBFB0 /* GradientView.swift in Sources */,
+				FA54032C2765E8A0009C95C1 /* SecurityContainer.swift in Sources */,
 				FA70A37C27629AE20014143E /* R1.swift in Sources */,
 				FAEAEB88274EC93A0091BF4C /* NewRenter.swift in Sources */,
 				FA2219BB274E16E7007B9C8A /* List.swift in Sources */,
@@ -406,6 +428,7 @@
 				FA73B938274EAAD4002981F6 /* AddNewC.swift in Sources */,
 				FAEAEB8A274EC97C0091BF4C /* RenterService.swift in Sources */,
 				FA70A37E27629AE80014143E /* V1.swift in Sources */,
+				FA5403282765E7A8009C95C1 /* SecurityHome.swift in Sources */,
 				FA96BC75274CF97300CD71A6 /* AppDelegate.swift in Sources */,
 				FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */,
 				FA6B0A9F275B819100D369E7 /* SettingViewController.swift in Sources */,
@@ -413,6 +436,7 @@
 				FA49E86D2764EA5A004C6FD3 /* BannedRenters.swift in Sources */,
 				FACC216B274E80B7009A225B /* Renter.swift in Sources */,
 				FAB95B91274D5F36001171C0 /* Hotels.swift in Sources */,
+				FA5403302765EC72009C95C1 /* HotelMenu.swift in Sources */,
 				FA96BC89274CFC0200CD71A6 /* Model.swift in Sources */,
 				FA49E87527651E87004C6FD3 /* ReportRenters.swift in Sources */,
 				FA52653C275D2CB500201069 /* Animation.swift in Sources */,
