@@ -19,9 +19,10 @@ enum colors {
     
     static let backgroundDarckcolor = UIColor(red: (76/255), green: (133/255), blue: (104/255), alpha: 1)
     static let backgroundLightcolor = UIColor(red: (143/255), green: (204/255), blue: (173/255), alpha: 1)
-    static let textFieldsBorder = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
-    static let textFieldsBackground = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.7)
-    static let titlesColor = UIColor(red:0.89, green:0.89, blue:0.89, alpha:1.0)
+    static let textFieldsBorder = #colorLiteral(red: 0.837469399, green: 0.9073725343, blue: 0.8370487094, alpha: 1)
+    static let textFieldsBackground = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    static let titlesColor = #colorLiteral(red: 0.4216900275, green: 0.4216900275, blue: 0.4216900275, alpha: 1)
+    static let titlesColor1 = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 }
 
 // Gradiant background
@@ -63,6 +64,15 @@ extension UILabel {
 }
 
 extension UIButton {
+    func changeUIButton1 (title : String , color : UIColor){
+        self.setTitle(title, for: .normal)
+        self.titleLabel?.font = UIFont(name: "Avenir-Light", size: 18)
+        self.backgroundColor = color
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.cornerRadius = 25
+        self.setTitleColor(colors.titlesColor1, for: .normal)
+  
+    }
     func changeUIButton (title : String , color : UIColor){
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = UIFont(name: "Avenir-Light", size: 18)

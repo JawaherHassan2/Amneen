@@ -51,6 +51,7 @@ class SecurityHome: UIViewController {
 //        self.view.addSubview(switchDemo)
 //
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
+        
        title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
         
         

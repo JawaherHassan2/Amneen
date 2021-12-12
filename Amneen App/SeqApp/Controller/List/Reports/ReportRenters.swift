@@ -22,10 +22,10 @@ class ReportRenters: UIViewController {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 25
+        layout.minimumInteritemSpacing = 25
         layout.itemSize = CGSize(width: 340,
-                                 height: 150)
+                                 height: 130)
         hotelCV = UICollectionView(frame: .zero,
                                    collectionViewLayout: layout)
         
@@ -50,7 +50,7 @@ var selectedIn = -1
 extension ReportRenters: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: 370, height: 200)
+           return CGSize(width: 370, height: 170)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -129,12 +129,14 @@ class Cellr: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.clipsToBounds = true
     
-        contentView.backgroundColor = #colorLiteral(red: 0.6864822151, green: 0.8622206013, blue: 1, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.6797825694, green: 0.768997848, blue: 0.769477129, alpha: 1)
         contentView.layer.cornerRadius = 13
         contentView.addSubview(label2)
         contentView.addSubview(label3)
         contentView.addSubview(label4)
         contentView.addSubview(label5)
+        contentView.layer.borderWidth = 3
+        contentView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
     
     required init?(coder: NSCoder) {

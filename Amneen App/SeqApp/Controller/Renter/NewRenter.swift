@@ -118,7 +118,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         }
         if isCriminal  {
                     let alert = UIAlertController(title: NSLocalizedString("43", comment:"تحذير⚠️ "), message: NSLocalizedString("44", comment:"مطلوب أمنيا! يرجى الحذر وابلاغ الجهات الامنيه"), preferredStyle: .alert )
-            alert.view.tintColor = UIColor.systemRed
+           
 
             let ok = UIAlertAction(title: NSLocalizedString("45", comment:"حسنا"), style: .default) { (alertAction) in }
             alert.addAction(ok)

@@ -74,9 +74,9 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //            case .profile:
 //                return "house"
             case .info:
-                return "xmark.octagon"
+                return "doc.plaintext"
             case .reportRenter:
-                return "xmark.octagon"
+                return "doc.richtext"
 //            case .appRating:
 //                return "house.circle.fill"
 //            case .newRenter:
@@ -117,7 +117,7 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         imageView.clipsToBounds = true
 //        imageView.layer.cornerRadius =
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "jay6")
+        imageView.image = UIImage(named: "o1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

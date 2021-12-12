@@ -183,7 +183,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
 
             alert.addTextField { (textField) in
                 textField.placeholder = "اشتباه في:"
-                textField.textColor = .purple
+                textField.textColor = .blue
             }
             alert.addAction(save)
             let cancel = UIAlertAction(title: "إلغاء", style: .default) { (alertAction) in }
@@ -191,7 +191,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
             self.present(alert, animated:true, completion: nil)
             
         }
-        editAction.backgroundColor = .blue
+        editAction.backgroundColor = #colorLiteral(red: 0.6381450404, green: 0.1305518336, blue: 0.06467522316, alpha: 1)
 
         let deleteAction = UITableViewRowAction(style: .normal, title: "مغادره") { [self] (rowAction, indexPath) in
   
@@ -231,7 +231,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
             
             
         }
-        deleteAction.backgroundColor = .red
+        deleteAction.backgroundColor = #colorLiteral(red: 0.4821594595, green: 0.5347387784, blue: 0.4426277938, alpha: 1)
 
         return [editAction,deleteAction]
     }

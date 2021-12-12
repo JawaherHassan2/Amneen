@@ -19,7 +19,7 @@ class L1: UIViewController {
     }(UILabel())
 
     lazy var singInBtn : UIButton = {
-        $0.changeUIButton(title:(NSLocalizedString("دخول", comment: "")), color: colors.bcolor)
+        $0.changeUIButton1(title:(NSLocalizedString("دخول", comment: "")), color: colors.bcolor)
         
         $0.addTarget(self, action:#selector(tapToSignIn), for: .touchUpInside)
         return $0
@@ -33,14 +33,14 @@ class L1: UIViewController {
     
     lazy var emailTextFiled :  V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
-        $0.icon.image = UIImage(named: "email3")
+        $0.icon.image = UIImage(named: "m1")
         return $0
     }(V1())
     
     
     lazy var passwordTextFiled : V1  = {
         $0.textFiled.placeholder  = (NSLocalizedString("كلمه السر", comment: ""))
-        $0.icon.image = UIImage(named: "password2")
+        $0.icon.image = UIImage(named: "p1")
         $0.textFiled.isSecureTextEntry = true
         return $0
     }(V1())
@@ -58,7 +58,7 @@ class L1: UIViewController {
     
    
 func assignbackground(){
-      let background = UIImage(named: "ef")
+      let background = UIImage(named: "wal6")
       var imageView : UIImageView!
       imageView = UIImageView(frame: view.bounds)
     imageView.contentMode =  .scaleAspectFill
@@ -136,6 +136,7 @@ func assignbackground(){
             }
             if email == "securityagency@moi.gov.sa"  {
                 let refreshAlert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
+                refreshAlert.view.tintColor = UIColor.systemGreen
                   
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: SecurityContainer())
@@ -157,10 +158,22 @@ func assignbackground(){
 //            vc.modalPresentationStyle = .fullScreen
 //            self.present(vc, animated: true, completion: nil)
             } else if email == "hotel@hotel.com" {
-                let vc = UINavigationController(rootViewController: HotelContainer())
-                vc.modalTransitionStyle = .crossDissolve
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+                let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
+                Alert.view.tintColor = UIColor.systemGreen
+               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    let vc = UINavigationController(rootViewController: HotelContainer())
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+//                            print("Handle Ok logic here")
+                   }))
+                
+                self.present(Alert, animated: true, completion: nil)
+                
+//                let vc = UINavigationController(rootViewController: HotelContainer())
+//                vc.modalTransitionStyle = .crossDissolve
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
             } else {
                 let vc = UINavigationController(rootViewController: SOSNumbers())
                 vc.modalTransitionStyle = .crossDissolve

@@ -128,12 +128,16 @@ class CellB: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.clipsToBounds = true
     
-        contentView.backgroundColor = #colorLiteral(red: 0.6864822151, green: 0.8622206013, blue: 1, alpha: 1)
+//        contentView.backgroundColor = #colorLiteral(red: 0.6864822151, green: 0.8622206013, blue: 1, alpha: 1)
         contentView.layer.cornerRadius = 13
         contentView.addSubview(label2)
         contentView.addSubview(label3)
         contentView.addSubview(label4)
         contentView.addSubview(label5)
+        contentView.backgroundColor = #colorLiteral(red: 0.6123598444, green: 0.7686617946, blue: 0.685389577, alpha: 1)
+       
+        contentView.layer.borderWidth = 3
+        contentView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
     
     required init?(coder: NSCoder) {

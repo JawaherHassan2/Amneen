@@ -22,7 +22,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     lazy var nameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاول", comment: ""))
-        $0.icon.image = UIImage(named: "person3")
+        $0.icon.image = UIImage(named: "p22")
        
         
         return $0
@@ -30,25 +30,26 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     lazy var emailTF:V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("البريد الالكتروني", comment: ""))
-        $0.icon.image = UIImage(named: "email3")
+        $0.icon.image = UIImage(named: "m1")
+        $0.icon.image?.withTintColor(.red)
         return $0
     }(V1())
     
     lazy var passwordTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("كلمه السر", comment: ""))
-        $0.icon.image = UIImage(named: "password2")
+        $0.icon.image = UIImage(named: "p1")
         $0.textFiled.isSecureTextEntry = true
         return $0
     }(V1())
     
     lazy var lastNameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاخير", comment: ""))
-        $0.icon.image = UIImage(named: "person3")
+        $0.icon.image = UIImage(named: "p22")
         return $0
     }(V1())
     
     lazy var singUpBtn: UIButton = {
-        $0.changeUIButton(title: (NSLocalizedString("تسجيل", comment: "")), color: colors.bcolor)
+        $0.changeUIButton1(title: (NSLocalizedString("تسجيل", comment: "")), color: colors.bcolor)
         $0.addTarget(self, action:#selector(startSignUp), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
@@ -69,7 +70,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     
     func assignbackground(){
-        let background = UIImage(named: "ef")
+        let background = UIImage(named: "wal6")
         var imageView : UIImageView!
         imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  .scaleAspectFill

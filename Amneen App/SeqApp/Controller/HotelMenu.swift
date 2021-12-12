@@ -19,7 +19,6 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     enum MenuOPtions: String, CaseIterable {
         case home
         case profile
-
         case appRating
         case newRenter
         case leaving
@@ -35,7 +34,6 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         return NSLocalizedString("47", comment: "الصفحة الرئيسية")
                     case .profile:
                         return NSLocalizedString("68", comment: "الملف الشخصي ")
-//
                     case .appRating:
                         return NSLocalizedString("49", comment: "الفنادق")
                     case .newRenter:
@@ -44,7 +42,6 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
                     case .banned:
                         return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
-//
                     case .dark:
                         return NSLocalizedString("53", comment:"الوضع الليلي")
                     case .language:
@@ -55,22 +52,27 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         return NSLocalizedString("56", comment: "الإعدادات")
                     }
                 }
+//        person
+//        person.fill.badge.plus
+//        person.2.crop.square.stack.fill
+//        person.fill.xmark
 //
         var imageName: String {
             switch self {
             case .home:
                 return "house"
             case .profile:
-                return "house"
+                return "person"
 
             case .appRating:
                 return "house.circle.fill"
             case .newRenter:
-                return "person"
+                return "person.fill.badge.plus"
             case .leaving:
-                return "person"
+               
+                return "figure.walk"
             case .banned:
-                return "person"
+                return "person.fill.xmark"
             case .dark:
                 return "moon"
             case .language:
@@ -91,6 +93,15 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         table.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         return table
     }()
+    let Image: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+//        imageView.layer.cornerRadius =
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "o1")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +112,7 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        switchDemo.setOn(true, animated: false)
 //        self.view.addSubview(switchDemo)
         
-        
+        view.addSubview(Image)
         view.addSubview(tableView)
        
         tableView.delegate = self
@@ -113,7 +124,8 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.bounds.size.width, height: view.bounds.size.height)
+        Image.frame = CGRect(x: 0, y: 0, width: 400, height: 250)
+        tableView.frame = CGRect(x: 0, y: 250, width: view.bounds.size.width, height: view.bounds.size.height)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuOPtions.allCases.count
@@ -135,7 +147,7 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                cell.contentView.backgroundColor = .yellow
                
            } else if cell.isSelected == false{
-               cell.contentView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+               cell.contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
            }
     
         cell.selectionStyle = .blue
