@@ -30,6 +30,7 @@ class SecurityContainer: UIViewController {
     lazy var profile = Profile()
     lazy var banned = BannedRenters()
     lazy var report = ReportRenters()
+    lazy var setting = SettingViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -127,14 +128,14 @@ extension SecurityContainer: MenuSViewControllerDelegate{
 //            self.addSe()
 //        case .centers:
 //            self.addCe()
-        case .dark:
-            self.addCe()
+//        case .dark:
+//            self.addCe()
 //        case .language:
 //            self.changrLa()
         case .about:
             self.addCe()
         case .settt:
-            self.addCe()
+            self.adds()
         }
     }
     func addInf() {
@@ -191,6 +192,14 @@ extension SecurityContainer: MenuSViewControllerDelegate{
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.backgroundColor = .black
     }
+    func adds() {
+        let vc = setting
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
     
     func  addcit() {
         let vc = cityy
@@ -237,7 +246,7 @@ extension SecurityContainer: MenuSViewControllerDelegate{
         profile.view.removeFromSuperview()
         banned.view.removeFromSuperview()
         report.view.removeFromSuperview()
-  
+        setting.view.removeFromSuperview()
         infoVC.didMove(toParent: nil)
         homeVC.title =  NSLocalizedString("31", comment:"الصفحه الرئيسية")
     }

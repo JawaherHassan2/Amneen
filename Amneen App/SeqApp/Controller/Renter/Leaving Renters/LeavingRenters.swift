@@ -16,6 +16,9 @@ class LeavingRenters: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.contents =  #imageLiteral(resourceName: "z1").cgImage
+        
+          
         self.title = NSLocalizedString("69", comment:"المستأجرين المغادرين ")
         
         
@@ -69,6 +72,12 @@ extension LeavingRenters: UICollectionViewDelegate  , UICollectionViewDataSource
 
         return cell
     }
+    
+   
+
+
+
+
 
    
 }

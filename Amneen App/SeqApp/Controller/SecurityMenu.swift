@@ -27,10 +27,11 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         case shareApp
 //        case settings
 //        case centers
-        case dark
+//        case dark
 //        case language
         case about
         case settt
+        
 
    var localized: String {
                     switch self {
@@ -56,8 +57,8 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //                        return NSLocalizedString("51", comment: "ارقام الطوارئ")
 //                    case .centers:
                         return NSLocalizedString("52", comment: "مواقع المراكز")
-                    case .dark:
-                        return NSLocalizedString("53", comment:"الوضع الليلي")
+//                    case .dark:
+//                        return NSLocalizedString("53", comment:"الوضع الليلي")
 //                    case .language:
 //                        return NSLocalizedString("54", comment: "تبديل اللغه")
                     case .about:
@@ -91,8 +92,8 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //                return "phone"
 //            case .centers:
 //                return "location.fill"
-            case .dark:
-                return "moon"
+//            case .dark:
+//                return "moon"
 //            case .language:
 //                return "character"
             case .about:

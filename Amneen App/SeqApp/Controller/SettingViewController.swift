@@ -44,9 +44,24 @@ class SettingViewController: UIViewController {
         UserDefaults.standard.setValue([newLan], forKey: "AppleLanguages")
         exit(0)
     }
-
+    func assignbackground(){
+          let background = UIImage(named: "z2")
+          var imageView : UIImageView!
+          imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+          imageView.clipsToBounds = true
+          imageView.image = background
+          imageView.center = view.center
+          view.addSubview(imageView)
+          self.view.sendSubviewToBack(imageView)
+      }
+        
+      
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        assignbackground()
 title = NSLocalizedString("72", comment:"الإعدادات ")
         view.backgroundColor = .white
         

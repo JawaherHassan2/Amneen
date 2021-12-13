@@ -73,13 +73,25 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     }(UIButton())
     
     
-    
+    func assignbackground(){
+          let background = UIImage(named: "z1")
+          var imageView : UIImageView!
+          imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+          imageView.clipsToBounds = true
+          imageView.image = background
+          imageView.center = view.center
+          view.addSubview(imageView)
+          self.view.sendSubviewToBack(imageView)
+      }
+        
+      
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setUpImage()
         
-        
+        assignbackground()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
              img.addGestureRecognizer(tapRecognizer)
         title = NSLocalizedString("68", comment: "الملف الشخصي ")

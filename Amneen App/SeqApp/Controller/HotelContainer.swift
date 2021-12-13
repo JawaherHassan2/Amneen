@@ -130,8 +130,8 @@ extension HotelContainer: MenuHViewControllerDelegate{
 //            self.addSe()
 //        case .centers:
 //            self.addCe()
-        case .dark:
-            self.addCe()
+//        case .dark:
+//            self.addCe()
 //        case .language:
 //            self.changrLa()
         case .about:
@@ -248,6 +248,7 @@ extension HotelContainer: MenuHViewControllerDelegate{
         profile.view.removeFromSuperview()
         banned.view.removeFromSuperview()
         report.view.removeFromSuperview()
+        setting.view.removeFromSuperview()
         infoVC.didMove(toParent: nil)
         homeVC.title =  NSLocalizedString("31", comment:"الصفحه الرئيسية")
     }

@@ -125,7 +125,7 @@ func assignbackground(){
     @objc private func tapToSignIn() {
         let email = self.emailTextFiled.textFiled.text ?? ""
         let password = self.passwordTextFiled.textFiled.text ?? ""
-        
+     
         
         if email.isEmpty || password.isEmpty {
             return self.alertUserLoginError()
@@ -160,6 +160,7 @@ func assignbackground(){
 //            self.present(vc, animated: true, completion: nil)
             } else if email == "hotel@hotel.com" {
                 let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
+            
                 Alert.view.tintColor = UIColor.systemGreen
                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: HotelContainer())
@@ -177,10 +178,11 @@ func assignbackground(){
 //                self.present(vc, animated: true, completion: nil)
             } else {
                 
-                let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
+                let Alert = UIAlertController(title: "أهلا بك 🤝", message: "في تطبيق آمنين   ", preferredStyle: UIAlertController.Style.alert)
                 Alert.view.tintColor = UIColor.systemGreen
                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
-                   self.present(Alert, animated: true, completion: nil)
+                   
+                  
                    let vc = UINavigationController(rootViewController: HotelContainer())
                    vc.modalTransitionStyle = .crossDissolve
                    vc.modalPresentationStyle = .fullScreen
@@ -189,6 +191,10 @@ func assignbackground(){
                    }))
                 self.present(Alert, animated: true, completion: nil)
 //                self.present(Alert, animated: true, completion: nil)
+//                let vc = UINavigationController(rootViewController: HotelContainer())
+//                vc.modalTransitionStyle = .crossDissolve
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
 //                let vc = UINavigationController(rootViewController: HotelContainer())
 //                vc.modalTransitionStyle = .crossDissolve
 //                vc.modalPresentationStyle = .fullScreen

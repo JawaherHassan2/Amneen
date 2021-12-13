@@ -23,7 +23,7 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case newRenter
         case leaving
         case banned
-        case dark
+//        case dark
 //        case language
         case about
         case settt
@@ -42,8 +42,8 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
                     case .banned:
                         return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
-                    case .dark:
-                        return NSLocalizedString("53", comment:"الوضع الليلي")
+//                    case .dark:
+//                        return NSLocalizedString("53", comment:"الوضع الليلي")
 //                    case .language:
 //                        return NSLocalizedString("54", comment: "تبديل اللغه")
                     case .about:
@@ -73,8 +73,8 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 return "figure.walk"
             case .banned:
                 return "person.fill.xmark"
-            case .dark:
-                return "moon"
+//            case .dark:
+//                return "moon"
 //            case .language:
 //                return "character"
             case .about:
