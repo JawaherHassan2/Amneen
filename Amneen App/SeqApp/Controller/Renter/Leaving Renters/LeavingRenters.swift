@@ -128,8 +128,6 @@ class CellL: UICollectionViewCell {
         
         contentView.clipsToBounds = true
         contentView.clipsToBounds = true
-    
-      
         contentView.layer.cornerRadius = 13
         contentView.addSubview(label2)
         contentView.addSubview(label3)

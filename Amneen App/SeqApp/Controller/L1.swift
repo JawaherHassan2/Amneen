@@ -167,7 +167,7 @@ func assignbackground(){
                     self.present(vc, animated: true, completion: nil)
 //                            print("Handle Ok logic here")
                    }))
-                
+              
                 self.present(Alert, animated: true, completion: nil)
                 
 //                let vc = UINavigationController(rootViewController: HotelContainer())
@@ -175,7 +175,7 @@ func assignbackground(){
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: true, completion: nil)
             } else {
-                let vc = UINavigationController(rootViewController: SOSNumbers())
+                let vc = UINavigationController(rootViewController: HotelContainer())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)

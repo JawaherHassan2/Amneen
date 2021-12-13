@@ -31,6 +31,8 @@ class HotelContainer: UIViewController {
     lazy var profile = Profile()
     lazy var banned = BannedRenters()
     lazy var report = ReportRenters()
+    lazy var setting = SettingViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -130,16 +132,24 @@ extension HotelContainer: MenuHViewControllerDelegate{
 //            self.addCe()
         case .dark:
             self.addCe()
-        case .language:
-            self.changrLa()
+//        case .language:
+//            self.changrLa()
         case .about:
             self.addCe()
         case .settt:
-            self.addCe()
+            self.adds()
         }
     }
     func addInf() {
         let vc = infoVC
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
+    func adds() {
+        let vc = setting
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame

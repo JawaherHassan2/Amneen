@@ -129,8 +129,8 @@ extension SecurityContainer: MenuSViewControllerDelegate{
 //            self.addCe()
         case .dark:
             self.addCe()
-        case .language:
-            self.changrLa()
+//        case .language:
+//            self.changrLa()
         case .about:
             self.addCe()
         case .settt:

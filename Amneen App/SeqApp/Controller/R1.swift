@@ -162,23 +162,25 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
                 self.present(vc, animated: true, completion: nil)
             } else {
                 
-                let vc = UINavigationController(rootViewController: SOSNumbers())
+                let vc = UINavigationController(rootViewController: HotelContainer())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             }
             
-            //                guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-            //                Firestore.firestore().document("users/\(currentUserID)").setData([
-            ////                    "name" : self.name.text,
-            //                    "id" : currentUserID,
-            //                    "email" : self.emailTF.textFiled.text,
-            //
-            //                ], merge : true)
-            //            if error != nil {
-            //                print(error as Any)
-            //                return
-            //            }
+                            guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+                            Firestore.firestore().document("users/\(currentUserID)").setData([
+            //                    "name" : self.name.text,
+                                "Id" : currentUserID,
+                                "Email" : self.emailTF.textFiled.text,
+                                "First Name": self.nameTF.textFiled.text,
+                                "Last Name": self.lastNameTF.textFiled.text
+            
+                            ], merge : true)
+                        if error != nil {
+                            print(error as Any)
+                            return
+                        }
         }
         
     }

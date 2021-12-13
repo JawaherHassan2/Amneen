@@ -28,7 +28,7 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //        case settings
 //        case centers
         case dark
-        case language
+//        case language
         case about
         case settt
 
@@ -58,8 +58,8 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
                         return NSLocalizedString("52", comment: "مواقع المراكز")
                     case .dark:
                         return NSLocalizedString("53", comment:"الوضع الليلي")
-                    case .language:
-                        return NSLocalizedString("54", comment: "تبديل اللغه")
+//                    case .language:
+//                        return NSLocalizedString("54", comment: "تبديل اللغه")
                     case .about:
                         return NSLocalizedString("55", comment: "عن التطبيق")
                     case .settt:
@@ -93,8 +93,8 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //                return "location.fill"
             case .dark:
                 return "moon"
-            case .language:
-                return "character"
+//            case .language:
+//                return "character"
             case .about:
                 return "lanyardcard"
             case .settt:
