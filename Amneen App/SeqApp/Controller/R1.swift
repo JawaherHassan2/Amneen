@@ -161,11 +161,27 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             } else {
-                
-                let vc = UINavigationController(rootViewController: HotelContainer())
-                vc.modalTransitionStyle = .crossDissolve
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+                let Alert = UIAlertController(title: "أهلا بك \(firstNam) \(lastNam) 🤝", message: "في تطبيق آمنين   ", preferredStyle: UIAlertController.Style.alert)
+                Alert.view.tintColor = UIColor.systemGreen
+               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                   
+                  
+                   let vc = UINavigationController(rootViewController: HotelContainer())
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .fullScreen
+                   self.present(vc, animated: true, completion: nil)
+//                            print("Handle Ok logic here")
+                   }))
+                self.present(Alert, animated: true, completion: nil)
+//                self.present(Alert, animated: true, completion: nil)
+//                let vc = UINavigationController(rootViewController: HotelContainer())
+//                vc.modalTransitionStyle = .crossDissolve
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
+//                let vc = UINavigationController(rootViewController: HotelContainer())
+//                vc.modalTransitionStyle = .crossDissolve
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
             }
             
                             guard let currentUserID = Auth.auth().currentUser?.uid else {return}

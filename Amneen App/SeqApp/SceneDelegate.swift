@@ -25,6 +25,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            self.window = window
         
         
+        
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
+//        let window = UIWindow(windowScene: windowScene)
+        
+        /// 3. Create a view hierarchy programmatically
+        let isLoggedIn = Auth.auth().currentUser != nil
+        
+        
+        let ViewController: UIViewController
+        
+        if isLoggedIn {
+            
+            ViewController = TabVC()
+        } else {
+            ViewController = L1()
+            
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
