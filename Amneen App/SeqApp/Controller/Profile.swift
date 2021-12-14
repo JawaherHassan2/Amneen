@@ -11,6 +11,8 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
 //        image.backgroundColor = .yellow
         image.image = UIImage(named: "p11")
         image.layer.cornerRadius = 10
+        image.layer.borderColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
+        image.layer.borderWidth = 2
         image.isUserInteractionEnabled = true
         return image
       }()
@@ -48,7 +50,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
 //        $0.setTitle("Save", for: .normal)
         $0.titleLabel?.textColor = .black
         $0.setImage(UIImage(systemName:"pencil"), for: .normal)
-        $0.tintColor = .black
+        $0.tintColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
 //        $0.titleColor(for: .)
 
 //        $0.layer.cornerRadius = 25
@@ -74,7 +76,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     
     
     func assignbackground(){
-          let background = UIImage(named: "z1")
+          let background = UIImage(named: "q33")
           var imageView : UIImageView!
           imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  .scaleAspectFill
@@ -90,7 +92,10 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setUpImage()
-        
+//        navigationController?.navigationBar.backgroundColor = .red
+//
+
+        navigationController?.navigationBar.tintColor = .blue
         assignbackground()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
              img.addGestureRecognizer(tapRecognizer)
@@ -129,7 +134,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
             
             lastName.topAnchor.constraint(equalTo: view.topAnchor,constant: 170),
 //            lastName.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 100),
-            lastName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -170),
+            lastName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -174),
 //            lastName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: 150),
     
             lastName.heightAnchor.constraint(equalToConstant: 40),
@@ -146,8 +151,8 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
 //            Button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
 //            Button.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 130),
             Button.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -185),
-            Button.heightAnchor.constraint(equalToConstant: 160),
-            Button.widthAnchor.constraint(equalToConstant: 160),
+            Button.heightAnchor.constraint(equalToConstant: 60),
+            Button.widthAnchor.constraint(equalToConstant: 60),
         ])
         
         view.addSubview(Button1)

@@ -40,7 +40,7 @@ class Renters: UIViewController {
         b.layer.cornerRadius = 25
         b.titleLabel?.textColor = .white
         b.titleLabel?.font = UIFont(name: "Avenir-Light", size: 18)
-        b.backgroundColor = #colorLiteral(red: 0.397809267, green: 0.4797546268, blue: 0.4178932905, alpha: 1)
+        b.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         return b
     }()
     
@@ -109,14 +109,14 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         
         let renter = renters[indexPath.row]
         //        let d =  hotelList[indexPath.row]
-        cell.label2.text = "      الاسم:\(renter.name)"
+        cell.label2.text = "      الاسم: \(renter.name)"
         //        cell.label2.text = "\(d.name)    اسم المدينه:"
         cell.label3.text = " الهويه الوطنيه:  \(renter.id)"
-        cell.label4.text = "\(renter.getNiceDate())   :وقت الدخول"
+        cell.label4.text = "وقت الدخول: \(renter.getNiceDate()) "
         cell.label5.text = " اسم الفندق:  \(r!.name)"
         cell.label6.text = "رقم الشقه:  \(indexPath.row + 1)"
-        cell.backgroundColor = .gray
-        cell.contentView.backgroundColor = .gray
+//        cell.backgroundColor = .gray
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.5575026482, green: 0.6737594539, blue: 0.7071654279, alpha: 1)
         cell.layer.cornerRadius = 40
         
         return cell
@@ -125,7 +125,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         if indexPath.row == selectedIndex {
             return 370
         }else {
-            return 240
+            return 225
         }
     }
     
@@ -153,6 +153,26 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         self.present(alert, animated:true, completion: nil)
 
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            
+            if searchText.isEmpty {
+                let temp = renters
+                renters = temp
+                
+                RenterService.shared.listenToRenters { newRenter in
+                    self.renters = newRenter
+                    self.sTV.reloadData()
+                }
+               
+            } else {
+                
+                renters = renters.filter({ oneProduct in
+                    return oneProduct.name.starts(with: searchText)
+                })
+            }
+        sTV.reloadData()
+            
+        }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cell = self.renters[indexPath.row]
@@ -191,7 +211,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
             self.present(alert, animated:true, completion: nil)
             
         }
-        editAction.backgroundColor = #colorLiteral(red: 0.6381450404, green: 0.1305518336, blue: 0.06467522316, alpha: 1)
+        editAction.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
 
         let deleteAction = UITableViewRowAction(style: .normal, title: "مغادره") { [self] (rowAction, indexPath) in
   
@@ -233,14 +253,33 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
             
             
         }
-        deleteAction.backgroundColor = #colorLiteral(red: 0.4821594595, green: 0.5347387784, blue: 0.4426277938, alpha: 1)
+        deleteAction.backgroundColor = #colorLiteral(red: 0.2912973366, green: 0.3988350792, blue: 0.7644492128, alpha: 1)
 
         return [editAction,deleteAction]
     }
     
 }
 
-
+//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        if searchText.isEmpty {
+//            let temp = renters
+//            renters = temp
+//
+//            RenterService.shared.listenToRenters { newRenter in
+//                renters = newRenter
+//                sTV!.reloadData()
+//            }
+//
+//        } else {
+//
+//            renters = renters.filter({ oneProduct in
+//                return oneProduct.name.starts(with: searchText)
+//            })
+//        }
+//    sTV?.reloadData()
+//
+//    }
 func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     
@@ -316,6 +355,8 @@ class RenterCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+            contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         
         //left right
         label2.frame = CGRect(x: 18,

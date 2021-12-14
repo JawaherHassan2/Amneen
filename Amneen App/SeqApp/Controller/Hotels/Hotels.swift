@@ -15,7 +15,7 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
     private var hotelCV: UICollectionView?
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: 350, height: 90)
+           return CGSize(width: 350, height: 70)
     }
 
     override func viewDidLoad() {
@@ -26,8 +26,8 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 20
-        layout.itemSize = CGSize(width: 320,
-                                 height: 150)
+        layout.itemSize = CGSize(width: 280,
+                                 height: 100)
         hotelCV = UICollectionView(frame: .zero,
                                    collectionViewLayout: layout)
         
@@ -41,6 +41,7 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         
         hotelCV.dataSource = self
         hotelCV.delegate = self
+        hotelCV.backgroundColor = #colorLiteral(red: 0.8992940602, green: 0.8936767668, blue: 0.8912667796, alpha: 1)
         
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
@@ -109,7 +110,7 @@ class HotelCell1: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.backgroundColor = #colorLiteral(red: 0.2470300611, green: 0.3494391085, blue: 0.403823951, alpha: 1)
         
-        contentView.layer.cornerRadius = 13
+        contentView.layer.cornerRadius = 15
         
     }
     

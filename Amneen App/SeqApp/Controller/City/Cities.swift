@@ -43,6 +43,8 @@ class Cities: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         hotelCV.backgroundColor = UIColor(named: "Color")
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
+        hotelCV.backgroundColor = #colorLiteral(red: 0.8992940602, green: 0.8936767668, blue: 0.8912667796, alpha: 1)
+
     }
     
     

@@ -135,9 +135,9 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = MenuOPtions.allCases[indexPath.row].localized
-        cell.textLabel?.textColor = #colorLiteral(red: 0.1401828367, green: 0.3361562391, blue: 0.2719624596, alpha: 1)
+        cell.textLabel?.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         cell.imageView?.image = UIImage(systemName: MenuOPtions.allCases[indexPath.row].imageName)
-        cell.imageView?.tintColor = #colorLiteral(red: 0.3525104821, green: 0.6645560861, blue: 0.6123059392, alpha: 1)
+        cell.imageView?.tintColor = #colorLiteral(red: 0.37440442, green: 0.5638569733, blue: 0.6446504804, alpha: 1)
         cell.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         cell.contentView.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         

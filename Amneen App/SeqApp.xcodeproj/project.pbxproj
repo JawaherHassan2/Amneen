@@ -30,6 +30,8 @@
 		FA5403322765ECC3009C95C1 /* HotelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5403312765ECC3009C95C1 /* HotelContainer.swift */; };
 		FA5536D62760A73400315C36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5536D82760A73400315C36 /* Localizable.strings */; };
 		FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */; };
+		FA5DB7562768C15700616630 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DB7552768C15700616630 /* AppInfo.swift */; };
+		FA5DB7582768DB0E00616630 /* AppSInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DB7572768DB0E00616630 /* AppSInfo.swift */; };
 		FA6B0A9B275B817D00D369E7 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */; };
 		FA6B0A9F275B819100D369E7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0A9E275B819100D369E7 /* SettingViewController.swift */; };
 		FA6B0AA1275B819900D369E7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B0AA0275B819800D369E7 /* MenuViewController.swift */; };
@@ -81,6 +83,8 @@
 		FA5536D72760A73400315C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5536D92760A73500315C36 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA5AD0DB275CAD2E007AE58A /* CentersLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentersLocations.swift; sourceTree = "<group>"; };
+		FA5DB7552768C15700616630 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		FA5DB7572768DB0E00616630 /* AppSInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSInfo.swift; sourceTree = "<group>"; };
 		FA6B0A9A275B817D00D369E7 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FA6B0A9E275B819100D369E7 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FA6B0AA0275B819800D369E7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 		FA96BC68274CF97300CD71A6 = {
 			isa = PBXGroup;
 			children = (
+				FA5DB7552768C15700616630 /* AppInfo.swift */,
+				FA5DB7572768DB0E00616630 /* AppSInfo.swift */,
 				FA73B939274EB898002981F6 /* GoogleService-Info.plist */,
 				FA5536D82760A73400315C36 /* Localizable.strings */,
 				FA96BC73274CF97300CD71A6 /* SeqApp */,
@@ -413,6 +419,7 @@
 				FA54032E2765EC21009C95C1 /* HotelHome.swift in Sources */,
 				FA4FFF812763584300416A07 /* Color.swift in Sources */,
 				FA96BC79274CF97300CD71A6 /* Cities.swift in Sources */,
+				FA5DB7582768DB0E00616630 /* AppSInfo.swift in Sources */,
 				FA6B0AA1275B819900D369E7 /* MenuViewController.swift in Sources */,
 				FA70A37A27629ADB0014143E /* L1.swift in Sources */,
 				FA5403322765ECC3009C95C1 /* HotelContainer.swift in Sources */,
@@ -423,6 +430,7 @@
 				FA2219BB274E16E7007B9C8A /* List.swift in Sources */,
 				FA2DD3932752BFFC003D2F6D /* Home.swift in Sources */,
 				FA1785792754AB5200C9A95D /* SOSNumbers.swift in Sources */,
+				FA5DB7562768C15700616630 /* AppInfo.swift in Sources */,
 				FA49E8732765154B004C6FD3 /* ReportRenterService.swift in Sources */,
 				FA0773E12756C43D00305527 /* Reports.swift in Sources */,
 				FA73B938274EAAD4002981F6 /* AddNewC.swift in Sources */,

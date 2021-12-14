@@ -158,7 +158,7 @@ func assignbackground(){
 //            vc.modalTransitionStyle = .crossDissolve
 //            vc.modalPresentationStyle = .fullScreen
 //            self.present(vc, animated: true, completion: nil)
-            } else if email == "hotel@hotel.com" {
+            } else if email == "alsrawat@hotel.com" {
                 let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
             
                 Alert.view.tintColor = UIColor.systemGreen

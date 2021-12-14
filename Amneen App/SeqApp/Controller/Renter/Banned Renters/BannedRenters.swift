@@ -35,6 +35,7 @@ class BannedRenters: UIViewController {
         bannedCV.register(CellB.self, forCellWithReuseIdentifier: "cell")
         bannedCV.dataSource = self
         bannedCV.delegate = self
+            bannedCV.backgroundColor = #colorLiteral(red: 0.8992940602, green: 0.8936767668, blue: 0.8912667796, alpha: 1)
         view.addSubview(bannedCV)
         bannedCV.frame = view.bounds
         
@@ -134,7 +135,7 @@ class CellB: UICollectionViewCell {
         contentView.addSubview(label3)
         contentView.addSubview(label4)
         contentView.addSubview(label5)
-        contentView.backgroundColor = #colorLiteral(red: 0.6123598444, green: 0.7686617946, blue: 0.685389577, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.6803148389, green: 0.7489489913, blue: 0.7700426579, alpha: 1)
        
         contentView.layer.borderWidth = 3
         contentView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)

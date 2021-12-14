@@ -32,6 +32,8 @@ class HotelContainer: UIViewController {
     lazy var banned = BannedRenters()
     lazy var report = ReportRenters()
     lazy var setting = SettingViewController()
+    lazy var abou = AppInfo()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +137,7 @@ extension HotelContainer: MenuHViewControllerDelegate{
 //        case .language:
 //            self.changrLa()
         case .about:
-            self.addCe()
+            self.addi()
         case .settt:
             self.adds()
         }
@@ -236,6 +238,14 @@ extension HotelContainer: MenuHViewControllerDelegate{
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
+    func  addi() {
+        let vc = abou
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = vc.title
+    }
     
     func resetToHom() {
         infoVC.view.removeFromSuperview()
@@ -249,6 +259,7 @@ extension HotelContainer: MenuHViewControllerDelegate{
         banned.view.removeFromSuperview()
         report.view.removeFromSuperview()
         setting.view.removeFromSuperview()
+        abou.view.removeFromSuperview()
         infoVC.didMove(toParent: nil)
         homeVC.title =  NSLocalizedString("31", comment:"الصفحه الرئيسية")
     }
