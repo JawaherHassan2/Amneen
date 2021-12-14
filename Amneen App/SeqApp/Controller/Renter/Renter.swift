@@ -76,14 +76,14 @@ class Renters: UIViewController {
             searchBar.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
         
-        view.addSubview(addRentersButton)
-        NSLayoutConstraint.activate([
-            addRentersButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -80),
-            addRentersButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 80),
-            addRentersButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            addRentersButton.widthAnchor.constraint(equalToConstant: 400),
-            addRentersButton.heightAnchor.constraint(equalToConstant: 60),
-        ])
+//        view.addSubview(addRentersButton)
+//        NSLayoutConstraint.activate([
+//            addRentersButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -80),
+//            addRentersButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 80),
+//            addRentersButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+//            addRentersButton.widthAnchor.constraint(equalToConstant: 400),
+//            addRentersButton.heightAnchor.constraint(equalToConstant: 60),
+//        ])
     }
     
     @objc func addRenter() {
@@ -117,6 +117,8 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         cell.label6.text = "رقم الشقه:  \(indexPath.row + 1)"
 //        cell.backgroundColor = .gray
         cell.contentView.backgroundColor = #colorLiteral(red: 0.5575026482, green: 0.6737594539, blue: 0.7071654279, alpha: 1)
+        cell.contentView.layer.borderWidth = 3
+        cell.contentView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         cell.layer.cornerRadius = 40
         
         return cell

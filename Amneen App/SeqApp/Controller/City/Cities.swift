@@ -118,7 +118,7 @@ class HotelCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 0, height: 2.0)
         layer.shadowRadius = 6.0
         layer.shadowOpacity = 1.0
-        contentView.backgroundColor = #colorLiteral(red: 0.07743890093, green: 0.2180493189, blue: 0.3155408361, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.3255151016, green: 0.4531929313, blue: 0.4515190841, alpha: 1)
         contentView.layer.cornerRadius = 34
     }
     

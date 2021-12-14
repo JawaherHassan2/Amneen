@@ -108,7 +108,7 @@ class HotelCell1: UICollectionViewCell {
 
         contentView.addSubview(myLabel)
         contentView.clipsToBounds = true
-        contentView.backgroundColor = #colorLiteral(red: 0.2470300611, green: 0.3494391085, blue: 0.403823951, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.357890688, green: 0.4412518331, blue: 0.4643064771, alpha: 1)
         
         contentView.layer.cornerRadius = 15
         
@@ -121,7 +121,7 @@ class HotelCell1: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        myLabel.frame = CGRect(x: 5,
+        myLabel.frame = CGRect(x: 0,
                                y: contentView.frame.size.height-70 ,
                                width: contentView.frame.size.width-10,
                                height: 50)

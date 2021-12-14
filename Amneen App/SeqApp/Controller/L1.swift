@@ -8,10 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import ShimmerSwift
 
 class L1: UIViewController {
     
-    
+    let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 250, height: 50))
     //MARK: Step 1
     lazy var titlelbl: UILabel = {
         $0.changeUILabel(title: (NSLocalizedString("تسجيل الدخول", comment: "")), size: 20)
@@ -20,7 +21,7 @@ class L1: UIViewController {
 
     lazy var singInBtn : UIButton = {
         $0.changeUIButton1(title:(NSLocalizedString("دخول", comment: "")), color: colors.bcolor)
-        
+        singInBtn = UIButton(frame: shimmerView.bounds)
         $0.addTarget(self, action:#selector(tapToSignIn), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
@@ -76,8 +77,10 @@ func assignbackground(){
         
         self.view.addSubview(titlelbl)
         self.view.addSubview(signUpBtn)
+        self.view.addSubview(shimmerView)
         self.view.addSubview(singInBtn)
-
+        shimmerView.contentView = singInBtn
+        shimmerView.isShimmering = true
         self.view.addSubview(stack)
         self.stack.addArrangedSubview(emailTextFiled)
         self.stack.addArrangedSubview(passwordTextFiled)
@@ -85,7 +88,7 @@ func assignbackground(){
         //MARK: step 3
         NSLayoutConstraint.activate([
             //***
-            self.titlelbl.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 250),
+            self.titlelbl.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 270),
             self.titlelbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
 
@@ -95,15 +98,16 @@ func assignbackground(){
             self.stack.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -100),
 
             //singInBtn btn
-            self.singInBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.singInBtn.topAnchor.constraint(equalTo: self.stack.bottomAnchor, constant: 20),
-            self.singInBtn.heightAnchor.constraint(equalToConstant: 50),
+            
+            self.shimmerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.shimmerView.topAnchor.constraint(equalTo: self.stack.bottomAnchor, constant: 20),
+            self.shimmerView.heightAnchor.constraint(equalToConstant: 50),
             //frame
-            self.singInBtn.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.2),
+            self.shimmerView.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.2),
             
             //signUpBtn BTN
             self.signUpBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.signUpBtn.topAnchor.constraint(equalTo: self.singInBtn.bottomAnchor, constant: 5),
+            self.signUpBtn.topAnchor.constraint(equalTo: self.singInBtn.bottomAnchor, constant: 13),
             self.signUpBtn.heightAnchor.constraint(equalToConstant: 30),
             self.signUpBtn.widthAnchor.constraint(equalToConstant: self.view.frame.width),
         ])

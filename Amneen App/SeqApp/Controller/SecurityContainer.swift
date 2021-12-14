@@ -31,7 +31,9 @@ class SecurityContainer: UIViewController {
     lazy var banned = BannedRenters()
     lazy var report = ReportRenters()
     lazy var setting = SettingViewController()
-    lazy var abou = AppInfo()
+    lazy var abou =   AppSInfo()
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

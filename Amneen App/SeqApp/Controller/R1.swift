@@ -9,11 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import ShimmerSwift
 
 class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var users: Array<User> = []
-    
+    let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 250, height: 50))
     lazy var titleLbl: UILabel = {
         $0.changeUILabel(title: (NSLocalizedString("تسجيل جديد", comment: "")), size: 20)
         
@@ -50,6 +51,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     
     lazy var singUpBtn: UIButton = {
         $0.changeUIButton1(title: (NSLocalizedString("تسجيل", comment: "")), color: colors.bcolor)
+        singUpBtn = UIButton(frame: shimmerView.bounds)
         $0.addTarget(self, action:#selector(startSignUp), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
@@ -88,7 +90,12 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         //      view.backgroundColor = .red
         view.addSubview(titleLbl)
         view.addSubview(singInBtn)
-        view.addSubview(singUpBtn)
+        
+        self.view.addSubview(shimmerView)
+        self.view.addSubview(singInBtn)
+        shimmerView.contentView = singUpBtn
+        shimmerView.isShimmering = true
+//        view.addSubview(singUpBtn)
         //stack
         view.addSubview(stackView)
         stackView.addArrangedSubview(nameTF)
@@ -98,7 +105,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         
         
         NSLayoutConstraint.activate([
-            self.titleLbl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 200),
+            self.titleLbl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 168),
             self.titleLbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
             self.stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -110,12 +117,12 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
             self.emailTF.heightAnchor.constraint(equalToConstant: 50),
             self.lastNameTF.heightAnchor.constraint(equalToConstant: 50),
             
-            self.singUpBtn.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 30),
-            self.singUpBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.singUpBtn.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.2),
-            self.singUpBtn.heightAnchor.constraint(equalToConstant: 50),
+            self.shimmerView.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 30),
+            self.shimmerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.shimmerView.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.2),
+            self.shimmerView.heightAnchor.constraint(equalToConstant: 50),
             
-            self.singInBtn.topAnchor.constraint(equalTo: self.singUpBtn.bottomAnchor, constant: 5),
+            self.singInBtn.topAnchor.constraint(equalTo: self.singUpBtn.bottomAnchor, constant: 14),
             self.singInBtn.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             self.singInBtn.heightAnchor.constraint(equalToConstant: 30),
             self.singInBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),

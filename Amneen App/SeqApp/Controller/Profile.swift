@@ -10,8 +10,8 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         image.translatesAutoresizingMaskIntoConstraints = false
 //        image.backgroundColor = .yellow
         image.image = UIImage(named: "p11")
-        image.layer.cornerRadius = 10
-        image.layer.borderColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
+        image.layer.cornerRadius = 20
+        image.layer.borderColor = #colorLiteral(red: 0.3955914783, green: 0.5126042842, blue: 0.517450081, alpha: 1)
         image.layer.borderWidth = 2
         image.isUserInteractionEnabled = true
         return image
@@ -92,10 +92,13 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setUpImage()
+        img.layer.cornerRadius = 19
 //        navigationController?.navigationBar.backgroundColor = .red
 //
 
-        navigationController?.navigationBar.tintColor = .blue
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.04864486824, green: 0.3906074293, blue: 0.3516095239, alpha: 1)
+        
+   
         assignbackground()
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
              img.addGestureRecognizer(tapRecognizer)
@@ -146,11 +149,11 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         view.addSubview(Button)
 
         NSLayoutConstraint.activate([
-            Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -24),
+            Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 21),
 //            Button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
 //            Button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
 //            Button.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 130),
-            Button.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -185),
+            Button.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -230),
             Button.heightAnchor.constraint(equalToConstant: 60),
             Button.widthAnchor.constraint(equalToConstant: 60),
         ])
