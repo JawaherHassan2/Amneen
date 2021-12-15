@@ -38,6 +38,7 @@ class ReportRenters: UIViewController {
         hotelCV.delegate = self
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
+        hotelCV.backgroundColor = #colorLiteral(red: 0.8992940602, green: 0.8936767668, blue: 0.8912667796, alpha: 1)
         
         ReportRenterService.shared.listenToReport { newRenter in
             self.reports = newRenter

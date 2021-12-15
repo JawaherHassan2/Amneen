@@ -26,7 +26,7 @@ class AnimationLaunch: UIViewController {
  }
  private func animate() {
   UIView.animate(withDuration: 1) {
-   let size = self.view.frame.size.width * 3
+   let size = self.view.frame.size.width * 2
    let diffX = size - self.view.frame.size.width
    let diffY = self.view.frame.size.height - size
    self.imageView.frame = CGRect(

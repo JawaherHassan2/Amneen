@@ -17,18 +17,9 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     enum MenuOPtions: String, CaseIterable {
         case home
-//        case profile
         case info
         case reportRenter
-//        case appRating
-//        case newRenter
-//        case leaving
-//        case banned
         case shareApp
-//        case settings
-//        case centers
-//        case dark
-//        case language
         case about
         case settt
         
@@ -37,26 +28,17 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
                     switch self {
                     case .home:
                         return NSLocalizedString("47", comment: "الصفحة الرئيسية")
-//                    case .profile:
-//                        return NSLocalizedString("68", comment: "الملف الشخصي ")
+                        
                     case .info:
                         return NSLocalizedString("48", comment: "البلاغات")
                     case .reportRenter:
                         return NSLocalizedString("بلاغات الاشتباه", comment: "")
-//                    case .appRating:
-//                        return NSLocalizedString("49", comment: "الفنادق")
-//                    case .newRenter:
-//                        return  NSLocalizedString("70", comment: "مستأجر جديد ")
-//                    case .leaving:
-//                        return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
-//                    case .banned:
-//                        return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
                     case .shareApp:
                         return NSLocalizedString("50", comment: "القائمه السوداء")
 //                    case .settings:
 //                        return NSLocalizedString("51", comment: "ارقام الطوارئ")
 //                    case .centers:
-                        return NSLocalizedString("52", comment: "مواقع المراكز")
+//                        return NSLocalizedString("52", comment: "مواقع المراكز")
 //                    case .dark:
 //                        return NSLocalizedString("53", comment:"الوضع الليلي")
 //                    case .language:
@@ -88,14 +70,6 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
 //                return "person"
             case .shareApp:
                 return "person.fill.xmark"
-//            case .settings:
-//                return "phone"
-//            case .centers:
-//                return "location.fill"
-//            case .dark:
-//                return "moon"
-//            case .language:
-//                return "character"
             case .about:
                 return "lanyardcard"
             case .settt:
@@ -105,7 +79,7 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     var switchController: UISwitch!
-    
+ 
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -161,12 +135,12 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
 
-           if cell.isSelected == true {
-               cell.contentView.backgroundColor = .yellow
-               
-           } else if cell.isSelected == false{
+//           if cell.isSelected == true {
+//               cell.contentView.backgroundColor = .yellow
+//
+//           } else if cell.isSelected == false{
                cell.contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-           }
+//           }
     
 //        cell.selectionStyle = .blue
         return cell
@@ -189,8 +163,9 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         let item = MenuOPtions.allCases[indexPath.row]
         delegate?.didSelect(menuItem: item)
         
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-              selectedCell.contentView.backgroundColor = .gray
+//        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+//              selectedCell.contentView.backgroundColor = .gray
+        
 
     }
    

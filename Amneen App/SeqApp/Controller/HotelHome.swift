@@ -10,7 +10,7 @@
 
 import Foundation
 import UIKit
-
+import ShimmerSwift
 protocol HomeHViewControllerDelegate: AnyObject {
     
     func didTapMenuButton()
@@ -20,6 +20,17 @@ class HotelHome: UIViewController {
    
     weak var delegate: HomeHViewControllerDelegate?
 
+    let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 450, height: 450))
+    let Image1: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+//        imageView.layer.cornerRadius =
+//        imageView.frame =  shimmerView2.bounds
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "g1")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     public let label33: UILabel = {
         let label = UILabel()
@@ -44,27 +55,24 @@ class HotelHome: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        view.backgroundColor = .white
 
-//        let switchDemo = UISwitch(frame:CGRect(x: 80, y: 400, width: 100, height: 100))
-//        switchDemo.addTarget(self, action: #selector(self.switchStateDidChange(_:)), for: .valueChanged)
-//        switchDemo.setOn(true, animated: false)
-//        self.view.addSubview(switchDemo)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.04864486824, green: 0.3906074293, blue: 0.3516095239, alpha: 1)
+        
+        
+        shimmerView.isShimmering = true
+        self.view.addSubview(shimmerView)
+        shimmerView.contentView = Image1
 //
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
        title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
         
         
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//        view.addSubview(label33)
-//        view.addSubview(Image)
-//        NSLayoutConstraint.activate([
-//            Image.topAnchor.constraint(equalTo: view.topAnchor),
-//            Image.leftAnchor.constraint(equalTo: view.leftAnchor),
-//            Image.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            Image.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//
-//        ])
+        shimmerView.translatesAutoresizingMaskIntoConstraints = false
+        shimmerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 250).isActive = true
+        shimmerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        shimmerView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        shimmerView.widthAnchor.constraint(equalToConstant: 500).isActive = true
     }
     @objc func goToCitiesVC() {
         var newVC = Cities()

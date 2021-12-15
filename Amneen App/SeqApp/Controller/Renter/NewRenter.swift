@@ -25,12 +25,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = NSLocalizedString("38", comment:"ادخل اسم المستأجر")
-//        tf.attributedPlaceholder = NSAttributedString(
-//            string: "Placeholder Text",
-//            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        )
         tf.backgroundColor = .white
-        
         tf.textAlignment = .right
         tf.delegate = self
         tf.layer.cornerRadius = 20

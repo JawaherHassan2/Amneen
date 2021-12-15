@@ -18,17 +18,27 @@ class TabVC: UITabBarController , UITabBarControllerDelegate{
 
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            let item1 = Cities()
-            let item2 = List()
-            let item3 = SOSNumbers()
-            let icon1 = UITabBarItem(title: "الفنادق", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house"))
+            let item1 = Profile()
+            let item2 = SOSNumbers()
+            let item3 = CentersLocations()
+            let item4 = AppUInfo()
+            let item5 = SettingViewController()
+//            let item6 = SOSNumbers()
+            let icon1 = UITabBarItem(title: NSLocalizedString("68", comment: "الملف الشخصي "), image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
             
-            let icon2 = UITabBarItem(title: "القائمه السوداء", image: UIImage(systemName: "person.fill.xmark"), selectedImage: UIImage(systemName: "person.fill.xmark"))
-            let icon3 = UITabBarItem(title: "ارقام تهمك", image: UIImage(systemName: "phone"), selectedImage: UIImage(systemName: "phone"))
+            let icon2 = UITabBarItem(title: NSLocalizedString("90", comment:"مواقع الطوارئ"), image: UIImage(systemName: "phone"), selectedImage: UIImage(systemName: "phone.fill"))
+            let icon3 = UITabBarItem(title: NSLocalizedString("91", comment:"ارقام الطوارئ"), image: UIImage(systemName: "location"), selectedImage: UIImage(systemName: "location.fill"))
+            let icon4 = UITabBarItem(title: NSLocalizedString("55", comment: "عن التطبيق"), image: UIImage(systemName: "info.circle"), selectedImage: UIImage(systemName: "info.circle.fill"))
+            let icon5 = UITabBarItem(title: NSLocalizedString("56", comment: "الإعدادات"), image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
+     
+         
             item1.tabBarItem = icon1
             item2.tabBarItem = icon2
             item3.tabBarItem = icon3
-            let controllers = [item1, item2, item3]  //array of the root view controllers displayed by the tab bar interface
+            item4.tabBarItem = icon4
+            item5.tabBarItem = icon5
+            
+            let controllers = [item1, item2, item3,  item4, item5]  //array of the root view controllers displayed by the tab bar interface
             self.viewControllers = controllers
          
             

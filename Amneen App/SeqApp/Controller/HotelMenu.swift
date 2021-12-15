@@ -13,7 +13,7 @@ protocol MenuHViewControllerDelegate: AnyObject{
     func didSelect(menuItem: HotelMenu.MenuOPtions)
 }
 class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     weak var delegate: MenuHViewControllerDelegate?
     
     enum MenuOPtions: String, CaseIterable {
@@ -23,60 +23,48 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case newRenter
         case leaving
         case banned
-//        case dark
-//        case language
         case about
         case settt
-
-   var localized: String {
-                    switch self {
-                    case .home:
-                        return NSLocalizedString("47", comment: "الصفحة الرئيسية")
-                    case .profile:
-                        return NSLocalizedString("68", comment: "الملف الشخصي ")
-                    case .appRating:
-                        return NSLocalizedString("49", comment: "الفنادق")
-                    case .newRenter:
-                        return  NSLocalizedString("70", comment: "مستأجر جديد ")
-                    case .leaving:
-                        return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
-                    case .banned:
-                        return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
-//                    case .dark:
-//                        return NSLocalizedString("53", comment:"الوضع الليلي")
-//                    case .language:
-//                        return NSLocalizedString("54", comment: "تبديل اللغه")
-                    case .about:
-                        return NSLocalizedString("55", comment: "عن التطبيق")
-                    case .settt:
-                        return NSLocalizedString("56", comment: "الإعدادات")
-                    }
-                }
-//        person
-//        person.fill.badge.plus
-//        person.2.crop.square.stack.fill
-//        person.fill.xmark
-//
+        
+        var localized: String {
+            switch self {
+            case .home:
+                return NSLocalizedString("47", comment: "الصفحة الرئيسية")
+            case .profile:
+                return NSLocalizedString("68", comment: "الملف الشخصي ")
+            case .appRating:
+                return NSLocalizedString("49", comment: "الفنادق")
+            case .newRenter:
+                return  NSLocalizedString("70", comment: "مستأجر جديد ")
+            case .leaving:
+                return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
+            case .banned:
+                return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
+                
+            case .about:
+                return NSLocalizedString("55", comment: "عن التطبيق")
+            case .settt:
+                return NSLocalizedString("56", comment: "الإعدادات")
+            }
+        }
+        
         var imageName: String {
             switch self {
             case .home:
                 return "house"
             case .profile:
                 return "person"
-
+                
             case .appRating:
                 return "house.circle.fill"
             case .newRenter:
                 return "person.fill.badge.plus"
             case .leaving:
-               
+                
                 return "figure.walk"
             case .banned:
                 return "person.fill.xmark"
-//            case .dark:
-//                return "moon"
-//            case .language:
-//                return "character"
+                
             case .about:
                 return "lanyardcard"
             case .settt:
@@ -96,7 +84,7 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let Image: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius =
+        //        imageView.layer.cornerRadius =
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "o1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,15 +94,10 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//
-//        let switchDemo = UISwitch(frame:CGRect(x: 60, y: 500, width: 100, height: 100))
-//        switchDemo.addTarget(self, action: #selector(self.switchStateDidChange(_:)), for: .valueChanged)
-//        switchDemo.setOn(true, animated: false)
-//        self.view.addSubview(switchDemo)
         
         view.addSubview(Image)
         view.addSubview(tableView)
-       
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -139,42 +122,18 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.imageView?.image = UIImage(systemName: MenuOPtions.allCases[indexPath.row].imageName)
         cell.imageView?.tintColor = #colorLiteral(red: 0.37440442, green: 0.5638569733, blue: 0.6446504804, alpha: 1)
         cell.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
-        cell.contentView.backgroundColor = #colorLiteral(red: 0.9762478471, green: 0.9803959727, blue: 0.9844033122, alpha: 1)
         
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-
-           if cell.isSelected == true {
-               cell.contentView.backgroundColor = .yellow
-               
-           } else if cell.isSelected == false{
-               cell.contentView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-           }
-    
-        cell.selectionStyle = .blue
         return cell
     }
     
-   
-
-//     func setSelected(_ selected: Bool, animated: Bool) {
-//        setSelected(selected, animated: animated)
-//
-//        if selected {
-//            // visual updates (with a small animation)
-//        } else {
-//            // visual updates
-//        }
-//    }
-   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = MenuOPtions.allCases[indexPath.row]
         delegate?.didSelect(menuItem: item)
-        
-        let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-              selectedCell.contentView.backgroundColor = .gray
 
     }
-   
+    
 }
 

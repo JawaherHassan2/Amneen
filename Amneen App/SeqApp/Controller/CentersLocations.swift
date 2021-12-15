@@ -21,6 +21,7 @@ import UIKit
      override func viewDidLoad() {
          super.viewDidLoad()
 
+         self.tabBarController?.title = NSLocalizedString("90", comment:"مواقع الطوارئ")
          mapV.delegate = self
          self.placePins()
          self.configureMap()

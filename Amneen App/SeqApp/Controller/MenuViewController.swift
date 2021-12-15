@@ -11,7 +11,7 @@ protocol MenuViewControllerDelegate: AnyObject{
     func didSelect(menuItem: MenuViewController.MenuOPtions)
 }
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     weak var delegate: MenuViewControllerDelegate?
     
     enum MenuOPtions: String, CaseIterable {
@@ -30,42 +30,42 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case language
         case about
         case settt
-
-   var localized: String {
-                    switch self {
-                    case .home:
-                        return NSLocalizedString("47", comment: "الصفحة الرئيسية")
-                    case .profile:
-                        return NSLocalizedString("68", comment: "الملف الشخصي ")
-                    case .info:
-                        return NSLocalizedString("48", comment: "البلاغات")
-                    case .reportRenter:
-                        return NSLocalizedString("بلاغات الاشتباه", comment: "")
-                    case .appRating:
-                        return NSLocalizedString("49", comment: "الفنادق")
-                    case .newRenter:
-                        return  NSLocalizedString("70", comment: "مستأجر جديد ")
-                    case .leaving:
-                        return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
-                    case .banned:
-                        return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
-                    case .shareApp:
-                        return NSLocalizedString("50", comment: "القائمه السوداء")
-                    case .settings:
-                        return NSLocalizedString("51", comment: "ارقام الطوارئ")
-                    case .centers:
-                        return NSLocalizedString("52", comment: "مواقع المراكز")
-                    case .dark:
-                        return NSLocalizedString("53", comment:"الوضع الليلي")
-                    case .language:
-                        return NSLocalizedString("54", comment: "تبديل اللغه")
-                    case .about:
-                        return NSLocalizedString("55", comment: "عن التطبيق")
-                    case .settt:
-                        return NSLocalizedString("56", comment: "الإعدادات")
-                    }
-                }
-//
+        
+        var localized: String {
+            switch self {
+            case .home:
+                return NSLocalizedString("47", comment: "الصفحة الرئيسية")
+            case .profile:
+                return NSLocalizedString("68", comment: "الملف الشخصي ")
+            case .info:
+                return NSLocalizedString("48", comment: "البلاغات")
+            case .reportRenter:
+                return NSLocalizedString("بلاغات الاشتباه", comment: "")
+            case .appRating:
+                return NSLocalizedString("49", comment: "الفنادق")
+            case .newRenter:
+                return  NSLocalizedString("70", comment: "مستأجر جديد ")
+            case .leaving:
+                return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
+            case .banned:
+                return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
+            case .shareApp:
+                return NSLocalizedString("50", comment: "القائمه السوداء")
+            case .settings:
+                return NSLocalizedString("51", comment: "ارقام الطوارئ")
+            case .centers:
+                return NSLocalizedString("52", comment: "مواقع المراكز")
+            case .dark:
+                return NSLocalizedString("53", comment:"الوضع الليلي")
+            case .language:
+                return NSLocalizedString("54", comment: "تبديل اللغه")
+            case .about:
+                return NSLocalizedString("55", comment: "عن التطبيق")
+            case .settt:
+                return NSLocalizedString("56", comment: "الإعدادات")
+            }
+        }
+        //
         var imageName: String {
             switch self {
             case .home:
@@ -113,16 +113,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//
-//        let switchDemo = UISwitch(frame:CGRect(x: 60, y: 500, width: 100, height: 100))
-//        switchDemo.addTarget(self, action: #selector(self.switchStateDidChange(_:)), for: .valueChanged)
-//        switchDemo.setOn(true, animated: false)
-//        self.view.addSubview(switchDemo)
-        
-        
+
         view.addSubview(tableView)
-       
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -149,39 +141,37 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.contentView.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         
         
-
-           if cell.isSelected == true {
-               cell.contentView.backgroundColor = .yellow
-               
-           } else if cell.isSelected == false{
-               cell.contentView.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
-           }
-    
+        
+        if cell.isSelected == true {
+            cell.contentView.backgroundColor = .yellow
+        } else if cell.isSelected == false{
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
+        }
         cell.selectionStyle = .blue
         return cell
     }
     
-   
-
-     func setSelected(_ selected: Bool, animated: Bool) {
+    
+    
+    func setSelected(_ selected: Bool, animated: Bool) {
         setSelected(selected, animated: animated)
-
+        
         if selected {
             // visual updates (with a small animation)
         } else {
             // visual updates
         }
     }
-   
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = MenuOPtions.allCases[indexPath.row]
         delegate?.didSelect(menuItem: item)
         
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-              selectedCell.contentView.backgroundColor = .gray
-
+        selectedCell.contentView.backgroundColor = .gray
+        
     }
-   
+    
 }
 

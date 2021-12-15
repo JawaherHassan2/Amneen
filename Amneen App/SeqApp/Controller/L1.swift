@@ -144,24 +144,16 @@ func assignbackground(){
                 refreshAlert.view.tintColor = UIColor.systemGreen
                   
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    
                     let vc = UINavigationController(rootViewController: SecurityContainer())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
                    }))
-                        
-//                refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//                            print("Handle Cancel Logic here")
-//                            refreshAlert .dismiss(animated: true, completion: nil)
-//                   }))
-
+            
                     self.present(refreshAlert, animated: true, completion: nil)
                 
-//            let vc = UINavigationController(rootViewController: SecurityContainer())
-//            vc.modalTransitionStyle = .crossDissolve
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
+
             } else if email == "alsrawat@hotel.com" {
                 let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
             
@@ -187,7 +179,7 @@ func assignbackground(){
                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                    
                   
-                   let vc = UINavigationController(rootViewController: HotelContainer())
+                   let vc = UINavigationController(rootViewController: TabVC())
                    vc.modalTransitionStyle = .crossDissolve
                    vc.modalPresentationStyle = .fullScreen
                    self.present(vc, animated: true, completion: nil)

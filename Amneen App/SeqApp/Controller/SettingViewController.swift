@@ -58,6 +58,18 @@ class SettingViewController: UIViewController {
           view.clipsToBounds = true
           return view
       }()
+    
+     @objc func alertt() {
+         let refreshAlert = UIAlertController(title: " لتغيير اللغه", message: "سيتم إغلاق التطبيق لإكمال تبديل اللغه ", preferredStyle: UIAlertController.Style.alert)
+         refreshAlert.view.tintColor = #colorLiteral(red: 0.4155413063, green: 0.5, blue: 0.4141010346, alpha: 1)
+      
+    refreshAlert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { (action: UIAlertAction!) in
+        
+        self.changrLa()
+       }))
+
+        self.present(refreshAlert, animated: true, completion: nil)
+    }
    @objc func changrLa() {
         let currentLa = Locale.current.languageCode
         let newLan = currentLa == "en" ? "ar" : "en"
@@ -84,10 +96,10 @@ class SettingViewController: UIViewController {
         assignbackground()
 title = NSLocalizedString("72", comment:"الإعدادات ")
 //        view.backgroundColor = UIColor(named: "Color1")
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.04864486824, green: 0.3906074293, blue: 0.3516095239, alpha: 1)
         
         
-        
-        
+        self.tabBarController?.title = NSLocalizedString("56", comment: "الإعدادات")
         view.addSubview(sButton)
         
         view.addSubview(label)

@@ -67,7 +67,7 @@ extension SecurityContainer: HomeSViewControllerDelegate{
         switch menuState {
             
         case .closed:
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromRight) {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .showHideTransitionViews ) {
                 self.navVC?.view.frame.origin.x =  self.homeVC.view.frame.size.width-50
             } completion: { [weak self] done in
                 if done {
@@ -79,7 +79,7 @@ extension SecurityContainer: HomeSViewControllerDelegate{
             
         case .opend:
             
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromRight) {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .showHideTransitionViews) {
                 
                 self.navVC?.view.frame.origin.x =  0
                 
@@ -109,32 +109,12 @@ extension SecurityContainer: MenuSViewControllerDelegate{
         switch menuItem {
         case .home:
             self.resetToHom()
-//        case .profile:
-//            self.addProfil()
         case .info:
             self.addInf()
         case .reportRenter:
             self.addreport()
-//        case .appRating:
-//            self.addcit()
-//        case .newRenter:
-//            self.addrente()
-            
-//        case .leaving:
-//            self.addlea()
-//        case .banned:
-//            self.addbanne()
-            
         case .shareApp:
             self.addlis()
-//        case .settings:
-//            self.addSe()
-//        case .centers:
-//            self.addCe()
-//        case .dark:
-//            self.addCe()
-//        case .language:
-//            self.changrLa()
         case .about:
             self.addi()
         case .settt:

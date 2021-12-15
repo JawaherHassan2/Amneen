@@ -48,6 +48,7 @@
 		FA96BC81274CF97700CD71A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA96BC7F274CF97700CD71A6 /* LaunchScreen.storyboard */; };
 		FA96BC89274CFC0200CD71A6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96BC88274CFC0200CD71A6 /* Model.swift */; };
 		FA9CF6212764CEDE002D6AD4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CF6202764CEDE002D6AD4 /* Profile.swift */; };
+		FAA2C15D2769C7D600B38CC8 /* AppUInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2C15C2769C7D600B38CC8 /* AppUInfo.swift */; };
 		FAB95B91274D5F36001171C0 /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB95B90274D5F36001171C0 /* Hotels.swift */; };
 		FACC216B274E80B7009A225B /* Renter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC216A274E80B7009A225B /* Renter.swift */; };
 		FAEAEB85274EBB060091BF4C /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAEB84274EBB060091BF4C /* ListService.swift */; };
@@ -103,6 +104,7 @@
 		FA96BC82274CF97700CD71A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA96BC88274CFC0200CD71A6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FA9CF6202764CEDE002D6AD4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		FAA2C15C2769C7D600B38CC8 /* AppUInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUInfo.swift; sourceTree = "<group>"; };
 		FAB95B90274D5F36001171C0 /* Hotels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
 		FACC216A274E80B7009A225B /* Renter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renter.swift; sourceTree = "<group>"; };
 		FAEAEB84274EBB060091BF4C /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				FA5DB7552768C15700616630 /* AppInfo.swift */,
 				FA5DB7572768DB0E00616630 /* AppSInfo.swift */,
+				FAA2C15C2769C7D600B38CC8 /* AppUInfo.swift */,
 				FA73B939274EB898002981F6 /* GoogleService-Info.plist */,
 				FA5536D82760A73400315C36 /* Localizable.strings */,
 				FA96BC73274CF97300CD71A6 /* SeqApp */,
@@ -411,6 +414,7 @@
 				FA4CB53F276494AC00D68EF0 /* LeavingRenters.swift in Sources */,
 				FA0B3AF827511E28008A0C9A /* RenterInfo.swift in Sources */,
 				FA5AD0DC275CAD2E007AE58A /* CentersLocations.swift in Sources */,
+				FAA2C15D2769C7D600B38CC8 /* AppUInfo.swift in Sources */,
 				FA2219B9274E16B2007B9C8A /* TabVC.swift in Sources */,
 				FA54032A2765E7FB009C95C1 /* SecurityMenu.swift in Sources */,
 				FA4CB5412764A58300D68EF0 /* LeavingService.swift in Sources */,

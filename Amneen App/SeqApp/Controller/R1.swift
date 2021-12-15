@@ -87,7 +87,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         super.viewDidLoad()
         assignbackground()
         
-        //      view.backgroundColor = .red
+       
         view.addSubview(titleLbl)
         view.addSubview(singInBtn)
         
@@ -162,7 +162,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: true, completion: nil)
                 let refreshAlert = UIAlertController(title: "أهلا بك 🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
-                refreshAlert.view.tintColor = UIColor.systemGreen
+                refreshAlert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
                   
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: SecurityContainer())
@@ -181,7 +181,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
 //                self.present(vc, animated: true, completion: nil)
                 
                 let Alert = UIAlertController(title: "أهلا بك \(firstNam) \(lastNam) 🤝", message:  "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
-                Alert.view.tintColor = UIColor.systemGreen
+                Alert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                    
                   
@@ -195,7 +195,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
                 
             } else {
                 let Alert = UIAlertController(title: "أهلا بك \(firstNam) \(lastNam) 🤝", message: "في تطبيق آمنين   ", preferredStyle: UIAlertController.Style.alert)
-                Alert.view.tintColor = UIColor.systemGreen
+                Alert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                    
                   

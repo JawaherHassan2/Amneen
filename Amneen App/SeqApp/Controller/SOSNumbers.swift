@@ -25,6 +25,8 @@ class SOSNumbers: UIViewController, UICollectionViewDelegate  , UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.title = NSLocalizedString("90", comment:"ارقام الطوارئ")
+        
         title =  NSLocalizedString("32", comment:"ارقام تهمك")
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTab))
 //        navigationController?.title = "lllist"

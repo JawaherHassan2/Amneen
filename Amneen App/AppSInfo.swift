@@ -42,7 +42,7 @@ class AppSInfo: UIViewController {
           label.textColor = .black
         label.font = UIFont(name: "Avenir-Light", size: 25)
         label.numberOfLines = 10
-        label.text = "اهلا بك في تطبيق امنين الامني الخاص بالفنادق ، "
+        label.text = " التطبيق الامني الخاص بالجهه الامنيه يساعد على تعزيز الامن وتسهيل تتبع المطلوبين امنياً للجهه الامنيه حيث يتيح تلقي تنبيهات تتبع المطلوبين امنياً المُرسله من الفنادق وتلقي بلاغات الاشتباه وعرض قائمه بالمطلوبين امنياً."
         label.preferredMaxLayoutWidth = 700
         label.sizeToFit()
           return label
