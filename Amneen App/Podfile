@@ -10,7 +10,7 @@ target 'SeqApp' do
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
    pod 'ShimmerSwift'
-
+   pod ‘IQKeyboardManagerSwift’
 
 
 

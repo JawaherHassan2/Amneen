@@ -8,6 +8,9 @@
 import UIKit
 import Firebase
 //import NaturalLanguage
+import IQKeyboardManagerSwift
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         FirebaseApp.configure()
         return true
+        IQKeyboardManager.shared.enable = true
+            IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
 
     // MARK: UISceneSession Lifecycle
