@@ -9,16 +9,16 @@
 import UIKit
 var leaving: Array<LeavingRenter> = []
 class LeavingRenters: UIViewController {
- 
+    
     var leaving: Array<LeavingRenter> = []
-   
+    
     private var leavCV: UICollectionView?
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.contents =  #imageLiteral(resourceName: "z1").cgImage
         
-          
+        
         self.title = NSLocalizedString("69", comment:"المستأجرين المغادرين ")
         
         
@@ -30,7 +30,7 @@ class LeavingRenters: UIViewController {
         layout.itemSize = CGSize(width: 340,
                                  height: 150)
         leavCV = UICollectionView(frame: .zero,
-                                   collectionViewLayout: layout)
+                                  collectionViewLayout: layout)
         
         guard let leavCV = leavCV else {
             return
@@ -54,47 +54,40 @@ var selectedIndexx = -1
 extension LeavingRenters: UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: 370, height: 200)
+        return CGSize(width: 370, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return leaving.count
     }
     
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellL
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellL
         
         let renter = leaving[indexPath.row]
         cell.label2.text = "تم مغادره المستأجر    \(renter.name)"
         cell.label3.text = " الذي يحمل رقم الهويه \(renter.id)"
         cell.label4.text = "  حيث استأجر في:\(renter.getNiceDate())     "
         cell.label5.text = "وغادر في:   \(renter.getNiceDate1()  )"
-
+        
         return cell
     }
     
-   
-
-
-
-
-
-   
 }
 
 
 class CellL: UICollectionViewCell {
     
     static let identifire = "Cell"
-
- public let label2: UILabel = {
-      let label = UILabel()
-      label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-     label.textColor = .black
-     label.textAlignment = .right
-     label.font = UIFont(name: "Avenir-Light", size: 19)
-      return label
+    
+    public let label2: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 19, weight: .regular)
+        label.textColor = .black
+        label.textAlignment = .right
+        label.font = UIFont(name: "Avenir-Light", size: 19)
+        return label
     }()
     
     public let label3: UILabel = {
@@ -103,36 +96,36 @@ class CellL: UICollectionViewCell {
         label.textColor = .black
         label.textAlignment = .right
         label.font = UIFont(name: "Avenir-Light", size: 18)
-         return label
-       }()
+        return label
+    }()
     public let label4: UILabel = {
-         let label = UILabel()
-      
-         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-         label.textColor = .black
+        let label = UILabel()
+        
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.textColor = .black
         label.font = UIFont(name: "Avenir-Light", size: 17)
         label.textAlignment = .right
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.frame.size.width = 250
         label.sizeToFit()
-         return label
-       }()
+        return label
+    }()
     
     public let label5: UILabel = {
-         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-         label.textColor = .black
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.textColor = .black
         label.font = UIFont(name: "Avenir-Light", size: 17)
         label.textAlignment = .right
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.frame.size.width = 250
         label.sizeToFit()
-         return label
-       }()
- 
- 
+        return label
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -144,7 +137,7 @@ class CellL: UICollectionViewCell {
         contentView.addSubview(label4)
         contentView.addSubview(label5)
         contentView.backgroundColor = #colorLiteral(red: 0.6803148389, green: 0.7489489913, blue: 0.7700426579, alpha: 1)
-       
+        
         contentView.layer.borderWidth = 3
         contentView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
@@ -155,13 +148,13 @@ class CellL: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
-//left right
+        
+        //left right
         label2.frame = CGRect(x: 33,
                               y: -35,
                               width: 300,
                               height: contentView.frame.size.height-30)
-    
+        
         label3.frame = CGRect(x: 40,
                               y: 17,
                               width: 300,
@@ -176,10 +169,10 @@ class CellL: UICollectionViewCell {
                               width: 500,
                               height: contentView.frame.size.height-30)
     }
-
+    
 }
 
 
 
-    
+
 

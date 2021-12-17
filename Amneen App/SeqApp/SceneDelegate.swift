@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
         let window = UIWindow(windowScene: scene)
-           window.rootViewController = L1()
+           window.rootViewController = LogIn()
            window.makeKeyAndVisible()
            self.window = window
 //        guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
 //            ViewController = HotelContainer()
         } else {
-            ViewController = L1()
+            ViewController = LogIn()
             
         }
     }

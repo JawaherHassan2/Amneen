@@ -38,9 +38,9 @@ class V1 : UIView {
     }(UITextField())
     
     
-   
     
-     
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,9 +72,9 @@ class V1 : UIView {
             
         ])
         
-}
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-}
-
+    }
+    
 }

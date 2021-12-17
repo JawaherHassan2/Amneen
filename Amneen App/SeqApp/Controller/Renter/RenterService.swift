@@ -10,9 +10,9 @@ import FirebaseFirestore
 
 class RenterService {
     static let shared = RenterService()
-
+    
     let hostelsCollection = Firestore.firestore().collection("Hostels")
-
+    
     func addH(hostels: Renter) {
         hostelsCollection.document(hostels.id).setData([
             "name": hostels.name,
@@ -23,16 +23,16 @@ class RenterService {
     func deletRe(hostels: Renter) {
         hostelsCollection.document(hostels.id).delete()
     }
-
+    
     
     func listenToRenters(completion: @escaping (([Renter]) -> Void)) {
-
+        
         hostelsCollection.addSnapshotListener { snapshot, error in
             if error != nil {
                 return
             }
             guard let documents = snapshot?.documents else { return }
-
+            
             var hostels: Array<Renter> = []
             for document in documents {
                 let data = document.data()
@@ -47,7 +47,7 @@ class RenterService {
             completion(hostels)
         }
     }
-
+    
 }
 
 

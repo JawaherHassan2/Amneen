@@ -7,10 +7,10 @@ import UIKit
 import FirebaseFirestore
 
 class NewRenter: UIViewController, UITextFieldDelegate {
-//    var criminals: Array<TPeople> = []
+    
     var criminals: Array<People> = []
     var a: TPeople?
-
+    
     lazy var datePicker: UIDatePicker = {
         let dp = UIDatePicker()
         dp.translatesAutoresizingMaskIntoConstraints = false
@@ -58,36 +58,32 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let label = UILabel()
         //     label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.font = UIFont(name: "Avenir-Light", size: 20)
-//        label.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        //        label.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         label.textColor = UIColor(named: "Color2")
         
         label.text = NSLocalizedString("41", comment:"اسم المستأجر:")
-     
+        
         label.textAlignment = .right
         
         return label
     }()
     public let LabelID: UILabel = {
         let label = UILabel()
-        //     label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.font = UIFont(name: "Avenir-Light", size: 20)
-//        label.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         label.textColor = UIColor(named: "Color2")
         label.text = NSLocalizedString("42", comment:"رقم الهويه الوطنيه:")
-     
         label.textAlignment = .right
-        
         return label
     }()
-
-
+    
+    
     
     @objc  func callNumber() {
         
         if let url = URL(string: "tel://\(999)") {
-             UIApplication.shared.openURL(url)
-         }
-
+            UIApplication.shared.openURL(url)
+        }
+        
     }
     @objc  func ss() {
         let name = studentNameTF.text ?? ""
@@ -95,9 +91,9 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let date = datePicker.date
         
         
-    ReportService.shared.addReport(
+        ReportService.shared.addReport(
             hostels: Report(name: name, id: id,timestamp: Timestamp(date: date))
-          )
+        )
     }
     
     
@@ -107,35 +103,35 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         let date = datePicker.date
         
         
-      
+        
         let isCriminal = list.contains { p in
             p.name == name || p.id == id
         }
         if isCriminal  {
-                    let alert = UIAlertController(title: NSLocalizedString("43", comment:"تحذير⚠️ "), message: NSLocalizedString("44", comment:"مطلوب أمنيا! يرجى الحذر وابلاغ الجهات الامنيه"), preferredStyle: .alert )
-           
-
+            let alert = UIAlertController(title: NSLocalizedString("43", comment:"تحذير⚠️ "), message: NSLocalizedString("44", comment:"مطلوب أمنيا! يرجى الحذر وابلاغ الجهات الامنيه"), preferredStyle: .alert )
+            
+            
             let ok = UIAlertAction(title: NSLocalizedString("45", comment:"حسنا"), style: .default) { (alertAction) in }
             alert.addAction(ok)
-           
+            
             
             let report = UIAlertAction(title: NSLocalizedString("46", comment: "إبلاغ"), style: .default) { (alertAction) in
-                    self.ss()
+                self.ss()
                 self.callNumber()
-                    }
+            }
             alert.addAction(report)
             self.present(alert, animated:true, completion: nil)
             return
         }
-       
+        
         RenterService.shared.addH(
-                hostels: Renter(name: name, id: id,timestamp: Timestamp(date: date))
-              )
-       
-
-//        dismiss(animated: true, completion: nil)
+            hostels: Renter(name: name, id: id,timestamp: Timestamp(date: date))
+        )
+        
+        
+        //        dismiss(animated: true, completion: nil)
     }
-
+    
     
     @objc func dateChanged() {
         
@@ -151,27 +147,20 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         
         view.addSubview(LabelN)
         view.addSubview(LabelID)
-//        view.backgroundColor = UIColor(red: (206/255), green: (222/255), blue: (211/255), alpha: 1)
         view.backgroundColor = UIColor(named: "Color")
         view.addSubview(addButton)
         view.addSubview(studentNameTF)
         
-//        NSLayoutConstraint.activate([
-//            LabelN.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            LabelN.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
-//            LabelN.heightAnchor.constraint(equalToConstant: 48),
-//            LabelN.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
-//        ])
         
         LabelN.frame = CGRect(x: 290,
-                             y: 70,
-                             width: 110,
-                             height:130)
+                              y: 70,
+                              width: 110,
+                              height:130)
         
         LabelID.frame = CGRect(x: 260,
-                             y: 150,
-                             width: 140,
-                             height:130)
+                               y: 150,
+                               width: 140,
+                               height:130)
         NSLayoutConstraint.activate([
             studentNameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
@@ -179,12 +168,6 @@ class NewRenter: UIViewController, UITextFieldDelegate {
             studentNameTF.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
         ])
         
-//        NSLayoutConstraint.activate([
-//            studentNameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            studentNameTF.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-//            studentNameTF.heightAnchor.constraint(equalToConstant: 48),
-//            studentNameTF.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -48)
-//        ])
         view.addSubview(studentNameTF2)
         NSLayoutConstraint.activate([
             studentNameTF2.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
@@ -205,13 +188,13 @@ class NewRenter: UIViewController, UITextFieldDelegate {
             datePicker.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             datePicker.topAnchor.constraint(equalTo: view.topAnchor, constant: 360),
             
- 
+            
         ])
-
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
- 
+        
         dismiss(animated: true, completion: nil)
         return true
     }

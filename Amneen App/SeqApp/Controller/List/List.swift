@@ -51,17 +51,10 @@ class List: UIViewController {
             criminalsTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-//        view.addSubview(addButton)
-//        NSLayoutConstraint.activate([
-//            addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
-//            addButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
-//            addButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
-//            addButton.widthAnchor.constraint(equalToConstant: 500),
-//            addButton.heightAnchor.constraint(equalToConstant: 60),
-//        ])
+    
     }
     
-   
+    
     
     @objc func report() {
         
@@ -84,7 +77,6 @@ extension List: UITableViewDataSource, UITableViewDelegate {
         //        let criminal = criminals[indexPath.row]
         let criminal = list[indexPath.row]
         
-        
         cell.label2.text = " الاسم:  \(criminal.name)"
         cell.label3.text = " الهويه الوطنيه:  \(criminal.id) "
         cell.label4.text = " التهمه:  \(criminal.crime) "
@@ -101,7 +93,7 @@ extension List: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-   
+    
 }
 
 class CriminalCell: UITableViewCell {
@@ -110,12 +102,9 @@ class CriminalCell: UITableViewCell {
     
     public let label2: UILabel = {
         let label = UILabel()
-        //     label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.font = UIFont(name: "Avenir-Light", size: 21)
-//        label.textColor = .black
         label.textColor = UIColor(named: "Color11")
         label.textAlignment = .right
-        
         return label
     }()
     
@@ -123,7 +112,6 @@ class CriminalCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .right
         label.font = UIFont(name: "Avenir-Light", size: 18)
-//        label.textColor = #colorLiteral(red: 0.4788181631, green: 0.4788181631, blue: 0.4788181631, alpha: 1)
         label.textColor = UIColor(named: "Color1")
         return label
     }()
@@ -131,7 +119,6 @@ class CriminalCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .right
         label.font = UIFont(name: "Avenir-Light", size: 18)
-//        label.textColor = #colorLiteral(red: 0.4788181631, green: 0.4788181631, blue: 0.4788181631, alpha: 1)
         label.textColor = UIColor(named: "Color1")
         return label
     }()
@@ -154,7 +141,7 @@ class CriminalCell: UITableViewCell {
         contentView.addSubview(label3)
         contentView.addSubview(label4)
         contentView.addSubview(Image)
-//        contentView.backgroundColor = #colorLiteral(red: 0.8914818384, green: 0.8685067299, blue: 0.8232201155, alpha: 1)
+        //        contentView.backgroundColor = #colorLiteral(red: 0.8914818384, green: 0.8685067299, blue: 0.8232201155, alpha: 1)
         contentView.backgroundColor = UIColor(named: "Color")
     }
     

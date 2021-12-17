@@ -22,7 +22,7 @@ class CriminalService {
             "id": criminals.id
         ])
     }
- 
+    
     
     func listenToNotes(completion: @escaping (([TPeople]) -> Void)) {
         

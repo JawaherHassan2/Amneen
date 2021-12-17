@@ -1,54 +1,50 @@
 //
-//  ReportRenterService.swift
+//  ReportService.swift
 //  SeqApp
 //
-//  Created by Jawaher🌻 on 07/05/1443 AH.
+//  Created by Jawaher🌻 on 24/04/1443 AH.
 //
-
 
 import UIKit
 import FirebaseFirestore
 
 
-class ReportRenterService {
-    static let shared = ReportRenterService()
-
-    let hostelsCollection = Firestore.firestore().collection("ReportRenter")
-
-    func addReport(hostels: ReportRenter) {
+class ReportService {
+    static let shared = ReportService()
+    
+    let hostelsCollection = Firestore.firestore().collection("Report")
+    
+    func addReport(hostels: Report) {
         
         
         hostelsCollection.document(hostels.id).setData([
             "name": hostels.name,
             "id": hostels.id,
-            "reason": hostels.reason
-//            "timestamp": hostels.timestamp
+            "timestamp": hostels.timestamp
         ])
     }
     
-    func listenToReport(completion: @escaping (([ReportRenter]) -> Void)) {
-
+    func listenToReport(completion: @escaping (([Report]) -> Void)) {
+        
         hostelsCollection.addSnapshotListener { snapshot, error in
             if error != nil {
                 return
             }
             guard let documents = snapshot?.documents else { return }
-
-            var hostels: Array<ReportRenter> = []
+            
+            var hostels: Array<Report> = []
             for document in documents {
                 let data = document.data()
-                let criminal = ReportRenter(
+                let criminal = Report(
                     name: (data["name"] as? String) ?? "No name",
                     id: (data["id"] as? String) ?? "No id",
-                    reason: (data["reason"] as? String) ?? "No reason"
-//                    timestamp: (data["timestamp"] as? Timestamp) ?? Timestamp()
+                    timestamp: (data["timestamp"] as? Timestamp) ?? Timestamp()
                 )
                 hostels.append(criminal)
             }
             completion(hostels)
         }
     }
-
+    
 }
-
 

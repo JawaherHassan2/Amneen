@@ -60,7 +60,7 @@ extension UILabel {
         self.font = UIFont(name: "Futura", size: size)
         
         
-}
+    }
 }
 
 extension UIButton {
@@ -71,7 +71,7 @@ extension UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 25
         self.setTitleColor(colors.titlesColor1, for: .normal)
-  
+        
     }
     func changeUIButton (title : String , color : UIColor){
         self.setTitle(title, for: .normal)
@@ -80,8 +80,8 @@ extension UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 25
         self.setTitleColor(colors.titlesColor, for: .normal)
-  
+        
     }
     
-  
+    
 }

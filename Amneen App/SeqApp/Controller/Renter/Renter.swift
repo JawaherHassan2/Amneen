@@ -262,26 +262,6 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
     
 }
 
-//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        if searchText.isEmpty {
-//            let temp = renters
-//            renters = temp
-//
-//            RenterService.shared.listenToRenters { newRenter in
-//                renters = newRenter
-//                sTV!.reloadData()
-//            }
-//
-//        } else {
-//
-//            renters = renters.filter({ oneProduct in
-//                return oneProduct.name.starts(with: searchText)
-//            })
-//        }
-//    sTV?.reloadData()
-//
-//    }
 func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     

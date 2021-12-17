@@ -1,5 +1,5 @@
 //
-//  R1.swift
+//  Register.swift
 //  
 //
 //  Created by Jawaher🌻 on 05/05/1443 AH.
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import ShimmerSwift
 
-class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class Register: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var users: Array<User> = []
     let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 250, height: 50))
@@ -24,7 +24,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
     lazy var nameTF: V1 = {
         $0.textFiled.placeholder = (NSLocalizedString("الاسم الاول", comment: ""))
         $0.icon.image = UIImage(named: "p22")
-       
+        
         
         return $0
     }(V1())
@@ -87,7 +87,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         super.viewDidLoad()
         assignbackground()
         
-       
+        
         view.addSubview(titleLbl)
         view.addSubview(singInBtn)
         
@@ -95,7 +95,7 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
         self.view.addSubview(singInBtn)
         shimmerView.contentView = singUpBtn
         shimmerView.isShimmering = true
-//        view.addSubview(singUpBtn)
+        //        view.addSubview(singUpBtn)
         //stack
         view.addSubview(stackView)
         stackView.addArrangedSubview(nameTF)
@@ -157,79 +157,66 @@ class R1: UIViewController , UIImagePickerControllerDelegate, UINavigationContro
             }
             
             if email == "securityagency@moi.gov.sa" {
-//                let vc = UINavigationController(rootViewController: ContainerViewController())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
+                //                let vc = UINavigationController(rootViewController: ContainerViewController())
+                //                vc.modalTransitionStyle = .crossDissolve
+                //                vc.modalPresentationStyle = .fullScreen
+                //                self.present(vc, animated: true, completion: nil)
                 let refreshAlert = UIAlertController(title: "أهلا بك 🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
                 refreshAlert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
-                  
+                
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: SecurityContainer())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
-                   }))
+                    //                            print("Handle Ok logic here")
+                }))
                 
             } else if email == "alsrawat@hotel.com" {
                 
                 
-//                let vc = UINavigationController(rootViewController: TabVC())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-                
                 let Alert = UIAlertController(title: "أهلا بك \(firstNam) \(lastNam) 🤝", message:  "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
                 Alert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
-               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
-                   
-                  
-                   let vc = UINavigationController(rootViewController: HotelContainer())
-                   vc.modalTransitionStyle = .crossDissolve
-                   vc.modalPresentationStyle = .fullScreen
-                   self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
-                   }))
+                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    
+                    
+                    let vc = UINavigationController(rootViewController: HotelContainer())
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    //                            print("Handle Ok logic here")
+                }))
                 self.present(Alert, animated: true, completion: nil)
                 
             } else {
                 let Alert = UIAlertController(title: "أهلا بك \(firstNam) \(lastNam) 🤝", message: "في تطبيق آمنين   ", preferredStyle: UIAlertController.Style.alert)
                 Alert.view.tintColor = #colorLiteral(red: 0.1447474861, green: 0.5, blue: 0.4262909248, alpha: 1)
-               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
-                   
-                  
-                   let vc = UINavigationController(rootViewController: HotelContainer())
-                   vc.modalTransitionStyle = .crossDissolve
-                   vc.modalPresentationStyle = .fullScreen
-                   self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
-                   }))
+                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    
+                    
+                    let vc = UINavigationController(rootViewController: HotelContainer())
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    //                            print("Handle Ok logic here")
+                }))
                 self.present(Alert, animated: true, completion: nil)
-//                self.present(Alert, animated: true, completion: nil)
-//                let vc = UINavigationController(rootViewController: HotelContainer())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//                let vc = UINavigationController(rootViewController: HotelContainer())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
+
             }
             
-                            guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-                            Firestore.firestore().document("users/\(currentUserID)").setData([
-            //                    "name" : self.name.text,
-                                "Id" : currentUserID,
-                                "Email" : self.emailTF.textFiled.text,
-                                "First Name": self.nameTF.textFiled.text,
-                                "Last Name": self.lastNameTF.textFiled.text
-            
-                            ], merge : true)
-                        if error != nil {
-                            print(error as Any)
-                            return
-                        }
+            guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+            Firestore.firestore().document("users/\(currentUserID)").setData([
+                //                    "name" : self.name.text,
+                "Id" : currentUserID,
+                "Email" : self.emailTF.textFiled.text,
+                "First Name": self.nameTF.textFiled.text,
+                "Last Name": self.lastNameTF.textFiled.text
+                
+            ], merge : true)
+            if error != nil {
+                print(error as Any)
+                return
+            }
         }
         
     }

@@ -1,5 +1,5 @@
 //
-//  L1.swift
+//  LogIn.swift
 //  
 //
 //  Created by Jawaher🌻 on 05/05/1443 AH.
@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import ShimmerSwift
 
-class L1: UIViewController {
+class LogIn: UIViewController {
     
     let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 250, height: 50))
     //MARK: Step 1
@@ -18,7 +18,7 @@ class L1: UIViewController {
         $0.changeUILabel(title: (NSLocalizedString("تسجيل الدخول", comment: "")), size: 20)
         return $0
     }(UILabel())
-
+    
     lazy var singInBtn : UIButton = {
         $0.changeUIButton1(title:(NSLocalizedString("دخول", comment: "")), color: colors.bcolor)
         singInBtn = UIButton(frame: shimmerView.bounds)
@@ -57,23 +57,23 @@ class L1: UIViewController {
     }(UIStackView())
     
     
-   
-func assignbackground(){
-      let background = UIImage(named: "wal6")
-      var imageView : UIImageView!
-      imageView = UIImageView(frame: view.bounds)
-    imageView.contentMode =  .scaleAspectFill
-      imageView.clipsToBounds = true
-      imageView.image = background
-      imageView.center = view.center
-      view.addSubview(imageView)
-      self.view.sendSubviewToBack(imageView)
-  }
+    
+    func assignbackground(){
+        let background = UIImage(named: "wal6")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assignbackground()
-
+        
         
         self.view.addSubview(titlelbl)
         self.view.addSubview(signUpBtn)
@@ -91,12 +91,12 @@ func assignbackground(){
             self.titlelbl.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor, constant: 270),
             self.titlelbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-
+            
             //***
             self.stack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.stack.topAnchor.constraint(equalTo: self.titlelbl.bottomAnchor, constant: 20),
             self.stack.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -100),
-
+            
             //singInBtn btn
             
             self.shimmerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -115,21 +115,21 @@ func assignbackground(){
     }
     
     @objc func didPresssignUpButton(_ sender: UIButton){
-        let vc = R1()
+        let vc = Register()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
-    
+        
     }
     @objc func PresssignUpButton(_ sender: UIButton){
         let vc = TabVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
-}
+    }
     
     @objc private func tapToSignIn() {
         let email = self.emailTextFiled.textFiled.text ?? ""
         let password = self.passwordTextFiled.textFiled.text ?? ""
-     
+        
         
         if email.isEmpty || password.isEmpty {
             return self.alertUserLoginError()
@@ -142,70 +142,58 @@ func assignbackground(){
             if email == "securityagency@moi.gov.sa"  {
                 let refreshAlert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
                 refreshAlert.view.tintColor = UIColor.systemGreen
-                  
+                
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     
                     let vc = UINavigationController(rootViewController: SecurityContainer())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-                   }))
-            
-                    self.present(refreshAlert, animated: true, completion: nil)
+                }))
                 
-
+                self.present(refreshAlert, animated: true, completion: nil)
+                
+                
             } else if email == "alsrawat@hotel.com" {
                 let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
-            
+                
                 Alert.view.tintColor = UIColor.systemGreen
-               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: HotelContainer())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
-                   }))
-              
-                self.present(Alert, animated: true, completion: nil)
+                    //                            print("Handle Ok logic here")
+                }))
                 
-//                let vc = UINavigationController(rootViewController: HotelContainer())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
+                self.present(Alert, animated: true, completion: nil)
+
             } else {
                 
                 let Alert = UIAlertController(title: "أهلا بك 🤝", message: "في تطبيق آمنين   ", preferredStyle: UIAlertController.Style.alert)
-                Alert.view.tintColor = UIColor.systemGreen
-               Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
-                   
-                  
-                   let vc = UINavigationController(rootViewController: TabVC())
-                   vc.modalTransitionStyle = .crossDissolve
-                   vc.modalPresentationStyle = .fullScreen
-                   self.present(vc, animated: true, completion: nil)
-//                            print("Handle Ok logic here")
-                   }))
+                Alert.view.tintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+                Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
+                    
+                    
+                    let vc = UINavigationController(rootViewController: TabVC())
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    //                            print("Handle Ok logic here")
+                }))
                 self.present(Alert, animated: true, completion: nil)
-//                self.present(Alert, animated: true, completion: nil)
-//                let vc = UINavigationController(rootViewController: HotelContainer())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//                let vc = UINavigationController(rootViewController: HotelContainer())
-//                vc.modalTransitionStyle = .crossDissolve
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
+
             }
         }
     }
     func alertUserLoginError() {
         let alert = UIAlertController(title: "Woops",
-         message: "Please enter your emile.",
-                                preferredStyle: .alert)
+                                      message: "Please enter your emile.",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"Dismiss",
                                       style: .cancel, handler: nil))
         present(alert, animated: true)
-    
-}
+        
+    }
 }
 

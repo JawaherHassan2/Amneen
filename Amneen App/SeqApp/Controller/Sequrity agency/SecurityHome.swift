@@ -16,17 +16,15 @@ protocol HomeSViewControllerDelegate: AnyObject {
 }
 
 class SecurityHome: UIViewController {
-   
+    
     weak var delegate: HomeSViewControllerDelegate?
-
+    
     
     let shimmerView = ShimmeringView(frame: CGRect(x: 75, y: 520, width: 450, height: 450))
-
+    
     let Image1: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius =
-//        imageView.frame =  shimmerView2.bounds
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "g1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +34,6 @@ class SecurityHome: UIViewController {
     public let label33: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
-//        label.text = Loc.l1
         label.text =  NSLocalizedString("1", comment: "ن")
         label.font = UIFont(name: "Avenir-Light", size: 40)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +43,6 @@ class SecurityHome: UIViewController {
     let Image: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius =
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "imag")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,8 +54,8 @@ class SecurityHome: UIViewController {
         self.view.addSubview(shimmerView)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.04864486824, green: 0.3906074293, blue: 0.3516095239, alpha: 1)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
-
-       title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
+        
+        title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
         view.backgroundColor = .white
         
         shimmerView.isShimmering = true
@@ -91,26 +87,26 @@ class SecurityHome: UIViewController {
     
     @objc func switchStateDidChange (_ sender: UISwitch) {
         if #available(i0S 13.0, *) {
-           let appDelegate = UIApplication.shared.windows.first
-            let vc = Home()
-           if sender.isOn {
-             appDelegate?.backgroundColor = .black
-//             view.backgroundColor = .gray
-             return
-           }
-//            vc.view.backgroundColor = .red
-          appDelegate?.backgroundColor = .white
-           return
-         } else {
-      }
-       }
+            let appDelegate = UIApplication.shared.windows.first
+//            let vc = Home()
+            if sender.isOn {
+                appDelegate?.backgroundColor = .black
+                //             view.backgroundColor = .gray
+                return
+            }
+   
+            appDelegate?.backgroundColor = .white
+            return
+        } else {
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-     
     
- 
-
+    
+    
+    
 }
 

@@ -73,11 +73,8 @@ extension HotelContainer: HomeHViewControllerDelegate{
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opend
-                    
                 }
-                
             }
-            
         case .opend:
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromRight) {
@@ -90,16 +87,9 @@ extension HotelContainer: HomeHViewControllerDelegate{
                     DispatchQueue.main.async {
                         completion?()
                     }
-                    
-                    
                 }
-                
             }
-            
-            
         }
-        
-        
     }
 }
 
@@ -112,30 +102,14 @@ extension HotelContainer: MenuHViewControllerDelegate{
             self.resetToHom()
         case .profile:
             self.addProfil()
-//        case .info:
-//            self.addInf()
-//        case .reportRenter:
-//            self.addreport()
         case .appRating:
             self.addcit()
         case .newRenter:
             self.addrente()
-            
         case .leaving:
             self.addlea()
         case .banned:
             self.addbanne()
-            
-//        case .shareApp:
-//            self.addlis()
-//        case .settings:
-//            self.addSe()
-//        case .centers:
-//            self.addCe()
-//        case .dark:
-//            self.addCe()
-//        case .language:
-//            self.changrLa()
         case .about:
             self.addi()
         case .settt:
@@ -199,7 +173,7 @@ extension HotelContainer: MenuHViewControllerDelegate{
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
-
+    
     func dark() {
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.backgroundColor = .black

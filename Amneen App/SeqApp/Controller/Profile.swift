@@ -51,9 +51,6 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         $0.titleLabel?.textColor = .black
         $0.setImage(UIImage(systemName:"pencil"), for: .normal)
         $0.tintColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
-        //        $0.titleColor(for: .)
-        
-        //        $0.layer.cornerRadius = 25
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.addTarget(self, action: #selector(B), for: .touchUpInside)
         return $0
@@ -62,9 +59,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     
     let Button1 : UIButton = {
         $0.backgroundColor = .white
-        
         //        $0.setTitle("sign out", for: .normal)
-        //        $0.backgroundColor = #colorLiteral(red: 0.8315088153, green: 0.3571410775, blue: 0.3587501645, alpha: 1)
         $0.changeUIButton1(title: (NSLocalizedString("تسجيل خروج", comment: "")), color: colors.bcolor)
         $0.layer.cornerRadius = 25
         $0.titleLabel?.font = UIFont(name: "Avenir-Light", size: 20)
@@ -124,7 +119,6 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         NSLayoutConstraint.activate([
             
             firstName.topAnchor.constraint(equalTo: view.topAnchor,constant: 170),
-            //            firstName.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 100),
             firstName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -120),
             firstName.heightAnchor.constraint(equalToConstant: 40),
             firstName.widthAnchor.constraint(equalToConstant: 80),
@@ -137,10 +131,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         NSLayoutConstraint.activate([
             
             lastName.topAnchor.constraint(equalTo: view.topAnchor,constant: 170),
-            //            lastName.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 100),
             lastName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -174),
-            //            lastName.rightAnchor.constraint(equalTo: view.rightAnchor , constant: 150),
-            
             lastName.heightAnchor.constraint(equalToConstant: 40),
             lastName.widthAnchor.constraint(equalToConstant: 80),
         ])
@@ -151,9 +142,6 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         
         NSLayoutConstraint.activate([
             Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 21),
-            //            Button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            //            Button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            //            Button.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 130),
             Button.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -230),
             Button.heightAnchor.constraint(equalToConstant: 60),
             Button.widthAnchor.constraint(equalToConstant: 60),
@@ -162,13 +150,6 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         view.addSubview(Button1)
         NSLayoutConstraint.activate([
             Button1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 570),
-            //            Button1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            //            Button1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            //            Button1.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 30),
-            //            Button1.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -30),
-            //            Button1.heightAnchor.constraint(equalToConstant: 50),
-            //            Button1.widthAnchor.constraint(equalToConstant: 290),
-            
             Button1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             Button1.widthAnchor.constraint(equalToConstant: self.view.frame.width / 1.2),
             Button1.heightAnchor.constraint(equalToConstant: 50),
@@ -224,7 +205,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
     @objc func imageTapped() {
         print("Image tapped")
         presentPhotoInputActionsheet()
-//        present(imagePicker, animated: true)
+        //        present(imagePicker, animated: true)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] ?? info [.originalImage] as? UIImage
@@ -242,7 +223,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
             print ("Error signing out: \(signOutError.localizedDescription)")
         }
         
-        let vc = UINavigationController(rootViewController: L1())
+        let vc = UINavigationController(rootViewController: LogIn())
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
@@ -253,7 +234,7 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
                                             message: " تغيير صوره الملف الشخصي من",
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "الكاميرا📷 ", style: .default, handler: { [weak self] _ in
-       
+            
             let picker = UIImagePickerController()
             picker.sourceType = .camera
             picker.delegate = self
@@ -275,12 +256,12 @@ class Profile: UIViewController, UIImagePickerControllerDelegate , UINavigationC
         present(actionSheet, animated: true)
         //            setupImagePicker()
     }
-   
+    
     func setUpImage() {
         
         img.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentPhotoInputActionsheet))
-       
+        
         img.addGestureRecognizer(tapRecognizer)
         
         view.addSubview(img)

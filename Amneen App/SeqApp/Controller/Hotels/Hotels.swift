@@ -11,17 +11,17 @@ import UIKit
 class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     var h: City?
-  
+    
     private var hotelCV: UICollectionView?
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: 350, height: 70)
+        return CGSize(width: 350, height: 70)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-
+        
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
@@ -45,20 +45,20 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
-
-    }
-
         
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return h?.Hotels.count ?? 0
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCell1.identifier, for: indexPath) as! HotelCell1
-
+        
         
         
         
@@ -73,11 +73,11 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         return cell
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         let newVC = Renters()
-
+        
         newVC.title = h?.Hotels[indexPath.row].name
         newVC.r = h?.Hotels[indexPath.row]
         newVC.a = hotelList[indexPath.row]
@@ -89,10 +89,10 @@ class Hotels: UIViewController, UICollectionViewDelegate  , UICollectionViewData
 
 class HotelCell1: UICollectionViewCell {
     
-  static let identifier = "cell"
+    static let identifier = "cell"
     
-
-     let myLabel: UILabel = {
+    
+    let myLabel: UILabel = {
         let label = UILabel()
         label.text = "آبها"
         label.font = UIFont(name: "Avenir-Light", size: 25.0)
@@ -101,15 +101,14 @@ class HotelCell1: UICollectionViewCell {
         return label
     }()
     
-  
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         contentView.addSubview(myLabel)
         contentView.clipsToBounds = true
         contentView.backgroundColor = #colorLiteral(red: 0.357890688, green: 0.4412518331, blue: 0.4643064771, alpha: 1)
-        
         contentView.layer.cornerRadius = 15
         
     }
@@ -120,7 +119,7 @@ class HotelCell1: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         myLabel.frame = CGRect(x: 0,
                                y: contentView.frame.size.height-70 ,
                                width: contentView.frame.size.width-10,

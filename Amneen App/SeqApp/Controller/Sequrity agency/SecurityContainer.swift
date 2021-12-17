@@ -33,7 +33,7 @@ class SecurityContainer: UIViewController {
     lazy var setting = SettingViewController()
     lazy var abou =   AppSInfo()
     
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -89,16 +89,9 @@ extension SecurityContainer: HomeSViewControllerDelegate{
                     DispatchQueue.main.async {
                         completion?()
                     }
-                    
-                    
                 }
-                
             }
-            
-            
         }
-        
-        
     }
 }
 
@@ -178,7 +171,7 @@ extension SecurityContainer: MenuSViewControllerDelegate{
         vc.didMove(toParent: homeVC)
         homeVC.title = vc.title
     }
-
+    
     func dark() {
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.backgroundColor = .black

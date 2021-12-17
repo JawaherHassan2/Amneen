@@ -6,19 +6,16 @@
 import UIKit
 
 class Cities: UIViewController, UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
-  
+    
     private var hotelCV: UICollectionView?
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 90)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let viewController = Cities()
-//        let navigation = UINavigationController(rootViewController: viewController)
-//        navigation.title = "mnj"
-//        view.backgroundColor = #colorLiteral(red: 0.8914818384, green: 0.8685067299, blue: 0.8232201155, alpha: 1)
+        
         title = NSLocalizedString("33", comment:"الفنادق")
         view.backgroundColor = UIColor(named: "Color")
         
@@ -39,12 +36,12 @@ class Cities: UIViewController, UICollectionViewDelegate  , UICollectionViewData
         hotelCV.register(HotelCell.self, forCellWithReuseIdentifier: HotelCell.identifier)
         hotelCV.dataSource = self
         hotelCV.delegate = self
-//        hotelCV.backgroundColor = #colorLiteral(red: 0.8914818384, green: 0.8685067299, blue: 0.8232201155, alpha: 1)
+        //        hotelCV.backgroundColor = #colorLiteral(red: 0.8914818384, green: 0.8685067299, blue: 0.8232201155, alpha: 1)
         hotelCV.backgroundColor = UIColor(named: "Color")
         view.addSubview(hotelCV)
         hotelCV.frame = view.bounds
         hotelCV.backgroundColor = #colorLiteral(red: 0.8992940602, green: 0.8936767668, blue: 0.8912667796, alpha: 1)
-
+        
     }
     
     
@@ -53,14 +50,10 @@ class Cities: UIViewController, UICollectionViewDelegate  , UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        hotelCV?
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCell.identifier, for: indexPath) as! HotelCell
-//        cell.layer.borderColor = UIColor(red: (184/255), green: (204/255), blue: (189/255), alpha: 1).cgColor
-//        cell.layer.borderWidth = 10
         cell.layer.cornerRadius = 22
         cell.myLabel.text = hotelList[indexPath.row].name
-        
-//        cell.myImage.image = UIImage(named: hotelList[indexPath.row].image)
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2)
         cell.layer.shadowOpacity = 1
@@ -106,12 +99,11 @@ class HotelCell: UICollectionViewCell {
         return label
     }()
     
-
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-      
-//        contentView.addSubview(myImage)
+        
         contentView.addSubview(myLabel)
         contentView.clipsToBounds = true
         layer.shadowColor = UIColor.lightGray.cgColor
@@ -129,7 +121,7 @@ class HotelCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-     
+        
         myImage.frame = CGRect(x: 1,
                                y: 3 ,
                                width: 200,

@@ -31,27 +31,27 @@ class AddNewC: UIViewController, UITextFieldDelegate {
     }()
     
     lazy var addButton: UIButton = {
-            let b = UIButton()
-            b.addTarget(self, action: #selector(add), for: .touchUpInside)
-            b.translatesAutoresizingMaskIntoConstraints = false
-            b.setTitle("إضافه", for: .normal)
+        let b = UIButton()
+        b.addTarget(self, action: #selector(add), for: .touchUpInside)
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.setTitle("إضافه", for: .normal)
         b.titleLabel?.font = UIFont(name: "Avenir-Light", size: 18)
-            b.layer.cornerRadius = 25
-
+        b.layer.cornerRadius = 25
+        
         b.backgroundColor = UIColor(red: (87/255), green: (107/255), blue: (96/255), alpha: 1)
-            return b
-        }()
+        return b
+    }()
     
     @objc func add() {
         
         
         let name = studentNameTF.text ?? ""
-              let id = studentNameTF2.text ?? ""
-      
-      
-              CriminalService.shared.addC(
-                criminals: TPeople(name: name, id: id)
-              )
+        let id = studentNameTF2.text ?? ""
+        
+        
+        CriminalService.shared.addC(
+            criminals: TPeople(name: name, id: id)
+        )
     }
     private func setupGradientView() {
         let _ = GradientView(self)
@@ -59,7 +59,7 @@ class AddNewC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
-       
+        
         view.backgroundColor = UIColor(red: (206/255), green: (222/255), blue: (211/255), alpha: 1) 
         view.addSubview(addButton)
         view.addSubview(studentNameTF)
@@ -83,12 +83,12 @@ class AddNewC: UIViewController, UITextFieldDelegate {
             addButton.widthAnchor.constraint(equalToConstant: 400),
             addButton.heightAnchor.constraint(equalToConstant: 60),
         ])
-
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-
+        
         
         dismiss(animated: true, completion: nil)
         return true

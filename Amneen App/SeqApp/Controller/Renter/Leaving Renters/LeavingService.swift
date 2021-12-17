@@ -12,9 +12,9 @@ import FirebaseFirestore
 
 class LeavingService {
     static let shared = LeavingService()
-
+    
     let leavingCollection = Firestore.firestore().collection("Leaving Renters")
-
+    
     func addLeaving(leaving: LeavingRenter) {
         
         
@@ -27,13 +27,13 @@ class LeavingService {
     }
     
     func listenToLeaving(completion: @escaping (([LeavingRenter]) -> Void)) {
-
+        
         leavingCollection.addSnapshotListener { snapshot, error in
             if error != nil {
                 return
             }
             guard let documents = snapshot?.documents else { return }
-
+            
             var hostels: Array<LeavingRenter> = []
             for document in documents {
                 let data = document.data()
@@ -48,7 +48,7 @@ class LeavingService {
             completion(hostels)
         }
     }
-
+    
 }
 
 

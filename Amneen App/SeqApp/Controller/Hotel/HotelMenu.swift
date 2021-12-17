@@ -40,7 +40,6 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 return  NSLocalizedString("69", comment: "المستأجرين السابقين  ")
             case .banned:
                 return  NSLocalizedString("71", comment: "مستأجرين تم منعهم   ")
-                
             case .about:
                 return NSLocalizedString("55", comment: "عن التطبيق")
             case .settt:
@@ -54,17 +53,14 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 return "house"
             case .profile:
                 return "person"
-                
             case .appRating:
                 return "house.circle.fill"
             case .newRenter:
                 return "person.fill.badge.plus"
             case .leaving:
-                
                 return "figure.walk"
             case .banned:
                 return "person.fill.xmark"
-                
             case .about:
                 return "lanyardcard"
             case .settt:
@@ -84,7 +80,6 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let Image: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        //        imageView.layer.cornerRadius =
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "o1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -132,7 +127,7 @@ class HotelMenu: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = MenuOPtions.allCases[indexPath.row]
         delegate?.didSelect(menuItem: item)
-
+        
     }
     
 }

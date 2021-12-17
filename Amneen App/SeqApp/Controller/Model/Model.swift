@@ -21,17 +21,17 @@ struct Hotel {
 }
 
 let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), image: "ab2",
-    
-                        Hotels: [
-                            Hotel(name: NSLocalizedString("24", comment:"فندق السروات")),
-                            Hotel(name: NSLocalizedString("25", comment:"فندق بلو إن")),
-                            Hotel(name: NSLocalizedString("26", comment:"فندق شفا ابها")),
-                            Hotel(name: NSLocalizedString("27", comment:"فندق قصر السلام")),
-                            Hotel(name: NSLocalizedString("28", comment:"فندق قصر ابها")),
-                            Hotel(name: NSLocalizedString("29", comment:"ابها كراون")),
-                            Hotel(name: NSLocalizedString("30", comment:"فندق السحاب "))
-                                ]
-                       ),
+                       
+                       Hotels: [
+                        Hotel(name: NSLocalizedString("24", comment:"فندق السروات")),
+                        Hotel(name: NSLocalizedString("25", comment:"فندق بلو إن")),
+                        Hotel(name: NSLocalizedString("26", comment:"فندق شفا ابها")),
+                        Hotel(name: NSLocalizedString("27", comment:"فندق قصر السلام")),
+                        Hotel(name: NSLocalizedString("28", comment:"فندق قصر ابها")),
+                        Hotel(name: NSLocalizedString("29", comment:"ابها كراون")),
+                        Hotel(name: NSLocalizedString("30", comment:"فندق السحاب "))
+                       ]
+                      ),
                   
                   City(name: NSLocalizedString("13", comment:"الرياض"), image: "ra2", Hotels: [
                     Hotel(name: "هيلتون الرياض"),
@@ -41,7 +41,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "فندق راديسون بلو "),
                     Hotel(name: "فندق الوفت"),
                     Hotel(name: "الفيصليه")
-                    ]  ),
+                  ]  ),
                   City(name: NSLocalizedString("14", comment:"جدة"), image: "je2", Hotels: [
                     Hotel(name: "فندق انتركونتيننتال"),
                     Hotel(name: "فندق كراون بلازا"),
@@ -50,7 +50,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "فندق رسيس"),
                     Hotel(name: "فندق راديسون بلو"),
                     Hotel(name: "فندق غاليريا")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("15", comment: "الدمام"), image: "da2", Hotels: [
                     Hotel(name: "فندق اورينتال رزيدنس"),
                     Hotel(name: "فندق شيراتون"),
@@ -59,7 +59,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "فندق اوبن"),
                     Hotel(name: "فندق لافونا"),
                     Hotel(name: "فندق بودل")
-                    ]),
+                  ]),
                   City(name:  NSLocalizedString("16", comment:"الأحساء"), image: "ah2", Hotels: [
                     Hotel(name: "فندق قاردن بلازا"),
                     Hotel(name: "فندق انتركونتننتال"),
@@ -68,7 +68,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "فندق كورال"),
                     Hotel(name: "فندق لينا"),
                     Hotel(name: "فندق لي لي")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("17", comment:"الخبر"), image: "kh2", Hotels: [
                     Hotel(name: " لاريسا"),
                     Hotel(name: "كراون بلازا"),
@@ -77,7 +77,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "مريديان"),
                     Hotel(name: "موفنبيك الخبر"),
                     Hotel(name: "ورويك الخبر")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("18", comment: "مكه"), image: "mk2", Hotels: [
                     Hotel(name: "فندق هيلتون"),
                     Hotel(name: "فندق لو مريديان"),
@@ -86,7 +86,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "فندق انجم"),
                     Hotel(name: "فندق فيوليت"),
                     Hotel(name: "فندق روشان الدار")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("19", comment:"حائل"), image: "ha2", Hotels: [
                     Hotel(name: "اروناني"),
                     Hotel(name: "ترامونتان"),
@@ -95,7 +95,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "جولدن توليب"),
                     Hotel(name: "تميز الاقامه"),
                     Hotel(name: "ترحال")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("20", comment:"المدينة"), image: "md2", Hotels: [
                     Hotel(name: "انوار المدينه"),
                     Hotel(name: "لو مريديان"),
@@ -104,7 +104,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "ارتال طيبه"),
                     Hotel(name: "روف"),
                     Hotel(name: "فيردان")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("21", comment: "تبوك"), image: "ta2", Hotels: [
                     Hotel(name: "بادن"),
                     Hotel(name: "هيدرا"),
@@ -113,7 +113,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "رونزا"),
                     Hotel(name: "الحياه المارينا"),
                     Hotel(name: "تبوك ريزيدنس")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("22", comment: "الطائف"), image: "taa2", Hotels: [
                     Hotel(name: "انتركونتيننال "),
                     Hotel(name: "رماج"),
@@ -122,7 +122,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "الريف دايموند "),
                     Hotel(name: "اولاف انترناشونال"),
                     Hotel(name: "اريديوم")
-                    ]),
+                  ]),
                   City(name: NSLocalizedString("23", comment:"جازان"), image: "je2", Hotels: [
                     Hotel(name: "نوفوتيل جازان"),
                     Hotel(name: "رفايا"),
@@ -131,7 +131,7 @@ let hotelList = [ City(name:  NSLocalizedString("12", comment: "ابها"), imag
                     Hotel(name: "اوج"),
                     Hotel(name: "زهره فيولا"),
                     Hotel(name: "الرست ان")
-                    ])
+                  ])
 ]
 
 
@@ -155,7 +155,7 @@ struct Renter {
         dateFormatter.timeStyle = .short
         return dateFormatter.string(from: timestamp.dateValue())
     }
-
+    
 }
 
 
@@ -179,10 +179,10 @@ class Numbers {
     let image: String
     
     init(name:String , number: Int , purpose: String , image: String) {
-    self.name = name
-    self.number = number
-    self.purpose = purpose
-    self.image = image
+        self.name = name
+        self.number = number
+        self.purpose = purpose
+        self.image = image
     }
 }
 
@@ -196,7 +196,7 @@ let listNumber = [Numbers(name:  NSLocalizedString("2", comment: "الشرطه")
                   Numbers(name: NSLocalizedString("9", comment: "الطوارئ  "), number: 112, purpose: "لطلب المساعده والاتصال بالطوارئ دون الحاجه لوجود شريحه", image: "t"),
                   Numbers(name: NSLocalizedString("10", comment: "أمن الطرق"), number: 996, purpose: " لبلاغات انعدام امن الطرق ",image: "tr1"),
                   Numbers(name: NSLocalizedString("11", comment: " العمليات الامنيه الموحده"), number: 911, purpose: "لتقديم بلاغ او معلومه لوزارة الداخلية", image: "am")
-                
+                  
 ]
 struct LeavingRenter {
     
@@ -216,7 +216,7 @@ struct LeavingRenter {
         dateFormatter.timeStyle = .short
         return dateFormatter.string(from: date.dateValue())
     }
-
+    
 }
 
 struct Report {
@@ -239,31 +239,17 @@ struct ReportRenter {
     let name: String
     let id: String
     let reason: String
-//    let timestamp: Timestamp
+    //    let timestamp: Timestamp
     
-//    func getNiceDate() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .medium
-//        return dateFormatter.string(from: timestamp.dateValue())
-//    }
+    //    func getNiceDate() -> String {
+    //        let dateFormatter = DateFormatter()
+    //        dateFormatter.dateStyle = .medium
+    //        dateFormatter.timeStyle = .medium
+    //        return dateFormatter.string(from: timestamp.dateValue())
+    //    }
     
 }
 
-//struct BannedRenter {
-//    
-//    let name: String
-//    let id: String
-//    let timestamp: Timestamp
-//
-//    func getNiceDate() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .medium
-//        return dateFormatter.string(from: timestamp.dateValue())
-//    }
-//
-//}
 
 
 var d: [String : Int] = ["Ahmad" : 21 ,
