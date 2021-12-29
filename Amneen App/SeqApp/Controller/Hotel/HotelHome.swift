@@ -5,9 +5,6 @@
 //  Created by Jawaher🌻 on 08/05/1443 AH.
 //
 
-
-
-
 import Foundation
 import UIKit
 import ShimmerSwift

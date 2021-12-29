@@ -163,7 +163,7 @@ class LogIn: UIViewController {
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-                    //                            print("Handle Ok logic here")
+                    // print("Handle Ok logic here")
                 }))
                 
                 self.present(Alert, animated: true, completion: nil)

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "FA96BC70274CF97300CD71A6"
                BuildableName = "SeqApp.app"
                BlueprintName = "SeqApp"
-               ReferencedContainer = "container:securityApp.xcodeproj">
+               ReferencedContainer = "container:SeqApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "FA96BC70274CF97300CD71A6"
             BuildableName = "SeqApp.app"
             BlueprintName = "SeqApp"
-            ReferencedContainer = "container:securityApp.xcodeproj">
+            ReferencedContainer = "container:SeqApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "FA96BC70274CF97300CD71A6"
             BuildableName = "SeqApp.app"
             BlueprintName = "SeqApp"
-            ReferencedContainer = "container:securityApp.xcodeproj">
+            ReferencedContainer = "container:SeqApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

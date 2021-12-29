@@ -1,21 +1,16 @@
-//
-//  People.swift
-//  SeqApp
-//
-//  Created by Jawaher🌻 on 19/04/1443 AH.
-//
+
 import Foundation
 import UIKit
 import FirebaseFirestore
 
-var renters: Array<Renter> = []
-var c: Renter?
-class Renters: UIViewController {
+
+var ce: Hotel1?
+class Hotels1: UIViewController {
     var r: Hotel?
     var a: City?
     
     
-    var renters: Array<Renter> = []
+    var renters: Array<Hotel1> = []
     
     lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200,height: 20))
     
@@ -25,7 +20,7 @@ class Renters: UIViewController {
         t.translatesAutoresizingMaskIntoConstraints = false
         t.delegate = self
         t.dataSource = self
-        t.register(RenterCell.self, forCellReuseIdentifier: "Cell")
+        t.register(RenterCell2.self, forCellReuseIdentifier: "Cell")
         t.backgroundColor = .white
         return t
     }()
@@ -48,14 +43,16 @@ class Renters: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.rightBarButtonItem = leftNavBarButton
-        searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = "بحث"
-        searchBar.sizeToFit()
-        searchBar.isTranslucent = false
-        searchBar.delegate = self
-        view.addSubview(searchBar)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(addRenter))
+//        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
+//        self.navigationItem.rightBarButtonItem = leftNavBarButton
+//        searchBar.searchBarStyle = UISearchBar.Style.default
+//        searchBar.placeholder = "بحث"
+//        searchBar.sizeToFit()
+//        searchBar.isTranslucent = false
+//        searchBar.delegate = self
+//        view.addSubview(searchBar)
         
         view.addSubview(sTV)
         NSLayoutConstraint.activate([
@@ -65,7 +62,7 @@ class Renters: UIViewController {
             sTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-        RenterService.shared.listenToRenters { newRenter in
+        HotelService1.shared.listenToHotels { newRenter in
             self.renters = newRenter
             self.sTV.reloadData()
         }
@@ -79,12 +76,12 @@ class Renters: UIViewController {
     }
     
     @objc func addRenter() {
-        let newVC = NewRenter()
+        let newVC = NewHotel1()
         present(newVC, animated: true, completion: nil)
     }
 }
-var selectedIndex = -1
-extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDelegate  {
+var selectedIndexo = -1
+extension Hotels1: UITableViewDelegate  , UITableViewDataSource, UISearchBarDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 350, height: 200)
@@ -97,16 +94,16 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RenterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RenterCell2
         
         let renter = renters[indexPath.row]
         //        let d =  hotelList[indexPath.row]
-        cell.label2.text = "      الاسم: \(renter.name)"
+        cell.label2.text = "  \(renter.name)"
         //        cell.label2.text = "\(d.name)    اسم المدينه:"
-        cell.label3.text = " الهويه الوطنيه:  \(renter.id)"
-        cell.label4.text = "وقت الدخول: \(renter.getNiceDate()) "
-        cell.label5.text = " اسم الفندق:  \(r!.name)"
-        cell.label6.text = "رقم الشقه:  \(indexPath.row + 1)"
+//        cell.label3.text = " الهويه الوطنيه:  \(renter.id)"
+//        cell.label4.text = "وقت الدخول: \(renter.getNiceDate()) "
+//        cell.label5.text = " اسم الفندق:  \(r!.name)"
+//        cell.label6.text = "رقم الشقه:  \(indexPath.row + 1)"
 //        cell.backgroundColor = .gray
         cell.contentView.backgroundColor = #colorLiteral(red: 0.5575026482, green: 0.6737594539, blue: 0.7071654279, alpha: 1)
         cell.contentView.layer.borderWidth = 3
@@ -121,6 +118,16 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         }else {
             return 225
         }
+    }
+    
+   
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var newVC = Hotels1()
+        newVC.title = " فنادق \(renters[indexPath.row].name)"
+//        newVC.h = hotelList[indexPath.row]
+        newVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(newVC,animated: true)
     }
     
      func tapToAdd(){
@@ -153,7 +160,7 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
                 let temp = renters
                 renters = temp
                 
-                RenterService.shared.listenToRenters { newRenter in
+                HotelService1.shared.listenToHotels { newRenter in
                     self.renters = newRenter
                     self.sTV.reloadData()
                 }
@@ -230,14 +237,9 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
                                           
                                           let name = cell.name
                                           let id = cell.id
-                                          let date = cell.timestamp
-                                          let nowdate = Timestamp()
-                                          
-                                        
-                                          LeavingService.shared.addLeaving(leaving: LeavingRenter(name: name, id: id,timestamp: date, date: nowdate))
-                                          
-                                              Firestore.firestore().collection("Hostels").document(cell.id).delete()
-                                          
+
+                                              Firestore.firestore().collection("NewHotel").document(cell.id).delete()
+//
                                           
                                           self.sTV.reloadData()
                                       })
@@ -254,21 +256,21 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
     
 }
 
-func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+func searchBarCancelButtonClicked1(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     
 }
 
-class RenterCell: UITableViewCell {
+class RenterCell2: UITableViewCell {
     
     static let identifire = "Cell"
     
     public let label2: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 30, weight: .regular)
         label.textColor = .black
-        label.textAlignment = .right
-        label.font = UIFont(name: "Avenir-Light", size: 20)
+        label.textAlignment = .center
+        label.font = UIFont(name: "Avenir-Light", size: 30)
         return label
     }()
     
@@ -299,7 +301,7 @@ class RenterCell: UITableViewCell {
     }()
     public let label6: UILabel = {
         let label = UILabel()
-        label.text = "a"
+//        label.text = "a"
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textColor = .black

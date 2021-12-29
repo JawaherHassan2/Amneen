@@ -14,32 +14,53 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    
-        /// 1. Capture the scene
-        guard let scene = (scene as? UIWindowScene) else { return }
-        /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
-        let window = UIWindow(windowScene: scene)
-           window.rootViewController = LogIn()
-           window.makeKeyAndVisible()
-           self.window = window
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
-//        let window = UIWindow(windowScene: windowScene)
+        let window = UIWindow(windowScene: windowScene)
         
         /// 3. Create a view hierarchy programmatically
-        let isLoggedIn = Auth.auth().currentUser != nil
+        let viewController = Cityp()
+        let navigation = UINavigationController(rootViewController: viewController)
+        
+        /// 4. Set the root view controller of the window with your view controller
+        window.rootViewController = navigation
+        
+        /// 5. Set the window and call makeKeyAndVisible()
+        self.window = window
+        window.makeKeyAndVisible()
         
         
-        let ViewController: UIViewController
         
-        if isLoggedIn {
-            
-//            ViewController = HotelContainer()
-        } else {
-            ViewController = LogIn()
-            
-        }
+        
+        
+//
+//
+//        /// 1. Capture the scene
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
+//        let window = UIWindow(windowScene: scene)
+//           window.rootViewController = A()
+//           window.makeKeyAndVisible()
+//           self.window = window
+////        guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//        /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
+////        let window = UIWindow(windowScene: windowScene)
+//
+//        /// 3. Create a view hierarchy programmatically
+//        let isLoggedIn = Auth.auth().currentUser != nil
+//
+//
+//        let ViewController: UIViewController
+//
+//        if isLoggedIn {
+//
+////            ViewController = HotelContainer()
+//        } else {
+//            ViewController = A()
+//
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

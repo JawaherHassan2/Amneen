@@ -157,6 +157,25 @@ struct Renter {
     }
     
 }
+struct City1 {
+    let name: String
+    let id: String
+
+//    let Hotels: Array<Hotel1>
+   
+    
+}
+struct Hotel1 {
+    let name: String
+    let id: String
+    
+    
+    
+
+    
+   
+    
+}
 
 
 struct People {
@@ -250,6 +269,10 @@ struct ReportRenter {
     
 }
 
+struct CCity {
+    
+    var name : String
+}
 
 
 var d: [String : Int] = ["Ahmad" : 21 ,
