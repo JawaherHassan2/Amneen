@@ -123,9 +123,9 @@ extension Hotels1: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var newVC = Hotels1()
+        var newVC = Renters()
         newVC.title = " فنادق \(renters[indexPath.row].name)"
-//        newVC.h = hotelList[indexPath.row]
+        newVC.h = renters[indexPath.row]
         newVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(newVC,animated: true)
     }

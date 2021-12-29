@@ -19,7 +19,7 @@ class HotelService1 {
     func addH(hostels: Hotel1) {
         var  hostels2: City1?
         hostelsCollection.document(
-            hostels2!.name).collection("Hotels").document(hostels.name).setData([
+           "Abha").collection("Hotels").document(hostels.name).setData([
             "name": hostels.name,
             "id": hostels.id,
           
