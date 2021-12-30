@@ -1,0 +1,6 @@
+framework module Pods_SeqApp {
+  umbrella header "Pods-SeqApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
