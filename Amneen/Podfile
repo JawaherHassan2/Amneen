@@ -11,5 +11,4 @@ target 'Amneen' do
    pod 'Firebase/Firestore'
    pod 'ShimmerSwift'
    pod ‘IQKeyboardManagerSwift’
-
 end
