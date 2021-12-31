@@ -55,7 +55,6 @@
 		FA828C45277DF7A9007B0910 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA828C44277DF7A9007B0910 /* Model.swift */; };
 		FA828C47277DF7F6007B0910 /* Login&Register View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA828C46277DF7F6007B0910 /* Login&Register View.swift */; };
 		FA828C49277DF7FE007B0910 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA828C48277DF7FD007B0910 /* GradientView.swift */; };
-		FA828C4B277DF80A007B0910 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA828C4A277DF80A007B0910 /* Animation.swift */; };
 		FA828C4D277DF811007B0910 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA828C4C277DF811007B0910 /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +113,6 @@
 		FA828C44277DF7A9007B0910 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FA828C46277DF7F6007B0910 /* Login&Register View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login&Register View.swift"; sourceTree = "<group>"; };
 		FA828C48277DF7FD007B0910 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		FA828C4A277DF80A007B0910 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		FA828C4C277DF811007B0910 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,40 +148,135 @@
 		FA52E6E0277DFB8800877588 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA52E6E1277DFBA000877588 /* Cities.swift */,
-				FA52E6E3277DFBA900877588 /* Hotels.swift */,
-				FA52E6E5277DFBB200877588 /* Renter.swift */,
-				FA52E6E7277DFBB800877588 /* RenterInfo.swift */,
-				FA52E6E9277DFBBE00877588 /* RenterService.swift */,
-				FA52E6EB277DFBC400877588 /* NewRenter.swift */,
-				FA52E6ED277DFBCA00877588 /* BannedRenters.swift */,
+				FAB60297277F1B380092836C /* Hotel */,
+				FAB60296277F1B320092836C /* City */,
+				FA6EA3AE277F55340089BC33 /* City & Hotels */,
+				FA6EA3AF277F558A0089BC33 /* Tab View Controller */,
+				FA6EA3AD277F54C10089BC33 /* Settings */,
+				FA6EA3AB277F54840089BC33 /* Profile */,
+				FAB6029B277F1B670092836C /* Info */,
+				FAB6029A277F1B5D0092836C /* List */,
+				FAB60299277F1B4F0092836C /* Reports */,
+				FAB60295277F1B2A0092836C /* Renter */,
+				FAB60298277F1B410092836C /* Banned Renters */,
+				FA6EA3A8277F54060089BC33 /* Leaving Renters */,
+				FA6EA3A9277F544C0089BC33 /* Hotel Container */,
+				FA6EA3AA277F54780089BC33 /* Sequrity Container */,
+				FA6EA3A4277F52A50089BC33 /* LogIn & Register */,
+				FA6EA3AC277F54B00089BC33 /* Centers Locations */,
+				FA6EA3A5277F52B70089BC33 /* SOS Numbers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA6EA3A4277F52A50089BC33 /* LogIn & Register */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E71F277DFD5700877588 /* LogIn.swift */,
+				FA52E71D277DFD4D00877588 /* Register.swift */,
+			);
+			path = "LogIn & Register";
+			sourceTree = "<group>";
+		};
+		FA6EA3A5277F52B70089BC33 /* SOS Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E71B277DFC8000877588 /* SOSNumbers.swift */,
+			);
+			path = "SOS Numbers";
+			sourceTree = "<group>";
+		};
+		FA6EA3A6277F52CA0089BC33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA828C46277DF7F6007B0910 /* Login&Register View.swift */,
+				FA828C4C277DF811007B0910 /* Color.swift */,
+				FA828C48277DF7FD007B0910 /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA6EA3A7277F52D20089BC33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA828C44277DF7A9007B0910 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA6EA3A8277F54060089BC33 /* Leaving Renters */ = {
+			isa = PBXGroup;
+			children = (
 				FA52E6EF277DFBD000877588 /* LeavingRenters.swift */,
 				FA52E6F1277DFBD500877588 /* LeavingService.swift */,
-				FA52E6F3277DFBE200877588 /* ReportService.swift */,
-				FA52E6F5277DFBE800877588 /* ReportRenterService.swift */,
-				FA52E6F7277DFBEE00877588 /* Reports.swift */,
-				FA52E6F9277DFBF400877588 /* ReportRenters.swift */,
-				FA52E6FB277DFBFC00877588 /* List.swift */,
-				FA52E6FD277DFC0300877588 /* AddNewC.swift */,
-				FA52E6FF277DFC0A00877588 /* ListService.swift */,
-				FA52E701277DFC1300877588 /* AppHInfo.swift */,
-				FA52E703277DFC1900877588 /* AppSInfo.swift */,
-				FA52E705277DFC1E00877588 /* AppUInfo.swift */,
+			);
+			path = "Leaving Renters";
+			sourceTree = "<group>";
+		};
+		FA6EA3A9277F544C0089BC33 /* Hotel Container */ = {
+			isa = PBXGroup;
+			children = (
 				FA52E707277DFC2E00877588 /* HotelContainer.swift */,
-				FA52E709277DFC3400877588 /* HotelMenu.swift */,
 				FA52E70B277DFC3A00877588 /* HotelHome.swift */,
+				FA52E709277DFC3400877588 /* HotelMenu.swift */,
+			);
+			path = "Hotel Container";
+			sourceTree = "<group>";
+		};
+		FA6EA3AA277F54780089BC33 /* Sequrity Container */ = {
+			isa = PBXGroup;
+			children = (
 				FA52E70D277DFC4200877588 /* SecurityContainer.swift */,
 				FA52E70F277DFC4900877588 /* SecurityMenu.swift */,
 				FA52E711277DFC5100877588 /* SecurityHome.swift */,
-				FA52E713277DFC6A00877588 /* Profile.swift */,
-				FA52E715277DFC7000877588 /* CentersLocations.swift */,
-				FA52E717277DFC7500877588 /* SettingViewController.swift */,
-				FA52E719277DFC7A00877588 /* TabViewController.swift */,
-				FA52E71B277DFC8000877588 /* SOSNumbers.swift */,
-				FA52E71D277DFD4D00877588 /* Register.swift */,
-				FA52E71F277DFD5700877588 /* LogIn.swift */,
 			);
-			path = Controllers;
+			path = "Sequrity Container";
+			sourceTree = "<group>";
+		};
+		FA6EA3AB277F54840089BC33 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E713277DFC6A00877588 /* Profile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FA6EA3AC277F54B00089BC33 /* Centers Locations */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E715277DFC7000877588 /* CentersLocations.swift */,
+			);
+			path = "Centers Locations";
+			sourceTree = "<group>";
+		};
+		FA6EA3AD277F54C10089BC33 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E717277DFC7500877588 /* SettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FA6EA3AE277F55340089BC33 /* City & Hotels */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6FD277DFC0300877588 /* AddNewC.swift */,
+				FA828C36277DF713007B0910 /* City VC.swift */,
+				FA828C3A277DF72B007B0910 /* NewCity .swift */,
+				FA828C3C277DF730007B0910 /* CityService.swift */,
+				FA828C3E277DF739007B0910 /* Hotels VC.swift */,
+				FA828C40277DF740007B0910 /* NewHotel1.swift */,
+				FA828C42277DF746007B0910 /* HotelService1.swift */,
+			);
+			path = "City & Hotels";
+			sourceTree = "<group>";
+		};
+		FA6EA3AF277F558A0089BC33 /* Tab View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E719277DFC7A00877588 /* TabViewController.swift */,
+			);
+			path = "Tab View Controller";
 			sourceTree = "<group>";
 		};
 		FA828C11277DEFE4007B0910 = {
@@ -209,25 +302,81 @@
 		FA828C1C277DEFE4007B0910 /* Amneen */ = {
 			isa = PBXGroup;
 			children = (
-				FA52E6E0277DFB8800877588 /* Controllers */,
-				FA828C44277DF7A9007B0910 /* Model.swift */,
-				FA828C1D277DEFE4007B0910 /* AppDelegate.swift */,
 				FA828C1F277DEFE4007B0910 /* SceneDelegate.swift */,
-				FA828C36277DF713007B0910 /* City VC.swift */,
-				FA828C3A277DF72B007B0910 /* NewCity .swift */,
-				FA828C3C277DF730007B0910 /* CityService.swift */,
-				FA828C3E277DF739007B0910 /* Hotels VC.swift */,
-				FA828C40277DF740007B0910 /* NewHotel1.swift */,
-				FA828C42277DF746007B0910 /* HotelService1.swift */,
-				FA828C46277DF7F6007B0910 /* Login&Register View.swift */,
-				FA828C48277DF7FD007B0910 /* GradientView.swift */,
-				FA828C4A277DF80A007B0910 /* Animation.swift */,
-				FA828C4C277DF811007B0910 /* Color.swift */,
+				FA828C1D277DEFE4007B0910 /* AppDelegate.swift */,
+				FA6EA3A7277F52D20089BC33 /* Model */,
+				FA6EA3A6277F52CA0089BC33 /* View */,
+				FA52E6E0277DFB8800877588 /* Controllers */,
 				FA828C26277DEFF0007B0910 /* Assets.xcassets */,
 				FA828C28277DEFF0007B0910 /* LaunchScreen.storyboard */,
 				FA828C2B277DEFF0007B0910 /* Info.plist */,
 			);
 			path = Amneen;
+			sourceTree = "<group>";
+		};
+		FAB60295277F1B2A0092836C /* Renter */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6E5277DFBB200877588 /* Renter.swift */,
+				FA52E6EB277DFBC400877588 /* NewRenter.swift */,
+				FA52E6E9277DFBBE00877588 /* RenterService.swift */,
+				FA52E6E7277DFBB800877588 /* RenterInfo.swift */,
+			);
+			path = Renter;
+			sourceTree = "<group>";
+		};
+		FAB60296277F1B320092836C /* City */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6E1277DFBA000877588 /* Cities.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		FAB60297277F1B380092836C /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6E3277DFBA900877588 /* Hotels.swift */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		FAB60298277F1B410092836C /* Banned Renters */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6ED277DFBCA00877588 /* BannedRenters.swift */,
+			);
+			path = "Banned Renters";
+			sourceTree = "<group>";
+		};
+		FAB60299277F1B4F0092836C /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6F7277DFBEE00877588 /* Reports.swift */,
+				FA52E6F9277DFBF400877588 /* ReportRenters.swift */,
+				FA52E6F3277DFBE200877588 /* ReportService.swift */,
+				FA52E6F5277DFBE800877588 /* ReportRenterService.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		FAB6029A277F1B5D0092836C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E6FF277DFC0A00877588 /* ListService.swift */,
+				FA52E6FB277DFBFC00877588 /* List.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FAB6029B277F1B670092836C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				FA52E701277DFC1300877588 /* AppHInfo.swift */,
+				FA52E703277DFC1900877588 /* AppSInfo.swift */,
+				FA52E705277DFC1E00877588 /* AppUInfo.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,7 +528,6 @@
 				FA828C37277DF714007B0910 /* City VC.swift in Sources */,
 				FA52E6FC277DFBFC00877588 /* List.swift in Sources */,
 				FA52E708277DFC2E00877588 /* HotelContainer.swift in Sources */,
-				FA828C4B277DF80A007B0910 /* Animation.swift in Sources */,
 				FA52E6F4277DFBE200877588 /* ReportService.swift in Sources */,
 				FA52E6EA277DFBBE00877588 /* RenterService.swift in Sources */,
 				FA52E71E277DFD4D00877588 /* Register.swift in Sources */,
