@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>443098967395-bncuvelbki0ngeo6133gfk7e412sc3gn.apps.googleusercontent.com</string>
+	<string>776753279630-ee1n4v85v870h178f6hhd4jmqq1vgv3a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.443098967395-bncuvelbki0ngeo6133gfk7e412sc3gn</string>
+	<string>com.googleusercontent.apps.776753279630-ee1n4v85v870h178f6hhd4jmqq1vgv3a</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB3aGr-CZbu-QuzHSkkytn8IXhBu0mRoG8</string>
+	<string>AIzaSyBR2QvzFAPsYNMB2fqZFGwhtHaUr8RAgMk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>443098967395</string>
+	<string>776753279630</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>l.Amneen</string>
 	<key>PROJECT_ID</key>
-	<string>amneen-2b3fa</string>
+	<string>amneen-c6c2c</string>
 	<key>STORAGE_BUCKET</key>
-	<string>amneen-2b3fa.appspot.com</string>
+	<string>amneen-c6c2c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:443098967395:ios:d8626f014962666e403756</string>
+	<string>1:776753279630:ios:f9e09e6a4fe915ac300fdf</string>
 </dict>
 </plist>

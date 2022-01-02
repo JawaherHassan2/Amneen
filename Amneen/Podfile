@@ -6,9 +6,11 @@ target 'Amneen' do
   use_frameworks!
 
   # Pods for Amneen
+
    pod 'Firebase/Analytics'
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
    pod 'ShimmerSwift'
    pod ‘IQKeyboardManagerSwift’
+
 end
