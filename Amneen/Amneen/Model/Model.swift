@@ -185,10 +185,10 @@ struct People {
     let crime: String
 }
 let list = [ People(name: "فهد علي", id: "١٠٤٣٢٣١٠٠٩", image: "i1", crime: "سرقه اموال"),
-             People(name: "خالد سعود", id: "١٠٩٩١١٩٩٨٠", image: "i2", crime: "سرقه اموال"),
-             People(name: "بدر عبدالله", id: "١٠٩٦١٢٣١٢١", image: "i3", crime: "سرقه اموال"),
-             People(name: "بندر سعد", id: "١٠٠٢٣١٠١٢١", image: "i4", crime: "سرقه اموال"),
-             People(name: "تركي فهد", id: "١٠٩٩١١٢١٢٠", image: "i1", crime: "سرقه اموال")]
+             People(name: "خالد سعود", id: "١٠٩٩١١٩٩٨٠", image: "i2", crime: " أختطاف"),
+             People(name: "بدر عبدالله", id: "١٠٩٦١٢٣١٢١", image: "i3", crime: " تهريب مخدرات"),
+             People(name: "بندر سعد", id: "١٠٠٢٣١٠١٢١", image: "i4", crime: "تهريب ممنوعات "),
+             People(name: "تركي فهد", id: "١٠٩٩١١٢١٢٠", image: "i1", crime: "سرقه ")]
 
 
 class Numbers {

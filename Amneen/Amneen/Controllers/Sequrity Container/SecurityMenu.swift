@@ -25,19 +25,33 @@ class SecurityMenu: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
         var localized: String {
+//            switch self {
+//            case .home:
+//                return NSLocalizedString("47", comment: "الصفحة الرئيسية")
+//            case .info:
+//                return NSLocalizedString("48", comment: "البلاغات")
+//            case .reportRenter:
+//                return NSLocalizedString("بلاغات الاشتباه", comment: "")
+//            case .shareApp:
+//                return NSLocalizedString("50", comment: "القائمه السوداء")
+//            case .about:
+//                return NSLocalizedString("55", comment: "عن التطبيق")
+//            case .settt:
+//                return NSLocalizedString("56", comment: "الإعدادات")
+//            }
             switch self {
             case .home:
-                return NSLocalizedString("47", comment: "الصفحة الرئيسية")
+                return NSLocalizedString("الصفحة الرئيسية", comment: "")
             case .info:
-                return NSLocalizedString("48", comment: "البلاغات")
+                return NSLocalizedString("البلاغات", comment: "")
             case .reportRenter:
                 return NSLocalizedString("بلاغات الاشتباه", comment: "")
             case .shareApp:
-                return NSLocalizedString("50", comment: "القائمه السوداء")
+                return NSLocalizedString( "القائمه السوداء", comment: "")
             case .about:
-                return NSLocalizedString("55", comment: "عن التطبيق")
+                return NSLocalizedString( "عن التطبيق ", comment: "")
             case .settt:
-                return NSLocalizedString("56", comment: "الإعدادات")
+                return NSLocalizedString("الإعدادات", comment: "")
             }
         }
         //

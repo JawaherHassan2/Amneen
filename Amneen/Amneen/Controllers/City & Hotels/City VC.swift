@@ -137,7 +137,8 @@ extension Cityp: UITableViewDelegate  , UITableViewDataSource, UISearchBarDelega
      func tapToAdd(){
 
         let alert = UIAlertController(title: "بلاغ اشتباه", message: "ارسال بلاغ اشتباه في :", preferredStyle: .alert )
-        
+         alert.view.tintColor = #colorLiteral(red: 0.6865567854, green: 0.1404559176, blue: 0.06958169459, alpha: 1)
+         
         let save = UIAlertAction(title: "إرسال بلاغ", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
             guard  let text = textField.text, !text.isEmpty else {
@@ -150,11 +151,12 @@ extension Cityp: UITableViewDelegate  , UITableViewDataSource, UISearchBarDelega
 
         alert.addTextField { (textField) in
             textField.placeholder = "اشتباه في:"
-            textField.textColor = .purple
+            textField.textColor = .black
         }
         alert.addAction(save)
         let cancel = UIAlertAction(title: "إلغاء", style: .default) { (alertAction) in }
         alert.addAction(cancel)
+         alert.view.tintColor = #colorLiteral(red: 0.6865567854, green: 0.1404559176, blue: 0.06958169459, alpha: 1)
         self.present(alert, animated:true, completion: nil)
 
     }

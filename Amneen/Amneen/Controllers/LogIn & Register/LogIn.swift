@@ -141,7 +141,7 @@ class LogIn: UIViewController {
             }
             if email == "securityagency@moi.gov.sa"  {
                 let refreshAlert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالجهات الامنيه", preferredStyle: UIAlertController.Style.alert)
-                refreshAlert.view.tintColor = UIColor.systemGreen
+                refreshAlert.view.tintColor = #colorLiteral(red: 0.4155413063, green: 0.5, blue: 0.4141010346, alpha: 1)
                 
                 refreshAlert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     
@@ -157,7 +157,7 @@ class LogIn: UIViewController {
             } else if email == "alsrawat@hotel.com" {
                 let Alert = UIAlertController(title: "أهلا بك🤝", message: "في تطبيق آمنين الخاص بالفنادق ", preferredStyle: UIAlertController.Style.alert)
                 
-                Alert.view.tintColor = UIColor.systemGreen
+                Alert.view.tintColor = #colorLiteral(red: 0.4155413063, green: 0.5, blue: 0.4141010346, alpha: 1)
                 Alert.addAction(UIAlertAction(title: "حسنا", style: .default, handler: { (action: UIAlertAction!) in
                     let vc = UINavigationController(rootViewController: HotelContainer())
                     vc.modalTransitionStyle = .crossDissolve

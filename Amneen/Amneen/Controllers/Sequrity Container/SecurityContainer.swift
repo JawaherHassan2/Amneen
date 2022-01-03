@@ -68,7 +68,7 @@ extension SecurityContainer: HomeSViewControllerDelegate{
             
         case .closed:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .showHideTransitionViews ) {
-                self.navVC?.view.frame.origin.x =  self.homeVC.view.frame.size.width-50
+                self.navVC?.view.frame.origin.x =  self.homeVC.view.frame.size.width-99
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opend

@@ -53,7 +53,7 @@ class SecurityHome: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(shimmerView)
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.04864486824, green: 0.3906074293, blue: 0.3516095239, alpha: 1)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
         
         title = NSLocalizedString("31", comment:"الصفحه الرئيسية")
         view.backgroundColor = .white

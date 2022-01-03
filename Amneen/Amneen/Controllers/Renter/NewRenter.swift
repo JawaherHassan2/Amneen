@@ -53,7 +53,6 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         b.backgroundColor = UIColor(red: (87/255), green: (107/255), blue: (96/255), alpha: 1)
         return b
     }()
-    
     public let LabelN: UILabel = {
         let label = UILabel()
         //     label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
@@ -109,7 +108,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
         }
         if isCriminal  {
             let alert = UIAlertController(title: NSLocalizedString("43", comment:"تحذير⚠️ "), message: NSLocalizedString("44", comment:"مطلوب أمنيا! يرجى الحذر وابلاغ الجهات الامنيه"), preferredStyle: .alert )
-            
+            alert.view.tintColor = #colorLiteral(red: 0.6865567854, green: 0.1404559176, blue: 0.06958169459, alpha: 1)
             
             let ok = UIAlertAction(title: NSLocalizedString("45", comment:"حسنا"), style: .default) { (alertAction) in }
             alert.addAction(ok)
@@ -144,7 +143,7 @@ class NewRenter: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
-        
+        title =  "مستأجر جديد"
         view.addSubview(LabelN)
         view.addSubview(LabelID)
         view.backgroundColor = UIColor(named: "Color")

@@ -23,7 +23,7 @@ class SettingViewController: UIViewController {
     
     lazy var sButton: UIButton = {
         let b = UIButton()
-        b.addTarget(self, action: #selector(changrLa), for: .touchUpInside)
+        b.addTarget(self, action: #selector(alertt), for: .touchUpInside)
         b.translatesAutoresizingMaskIntoConstraints = false
         b.setTitle(NSLocalizedString("54", comment: "تبديل اللغه"), for: .normal)
         b.layer.cornerRadius = 25

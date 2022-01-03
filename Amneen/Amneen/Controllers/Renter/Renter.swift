@@ -48,16 +48,16 @@ class Renters: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(addRentert)
-        )
-//        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-//        self.navigationItem.rightBarButtonItem = leftNavBarButton
-//        searchBar.searchBarStyle = UISearchBar.Style.default
-//        searchBar.placeholder = "بحث"
-//        searchBar.sizeToFit()
-//        searchBar.isTranslucent = false
-//        searchBar.delegate = self
-//        view.addSubview(searchBar)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(addRentert)
+//        )
+        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
+        self.navigationItem.rightBarButtonItem = leftNavBarButton
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = "بحث"
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.delegate = self
+        view.addSubview(searchBar)
         
         view.addSubview(sTV)
         NSLayoutConstraint.activate([
@@ -102,12 +102,12 @@ extension Renters: UITableViewDelegate  , UITableViewDataSource, UISearchBarDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RenterCell
         
         let renter = renters[indexPath.row]
-        //        let d =  hotelList[indexPath.row]
+//                let d =  hotelList[indexPath.row]
         cell.label2.text = "      الاسم: \(renter.name)"
-        //        cell.label2.text = "\(d.name)    اسم المدينه:"
+//                cell.label2.text = "\(d.name)    اسم المدينه:"
         cell.label3.text = " الهويه الوطنيه:  \(renter.id)"
-//        cell.label4.text = "وقت الدخول: \(renter.getNiceDate()) "
-//        cell.label5.text = " اسم الفندق:  \(r!.name)"
+        cell.label4.text = "وقت الدخول: \(renter.getNiceDate()) "
+        cell.label5.text = " اسم الفندق:  \(r!.name)"
         cell.label6.text = "رقم الشقه:  \(indexPath.row + 1)"
 //        cell.backgroundColor = .gray
         cell.contentView.backgroundColor = #colorLiteral(red: 0.5575026482, green: 0.6737594539, blue: 0.7071654279, alpha: 1)

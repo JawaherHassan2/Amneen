@@ -8,7 +8,7 @@ import UIKit
 
 class List: UIViewController {
     
-    //    var criminals: Array<TPeople> = []
+//        var criminals: Array<TPeople> = []
     var criminals: Array<People> = []
     
     lazy var criminalsTV: UITableView = {
@@ -41,6 +41,7 @@ class List: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: #selector(addRenter))
         
         title = "القائمه السوداء "
         view.addSubview(criminalsTV)
@@ -50,7 +51,10 @@ class List: UIViewController {
             criminalsTV.rightAnchor.constraint(equalTo: view.rightAnchor),
             criminalsTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        
+//        CriminalService.shared.listenToNotes { newRenter in
+//            self.criminals = newRenter
+//            self.criminalsTV.reloadData()
+//        }
     
     }
     
@@ -67,14 +71,14 @@ class List: UIViewController {
 extension List: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        return criminals.count
+//                return criminals.count
         return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CriminalCell
         
-        //        let criminal = criminals[indexPath.row]
+//                let criminal = criminals[indexPath.row]
         let criminal = list[indexPath.row]
         
         cell.label2.text = " الاسم:  \(criminal.name)"
@@ -91,6 +95,10 @@ extension List: UITableViewDataSource, UITableViewDelegate {
         }else {
             return 160
         }
+    }
+    @objc func addRenter() {
+        let newVC = AddNewC()
+        present(newVC, animated: true, completion: nil)
     }
     
     

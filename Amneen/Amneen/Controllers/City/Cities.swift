@@ -4,7 +4,7 @@
 //
 //  Created by Jawaher🌻 on 18/04/1443 AH.
 import UIKit
-//
+
 class Cities: UIViewController, UICollectionViewDelegate  , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
     
     private var hotelCV: UICollectionView?

@@ -38,11 +38,8 @@ class NewCity: UIViewController, UITextFieldDelegate {
         label.font = UIFont(name: "Avenir-Light", size: 20)
         //        label.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         label.textColor = UIColor(named: "Color2")
-        
         label.text = NSLocalizedString("41", comment:"اسم المستأجر:")
-        
         label.textAlignment = .right
-        
         return label
     }()
 
@@ -63,7 +60,6 @@ class NewCity: UIViewController, UITextFieldDelegate {
 //        let date = datePicker.date
         let uuid = UUID().uuidString
         
-        
         CityService.shared.addH(
             hostels: City1(name: name, id: uuid)
         )
@@ -73,7 +69,6 @@ class NewCity: UIViewController, UITextFieldDelegate {
     }
     
     
-   
     
     private func setupGradientView() {
         let _ = GradientView(self)
