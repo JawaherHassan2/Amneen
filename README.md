@@ -67,7 +67,9 @@ The application supports dark and lite mode.
 | HotelContainer | Hotel only | It contains the settings screen, the home page, the screen for adding new renters, existing renters, departing renters, and prohibited renters from entering.
 ## Access Primssions :
  -For Sequrity Agency:   email: securityagency@moi.gov.sa       password: 123456
- -For Sequrity Agency:   email: alsrawat@hotel.com              password: 123456          
+ 
+ -For Hotel:   email: alsrawat@hotel.com              password: 123456          
+  -For Other users :   your email.
 ## Models:
 - City
 - Hotel
