@@ -65,7 +65,9 @@ The application supports dark and lite mode.
 | Leaving Renters | Hotel only | It displays the previous renters, name, ID number, the date of entering the hotel and the date of leaving the hotel.
 | Banned Renters | Hotel only | In it, a list of people who were prevented from entering the hotel and the reason for the ban is displayed.
 | HotelContainer | Hotel only | It contains the settings screen, the home page, the screen for adding new renters, existing renters, departing renters, and prohibited renters from entering.
-
+## Access Primssions :
+ -For Sequrity Agency:   email: securityagency@moi.gov.sa       password: 123456
+ -For Sequrity Agency:   email: alsrawat@hotel.com              password: 123456          
 ## Models:
 - City
 - Hotel
