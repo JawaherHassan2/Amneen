@@ -132,5 +132,5 @@ The application supports dark and lite mode.
 https://github.com/JawaherHassan2/Amneen
 
 ## Slides :
-
+https://docs.google.com/presentation/d/1NNRo4hWX5JntOHVrVIUONIenleG7QaVrE13w3vU07B0/edit#slide=id.p8
 ## My presentation:
