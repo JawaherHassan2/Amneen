@@ -52,7 +52,6 @@ It also displays the locations of important security stations in the Kingdom of 
 | AppInfoSecurity | Security Agency only | displaying user guidlines for security agencies.
 | AppInfoUser | User only | displaying user guidlines for citizens.
 | TabViewController | User only | It contains the profile screen, settings screen, application information screen, important emergency numbers screen, and important sites screen.
-<<<<<<< HEAD
 | CentersLocations | User only | The sites of important security stations are displayed.
 | SOS numbers | User only | Important emergency numbers are shown and how to directly contact them.
 | SecurityContainer | Security Agency only | It contains the profile screen, settings screen, application information screen, reports screen, and suspicious people reports screen.
