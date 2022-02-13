@@ -52,6 +52,7 @@ It also displays the locations of important security stations in the Kingdom of 
 | AppInfoSecurity | Security Agency only | displaying user guidlines for security agencies.
 | AppInfoUser | User only | displaying user guidlines for citizens.
 | TabViewController | User only | It contains the profile screen, settings screen, application information screen, important emergency numbers screen, and important sites screen.
+<<<<<<< HEAD
 | CentersLocations | User only | The sites of important security stations are displayed.
 | SOS numbers | User only | Important emergency numbers are shown and how to directly contact them.
 | SecurityContainer | Security Agency only | It contains the profile screen, settings screen, application information screen, reports screen, and suspicious people reports screen.
@@ -78,6 +79,27 @@ It also displays the locations of important security stations in the Kingdom of 
  - For other users:   
  Please register with your *email* and *password*.
  
+=======
+| CentersLocations | User only | The sites of the important security centers are displayed.
+| SOS numbers | User only | Important emergency numbers are displayed and the ability to contact them directly.
+| SecurityContainer | Security Agency only | It contains the profile screen, settings screen, application information screen, reports screen, and suspicious reports screen.
+| Blacklist | Security Agency only | A list of criminals in the blacklist is displayed.
+| Reports | Security Agency only | It receives reports of criminals tracking coming from hotels.
+| ReportRenters | Security Agency only | It receives reports of suspicions of stalactites, such as drug smuggling or theft, and others, coming from hotels.
+| Cities | Hotel only | The cities of the Kingdom of Saudi Arabia are displayed, and each city has its own hotels.
+| Hotels | Hotel only | The hotels for each city and the renters for each hotel are displayed.
+| Renters | Hotel only | It displays the information of the renters, the name and ID number, the date of entry, and the time of entry.
+| NewRenter | Hotel only | Through it, a new renter is added, where the renter's name, ID number, and the date and time of entering the hotel are entered.
+| Renter | Hotel only | Where the renter information is displayed.
+| Leaving Renters | Hotel only | It displays the previous renters, name, ID number, the date of entering the hotel and the date of leaving the hotel.
+| Banned Renters | Hotel only | In it, a list of people who were prevented from entering the hotel and the reason for the ban is displayed.
+| HotelContainer | Hotel only | It contains the settings screen, the home page, the screen for adding new renters, existing renters, departing renters, and prohibited renters from entering.
+## Access Primssions :
+ -For Sequrity Agency:   email: securityagency@moi.gov.sa       password: 123456
+ 
+ -For Hotel:   email: alsrawat@hotel.com              password: 123456          
+  -For Other users :   your email.
+>>>>>>> 073fb892a14db9e12aa548261664885907676a79
 ## Models:
 - City
 - Hotel
